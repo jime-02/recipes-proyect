@@ -1,0 +1,8 @@
+@use '../abstracts/vars';
+
+@mixin set-font($ffamily, $fweight, $fsize, $fcolor: vars.$clr-black){
+    font-family: $ffamily;
+    font-weight: $fweight;
+    font-size: $fsize;
+    color: $fcolor;
+}
