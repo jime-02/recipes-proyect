@@ -1,0 +1,26 @@
+.footer-color {
+  height: 35.063rem;
+  width: auto;
+  background: hsl(0deg, 5%, 92%);
+}
+
+.footer-title {
+  font-family: "Oswald";
+  font-weight: 700;
+  font-size: 2.125rem;
+  color: hsl(355deg, 68%, 51%);
+}
+
+.footer-info {
+  font-family: "Oswald";
+  font-weight: 700;
+  font-size: 1.938rem;
+  color: hsl(0deg, 0%, 100%);
+}
+
+.footer-info:hover {
+  opacity: 85%;
+  color: var(--clr-red);
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}

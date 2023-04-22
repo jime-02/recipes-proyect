@@ -1,0 +1,39 @@
+@use '../vendor/bootstrap/bootstrap.scss';
+@use '../abstracts/vars';
+@use '../base/typography';
+
+.footer-color{
+    height: 33rem;
+    width: auto;
+    background: vars.$clr-gray-dark;
+}
+
+.footer-title{
+    @include typography.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-med, vars.$clr-red);   
+}
+
+.footer-info{
+    @include typography.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-xmed, vars.$clr-white); 
+    --bs-nav-link-padding-x: 5rem; 
+    display: inline-block;  
+}
+
+.footer-info:hover{
+    opacity: 85%;
+    color:  vars.$clr-red;
+    transform: scale(1.5);
+}
+
+.footer-no-item{
+    list-style-type: none;
+}
+
+.margin-logo{
+    margin-top: 11rem;
+    margin-left: 1.5rem;
+}
+
+.icons-size{
+    width: 90%;
+}
+
