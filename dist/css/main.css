@@ -13386,6 +13386,98 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+body {
+  font-family: "Oswald";
+}
+
+html {
+  font-size: 15.5px;
+}
+
+.btn-menu {
+  position: relative;
+  display: table-cell;
+  place-items: center;
+  text-decoration: none;
+  border-radius: 1.5rem;
+  width: 12.375rem;
+  height: 3.938rem;
+  text-align: center;
+  font-family: "Oswald";
+  font-size: 1.563rem;
+  font-weight: 700;
+  border: hsl(355deg, 68%, 51%);
+  background-color: hsl(355deg, 68%, 51%);
+  color: hsl(0deg, 0%, 100%);
+}
+
+.btn-menu:hover {
+  color: hsl(200deg, 19%, 18%);
+}
+
+.search-btn {
+  position: relative;
+  display: table-cell;
+  place-items: center;
+  text-decoration: none;
+  border-radius: 1.5rem;
+  width: 12.375rem;
+  height: 3.938rem;
+  text-align: center;
+  font-family: "Oswald";
+  font-size: 1.563rem;
+  font-weight: 700;
+  border: hsl(355deg, 68%, 51%);
+  background-color: hsl(355deg, 68%, 51%);
+  color: hsl(0deg, 0%, 100%);
+  border-bottom-right-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+  border-bottom-left-radius: 0%;
+  border-top-left-radius: 0%;
+  width: 5.563rem;
+}
+
+.search-bar {
+  position: relative;
+  display: table-cell;
+  place-items: center;
+  text-decoration: none;
+  border-radius: 1.5rem;
+  width: 12.375rem;
+  height: 3.938rem;
+  text-align: center;
+  font-family: "Oswald";
+  font-size: 1.563rem;
+  font-weight: 700;
+  border: hsl(355deg, 68%, 51%);
+  background-color: hsl(0deg, 5%, 92%);
+  color: hsl(0deg, 0%, 0%);
+  text-align: left;
+  border-bottom-right-radius: 0%;
+  border-top-right-radius: 0%;
+  border-bottom-left-radius: 1.5rem;
+  border-top-left-radius: 1.5rem;
+  width: 22rem;
+}
+
+.carrousel-text {
+  font-family: "Oswald";
+  font-weight: 700;
+  font-size: 2.188rem;
+  color: hsl(355deg, 68%, 51%);
+}
+
+.margins-carrousel {
+  margin-right: 9.688rem;
+  margin-left: 9.688rem;
+  margin-top: 6rem;
+  margin-bottom: 7rem;
+}
+
+.margin-carrousel {
+  margin-right: 3.688rem;
+}
+
 .footer-color {
   height: 33rem;
   width: auto;
@@ -13415,10 +13507,6 @@ textarea.form-control-lg {
           transform: scale(1.5);
 }
 
-.footer-no-item {
-  list-style-type: none;
-}
-
 .margin-logo {
   margin-top: 11rem;
   margin-left: 1.5rem;
@@ -13426,4 +13514,47 @@ textarea.form-control-lg {
 
 .icons-size {
   width: 90%;
+}
+
+.topnav {
+  height: 9.563rem;
+  width: auto;
+  background: hsl(355deg, 68%, 51%);
+}
+
+.margin-user {
+  margin-right: 8rem;
+}
+
+.header-text {
+  font-family: "Oswald";
+  font-weight: 700;
+  font-size: 2.188rem;
+  color: hsl(355deg, 68%, 51%);
+}
+
+.nav-background-color {
+  background-color: hsl(0deg, 5%, 92%);
+}
+
+.nav li a {
+  padding: 0.7rem 0.438rem;
+  display: block;
+  opacity: 97%;
+  margin-right: 1.875rem;
+}
+
+.nav li ul {
+  display: none;
+  position: absolute;
+}
+
+.nav li:hover > ul {
+  display: block;
+  z-index: 2;
+  position: fixed;
+}
+
+.nav-client-align {
+  right: 3.875rem;
 }

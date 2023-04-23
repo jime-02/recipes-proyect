@@ -1,0 +1,50 @@
+@use '../media-queries';
+@use '../abstracts/mixins';
+@use '../abstracts/vars';
+@use '../base/typography';
+
+.btn-menu{
+    @include mixins.btn-menu(vars.$clr-red, vars.$clr-red, vars.$clr-white);
+}
+
+.btn-menu:hover{ 
+    color:  vars.$clr-gray-dark;   
+}
+
+.search-btn{
+    @include mixins.btn-menu(vars.$clr-red, vars.$clr-red, vars.$clr-white);
+
+    border-bottom-right-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+    border-bottom-left-radius: 0%;
+    border-top-left-radius: 0%;
+    width: 5.563rem; 
+}
+
+.search-bar{
+    @include mixins.btn-menu(vars.$clr-red, vars.$clr-gray, vars.$clr-black);
+
+    text-align: left;
+    border-bottom-right-radius: 0%;
+    border-top-right-radius: 0%;
+    border-bottom-left-radius: 1.5rem;
+    border-top-left-radius: 1.5rem;
+    width: 22rem;  
+} 
+
+.carrousel-text{
+    @include typography.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-lg, vars.$clr-red);   
+}
+
+//carrousel
+.margins-carrousel{
+    margin-right: 9.688rem;
+    margin-left: 9.688rem;
+    margin-top: 6rem;
+    margin-bottom: 7rem;
+}
+
+
+.margin-carrousel{
+    margin-right: 3.688rem;
+}

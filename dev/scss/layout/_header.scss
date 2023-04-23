@@ -1,0 +1,43 @@
+@use '../vendor/bootstrap/bootstrap.scss';
+@use '../abstracts/vars';
+@use '../base/typography';
+
+.topnav{
+    height: 9.563rem;
+    width: auto;
+    background: vars.$clr-red;
+}
+
+.margin-user{
+    margin-right: 8rem;
+}
+
+.header-text{
+    @include typography.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-lg, vars.$clr-red);   
+}
+
+.nav-background-color{
+    background-color: vars.$clr-gray;
+}
+
+.nav li a {  
+    padding: 0.7rem 0.438rem;
+    display:block;
+    opacity: 97%; 
+    margin-right: 1.875rem;
+}
+
+.nav li ul {
+    display:none;
+    position:absolute;
+}
+
+.nav li:hover > ul {
+    display:block;
+    z-index: 2;
+    position: fixed;
+}
+
+.nav-client-align{
+   right: 3.875rem; 
+}

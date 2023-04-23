@@ -1,0 +1,22 @@
+@use '../abstracts/vars';
+@use '../media-queries';
+
+@mixin btn-menu($border, $background, $color){
+    position: relative;
+    display: table-cell;
+    place-items: center;
+    text-decoration: none;
+    border-radius: 1.5rem;
+    width: 12.375rem;
+    height: 3.938rem;
+    text-align: center;
+   
+    font-family: vars.$ff-primary;
+    font-size: vars.$fs-xxsm;
+    font-weight: vars.$fw-bold;
+    border: $border;
+
+    background-color: $background;
+    color: $color;
+
+}
