@@ -32,19 +32,68 @@
     width: 22rem;  
 } 
 
-.carrousel-text{
-    @include typography.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-lg, vars.$clr-red);   
+.box-titles{
+    @include mixins.btn-menu(vars.$clr-red, vars.$clr-red, vars.$clr-white);
+
+    width: vars.$btn-lg;
+    font-size: vars.$fs-lg;
+}/*buttons size
+$btn-sm: 239px;
+$btn-xsm: 325px;
+$btn-med: 389px;
+$btn-lg: 419px;
+$btn-sup-lg: 630.34px;*/
+
+.btn-view{
+    @include mixins.btn-menu(vars.$clr-gray-dark, vars.$clr-gray-dark, vars.$clr-white);
+
+    width: vars.$btn-sm;
+    font-size: vars.$fs-xsm;
 }
 
-//carrousel
-.margins-carrousel{
-    margin-right: 9.688rem;
-    margin-left: 9.688rem;
-    margin-top: 6rem;
-    margin-bottom: 7rem;
+.btn-view-more{
+    @include mixins.btn-menu(vars.$clr-gray-dark, vars.$clr-gray-dark, vars.$clr-white);
+
+    width: vars.$btn-xsm;
+    font-size: vars.$fs-sm;
+}
+
+.display-nav{
+    @include mixins.display-options();
+}
+
+.card-color{
+    background-color: vars.$clr-gray;
+}
+
+.category-text{
+    @include typography.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-xxxxsm, vars.$clr-red);   
+}
+
+.text-recipe-name{
+    @include typography.set-font(vars.$ff-primary, vars.$fw-medium, vars.$fs-xsm, vars.$clr-black);  
+
+    max-height: 1.899000000000001rem; 
+}
+
+.text-recipe-level{
+    @include typography.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-xxxxsm, vars.$clr-black);  
+    opacity: 50%;  
+}
+
+.text-recipe-description{
+    @include typography.set-font(vars.$ff-primary, vars.$fw-regular, vars.$fs-xxxxsm, vars.$clr-black); 
+    max-height: 6rem; 
+     
+}
+
+.padding-card{
+    padding-right: 11rem;
+}
+
+.img-height{
+   height: 14rem;
 }
 
 
-.margin-carrousel{
-    margin-right: 3.688rem;
-}
+

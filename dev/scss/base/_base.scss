@@ -2,10 +2,9 @@
 @use '../abstracts/vars';
 
 body{
-    font-family: vars.$ff-primary;
-   
+    font-family: vars.$ff-primary;  
 }
 
 html{
-    font-size: 15.5px;
+    font-size: 0.969rem;
 }

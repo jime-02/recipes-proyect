@@ -29,7 +29,7 @@
 
 </head>
 
-<body class="container">
+<body id="app" class="container">
 
      <!--header section-->
      <header class="topnav">
@@ -37,13 +37,13 @@
             <a href="index.html"><img src="./images/identificador.png" class="position-relative mt-4 ms-5 p-2" alt="Graphic identifier"></a>
         </div>
       
-        <div class="position-absolute top-0 end-0 mx-5 mt-2 px-5">
+        <div class="position-absolute top-0 display-user end-0 mx-5 mt-2 px-5">
             <ul class="nav">
                 <li class="position-relative hide-mb hide-tab"><a class="" href="#">
                     <img src="./images/icono-usuario.png" class="margin-user" alt="Perfil" ></a> 
                     <ul class="nav-background-color nav-client-align list-unstyled">
-                        <li class="header-no-item"><a class="btn-circular btn-circular-client mt-5 header-text nav-link" href="login.php">Iniciar Sesión</a></li>
-                        <li class="header-no-item"><a class="btn-circular btn-circular-client mt-3 mb-3 header-text nav-link" href="registro-admin.php">Registrarse</a></li>
+                        <li class="header-no-item"><a class="mt-5 header-text nav-link" href="login.php">Iniciar Sesión</a></li>
+                        <li class="header-no-item"><a class="mt-3 mb-3 header-text nav-link" href="registro-admin.php">Registrarse</a></li>
                     </ul>  
                 </li>
             </ul>
@@ -53,7 +53,7 @@
 
     <!-- Navigation menu-->
     <div class="row mt-5 mb-5">
-        <nav id="navbar-main" class="navbar">
+        <nav id="navbar-main" class="navbar display-nav">
             <!-- <div class="offcanvas-header">  
                     <button id="btn-close" class="btn btn-all float-end me-3">X</button>
                 </div>-->
@@ -63,7 +63,14 @@
                         <a class="btn-menu" href="#">Categorías</a>
                          <ul class="mt-1 nav-background-color">
                             <li class='header-no-item'>
-                                <a class='header-subtext mt-3' href='recipes.php'></a></li>
+                                <a class='header-subtext mt-3' href='recipes.php'>Almuerzo</a>
+                            </li>
+                            <li class='header-no-item'>
+                                <a class='header-subtext mt-3' href='recipes.php'>Bebidas</a>
+                            </li>
+                            <li class='header-no-item'>
+                                <a class='header-subtext mt-3' href='recipes.php'>Desayuno</a>
+                            </li>
                          </ul>
                     </li>
                 </ul>
@@ -71,14 +78,34 @@
                 <ul class="nav">
                     <li class="nav-item">
                         <a class="btn-menu" href="#">Niveles</a>
-                        
+                        <ul class="mt-1 nav-background-color">
+                            <li class='header-no-item'>
+                                <a class='header-subtext mt-3' href='recipes.php'>Fácil</a>
+                            </li>
+                            <li class='header-no-item'>
+                                <a class='header-subtext mt-3' href='recipes.php'>Intermedio</a>
+                            </li>
+                            <li class='header-no-item'>
+                                <a class='header-subtext mt-3' href='recipes.php'>Avanzado</a>
+                            </li>
+                         </ul>
                     </li>
                 </ul>
 
                 <ul class="nav">
                     <li class="nav-item">
                         <a class="btn-menu" href="#">Ocasiones</a>
-                       
+                        <ul class="mt-1 nav-background-color">
+                            <li class='header-no-item'>
+                                <a class='header-subtext mt-3' href='recipes.php'>Todas</a>
+                            </li>
+                            <li class='header-no-item'>
+                                <a class='header-subtext mt-3' href='recipes.php'>Día del padre</a>
+                            </li>
+                            <li class='header-no-item'>
+                                <a class='header-subtext mt-3' href='recipes.php'>Día de la madre</a>
+                            </li>
+                         </ul>
                     </li>
                 </ul>
 
@@ -101,6 +128,54 @@
         <div class="carousel-cell margin-carousel"><a class="nav-link topnav-link" href="informacion-receta.html"><img class="border border-4 border-danger rounded" src="./images/receta-10.png" alt="receta1"><h4 class="text-center mt-3 mb-3 carrousel-text">Sopa</h4></a></div> 
     </div>
     <!-- Carrousel end-->
+
+    <!-- Best recipes -->
+    <section class="row mt-5 justify-content-center">
+        <p class="box-titles mb-4 mt-5">Mejores recetas</p>
+
+        <section class="row mt-5 padding-card">
+            <div v-for="(item, index) in recipes" class="col-2 mt-3 mx-5 mt-2 px-5">
+              <div class="card p-3 shadow border-0 d-inline-block card-color mb-4">
+                    <img v-bind:src="item.image" class="card-img-top img-height rounded mb-4" alt="featured recipe">
+                    <div class="card-body p-0">
+                        <p class="mt-2 mb-4 category-text">{{ item.category }}</p>
+                        <h5 class="mb-4 card-title overflow-hidden text-recipe-name">{{ item.name }}</h5>
+                        <p class="mb-5 text-recipe-level">{{ item.level }}</p>
+
+                        <button class="btn-view mt-2 mb-4 align-middle" v-on:click="onClickViewRecipe(index)" data-bs-toggle="modal" data-bs-target="#staticBackdrop">View Recipe</button>
+                    </div>
+                </div>     
+          </div> 
+        </section>
+
+        <button class="btn-view-more mt-5 mb-4">Ver más</button>
+
+     </section>   
+    <!-- Best recipes end -->
+
+     <!-- New recipes -->
+     <section class="row mt-5 justify-content-center">
+        <p class="box-titles mb-4 mt-5">Lo más nuevo</p>
+
+        <section class="row mt-5 padding-card">
+            <div v-for="(item, index) in recipes" class="col-2 mt-3 mx-5 mt-2 px-5">
+              <div class="card p-3 shadow border-0 d-inline-block card-color mb-4">
+                    <img v-bind:src="item.image" class="card-img-top img-height rounded mb-4" alt="featured recipe">
+                    <div class="card-body p-0">
+                        <p class="mt-2 mb-4 category-text">{{ item.category }}</p>
+                        <h5 class="mb-4 card-title overflow-hidden text-recipe-name">{{ item.name }}</h5>
+                        <p class="card-text overflow-hidden text-recipe-description">{{ item.ingredients }}</p>
+                        <p class="mb-5 text-recipe-level">{{ item.level }}</p>
+
+                        <button class="btn-view mt-2 mb-4 align-middle" v-on:click="onClickViewRecipe(index)" data-bs-toggle="modal" data-bs-target="#staticBackdrop">View Recipe</button>
+                    </div>
+                </div>     
+          </div> 
+        </section>
+
+        <button class="btn-view-more mt-5 mb-4">Ver más</button>
+     </section>  
+     <!-- New recipes end -->
 
     <!--Footer information-->
     <footer class="mt-5 footer-color">
@@ -155,6 +230,8 @@
     <!--Footer information end-->
    
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Carousel -->
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
    
      <!-- VueJS -->
@@ -162,12 +239,12 @@
 
      <!-- main script -->
      <script src="./js/main.js"></script>
+     <script src="./js/components/RecipeCard.js"></script>
 
-       <!-- mounted, se verifica que la app fue cargada, ref a la aplicacion -->
+    <!-- mounted, se verifica que la app fue cargada, ref a la aplicacion -->
     <script>
         const mountedApp = app.mount("#app");
     </script>
-
 
     <script>
     document.addEventListener("DOMContentLoaded", function(){

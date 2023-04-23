@@ -3,7 +3,7 @@
 
 @mixin btn-menu($border, $background, $color){
     position: relative;
-    display: table-cell;
+    display: grid;
     place-items: center;
     text-decoration: none;
     border-radius: 1.5rem;
@@ -19,4 +19,27 @@
     background-color: $background;
     color: $color;
 
+}
+
+@mixin display-options(){
+    nav li a {  
+        padding: 0.7rem 0.438rem;
+        display:block;
+        opacity: 97%; 
+        margin-right: 1.875rem;
+    }
+    .nav li ul {
+        display:none;
+        position:absolute;
+    }
+
+    .nav li:hover > ul {
+        display:block;
+        z-index: 2;
+        position: fixed;
+    }
+
+    .nav-client-align{
+        right: 3.875rem; 
+    }
 }

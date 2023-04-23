@@ -1,0 +1,21 @@
+@use '../media-queries';
+@use '../abstracts/mixins';
+@use '../abstracts/vars';
+@use '../base/typography';
+
+//carrousel
+.carrousel-text{
+    @include typography.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-lg, vars.$clr-red);   
+}
+
+.margins-carrousel{
+    margin-right: 9.688rem;
+    margin-left: 9.688rem;
+    margin-top: 6rem;
+    margin-bottom: 7rem;
+}
+
+
+.margin-carrousel{
+    margin-right: 3.688rem;
+}
