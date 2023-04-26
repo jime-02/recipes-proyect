@@ -13581,6 +13581,29 @@ $btn-sup-lg: 630.34px;*/
   max-height: 6rem;
 }
 
+.text-recipe-label {
+  font-family: "Oswald";
+  font-weight: 700;
+  font-size: 2.188rem;
+  color: hsl(355deg, 68%, 51%);
+  margin-left: 7.5rem;
+}
+
+.text-recipe-textarea {
+  font-family: "Oswald";
+  font-weight: 700;
+  font-size: 1.813rem;
+  color: hsl(0deg, 0%, 0%);
+  opacity: 90%;
+  width: 42rem;
+  border-color: hsl(355deg, 68%, 51%);
+  border-width: 0.313rem;
+}
+
+.textarea-width {
+  width: 19.125rem;
+}
+
 .padding-card {
   padding-right: 11rem;
 }

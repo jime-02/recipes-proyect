@@ -87,6 +87,25 @@ $btn-sup-lg: 630.34px;*/
      
 }
 
+.text-recipe-label{
+    @include typography.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-lg, vars.$clr-red);
+     
+    margin-left: 7.5rem;
+}
+
+.text-recipe-textarea{
+    @include typography.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-sm, vars.$clr-black); 
+
+    opacity: 90%;
+    width: vars.$btn-sup-lg;
+    border-color: vars.$clr-red;
+    border-width: 0.313rem; 
+}
+
+.textarea-width{
+    width: 19.125rem;
+}
+
 .padding-card{
     padding-right: 11rem;
 }
@@ -94,6 +113,3 @@ $btn-sup-lg: 630.34px;*/
 .img-height{
    height: 14rem;
 }
-
-
-

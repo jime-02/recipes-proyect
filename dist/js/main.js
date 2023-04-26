@@ -37,7 +37,7 @@ const app = Vue.createApp({
     },
 
     methods: { //area donde se establecen todas las funciones
-        onClickLike(index){
+       /* onClickLike(index){
            // console.log("btn-click");
            //this.likes += 1;
            //console.log("index=" + index);
@@ -49,7 +49,7 @@ const app = Vue.createApp({
         onClickUnLike(index){
            // if(this.likes > 0) this.likes -= 1;
            if(this.recipes[index].likes > 0) this.recipes[index].likes -= 1;
-        },
+        },*/
         
         onClickCategory(category){
            // console.log("category " + category);
