@@ -37,12 +37,7 @@
 
     width: vars.$btn-lg;
     font-size: vars.$fs-lg;
-}/*buttons size
-$btn-sm: 239px;
-$btn-xsm: 325px;
-$btn-med: 389px;
-$btn-lg: 419px;
-$btn-sup-lg: 630.34px;*/
+}
 
 .btn-view{
     @include mixins.btn-menu(vars.$clr-gray-dark, vars.$clr-gray-dark, vars.$clr-white);
@@ -55,7 +50,16 @@ $btn-sup-lg: 630.34px;*/
     @include mixins.btn-menu(vars.$clr-gray-dark, vars.$clr-gray-dark, vars.$clr-white);
 
     width: vars.$btn-xsm;
-    font-size: vars.$fs-sm;
+    font-size: vars.$fs-lg;
+}
+
+.btn-modal{
+    @include mixins.btn-menu(vars.$clr-gray-dark, vars.$clr-gray-dark, vars.$clr-white);
+    height: 2.9rem;
+
+    width: 8rem;
+    font-size: vars.$fs-xsm;
+    font-weight: vars.$fw-regular;
 }
 
 .display-nav{
@@ -83,13 +87,13 @@ $btn-sup-lg: 630.34px;*/
 
 .text-recipe-description{
     @include typography.set-font(vars.$ff-primary, vars.$fw-regular, vars.$fs-xxxxsm, vars.$clr-black); 
-    max-height: 6rem; 
+    max-height: 7rem; 
      
 }
 
 .text-recipe-label{
     @include typography.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-lg, vars.$clr-red);
-     
+
     margin-left: 7.5rem;
 }
 
@@ -102,6 +106,15 @@ $btn-sup-lg: 630.34px;*/
     border-width: 0.313rem; 
 }
 
+.text-info-name{
+    @include typography.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-sup-lg, vars.$clr-black);
+}
+
+.text-info{
+    @include typography.set-font(vars.$ff-primary, vars.$fw-regular, vars.$fs-xmed, vars.$clr-black);  
+    color: vars.$clr-black !important;
+}
+
 .textarea-width{
     width: 19.125rem;
 }
@@ -112,4 +125,19 @@ $btn-sup-lg: 630.34px;*/
 
 .img-height{
    height: 14rem;
+}
+
+.img-fitscreeen{
+    object-fit: fill;
+    width: 45%;
+    height: 90%;
+}
+
+.margin-modal{
+    margin-left: 3rem;
+    padding-right: 3rem;
+}
+
+.carrousel-width{
+    width: 70%;
 }

@@ -13405,8 +13405,8 @@ html {
   height: 3.938rem;
   text-align: center;
   font-family: "Oswald";
-  font-size: 1.563rem;
-  font-weight: 700;
+  font-size: 1.38rem;
+  font-weight: 680;
   border: hsl(355deg, 68%, 51%);
   background-color: hsl(355deg, 68%, 51%);
   color: hsl(0deg, 0%, 100%);
@@ -13427,8 +13427,8 @@ html {
   height: 3.938rem;
   text-align: center;
   font-family: "Oswald";
-  font-size: 1.563rem;
-  font-weight: 700;
+  font-size: 1.38rem;
+  font-weight: 680;
   border: hsl(355deg, 68%, 51%);
   background-color: hsl(355deg, 68%, 51%);
   color: hsl(0deg, 0%, 100%);
@@ -13450,8 +13450,8 @@ html {
   height: 3.938rem;
   text-align: center;
   font-family: "Oswald";
-  font-size: 1.563rem;
-  font-weight: 700;
+  font-size: 1.38rem;
+  font-weight: 680;
   border: hsl(355deg, 68%, 51%);
   background-color: hsl(0deg, 5%, 92%);
   color: hsl(0deg, 0%, 0%);
@@ -13474,19 +13474,15 @@ html {
   height: 3.938rem;
   text-align: center;
   font-family: "Oswald";
-  font-size: 1.563rem;
-  font-weight: 700;
+  font-size: 1.38rem;
+  font-weight: 680;
   border: hsl(355deg, 68%, 51%);
   background-color: hsl(355deg, 68%, 51%);
   color: hsl(0deg, 0%, 100%);
   width: 26.188rem;
-  font-size: 2.188rem;
-} /*buttons size
-$btn-sm: 239px;
-$btn-xsm: 325px;
-$btn-med: 389px;
-$btn-lg: 419px;
-$btn-sup-lg: 630.34px;*/
+  font-size: 2rem;
+}
+
 .btn-view {
   position: relative;
   display: -ms-grid;
@@ -13498,13 +13494,13 @@ $btn-sup-lg: 630.34px;*/
   height: 3.938rem;
   text-align: center;
   font-family: "Oswald";
-  font-size: 1.563rem;
-  font-weight: 700;
+  font-size: 1.38rem;
+  font-weight: 680;
   border: hsl(200deg, 19%, 18%);
   background-color: hsl(200deg, 19%, 18%);
   color: hsl(0deg, 0%, 100%);
   width: 14.938rem;
-  font-size: 1.625rem;
+  font-size: 1.399rem;
 }
 
 .btn-view-more {
@@ -13518,13 +13514,35 @@ $btn-sup-lg: 630.34px;*/
   height: 3.938rem;
   text-align: center;
   font-family: "Oswald";
-  font-size: 1.563rem;
-  font-weight: 700;
+  font-size: 1.38rem;
+  font-weight: 680;
   border: hsl(200deg, 19%, 18%);
   background-color: hsl(200deg, 19%, 18%);
   color: hsl(0deg, 0%, 100%);
   width: 20.313rem;
-  font-size: 1.813rem;
+  font-size: 2rem;
+}
+
+.btn-modal {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  border-radius: 1.5rem;
+  width: 12.375rem;
+  height: 3.938rem;
+  text-align: center;
+  font-family: "Oswald";
+  font-size: 1.38rem;
+  font-weight: 680;
+  border: hsl(200deg, 19%, 18%);
+  background-color: hsl(200deg, 19%, 18%);
+  color: hsl(0deg, 0%, 100%);
+  height: 2.9rem;
+  width: 8rem;
+  font-size: 1.399rem;
+  font-weight: 400;
 }
 
 .display-nav nav li a {
@@ -13552,23 +13570,23 @@ $btn-sup-lg: 630.34px;*/
 
 .category-text {
   font-family: "Oswald";
-  font-weight: 700;
-  font-size: 1.313rem;
+  font-weight: 680;
+  font-size: 1.156rem;
   color: hsl(355deg, 68%, 51%);
 }
 
 .text-recipe-name {
   font-family: "Oswald";
   font-weight: 600;
-  font-size: 1.625rem;
+  font-size: 1.399rem;
   color: hsl(0deg, 0%, 0%);
   max-height: 1.899rem;
 }
 
 .text-recipe-level {
   font-family: "Oswald";
-  font-weight: 700;
-  font-size: 1.313rem;
+  font-weight: 680;
+  font-size: 1.156rem;
   color: hsl(0deg, 0%, 0%);
   opacity: 50%;
 }
@@ -13576,28 +13594,43 @@ $btn-sup-lg: 630.34px;*/
 .text-recipe-description {
   font-family: "Oswald";
   font-weight: 400;
-  font-size: 1.313rem;
+  font-size: 1.156rem;
   color: hsl(0deg, 0%, 0%);
-  max-height: 6rem;
+  max-height: 7rem;
 }
 
 .text-recipe-label {
   font-family: "Oswald";
-  font-weight: 700;
-  font-size: 2.188rem;
+  font-weight: 680;
+  font-size: 2rem;
   color: hsl(355deg, 68%, 51%);
   margin-left: 7.5rem;
 }
 
 .text-recipe-textarea {
   font-family: "Oswald";
-  font-weight: 700;
-  font-size: 1.813rem;
+  font-weight: 680;
+  font-size: 1.406rem;
   color: hsl(0deg, 0%, 0%);
   opacity: 90%;
   width: 42rem;
   border-color: hsl(355deg, 68%, 51%);
   border-width: 0.313rem;
+}
+
+.text-info-name {
+  font-family: "Oswald";
+  font-weight: 680;
+  font-size: 2.3rem;
+  color: hsl(0deg, 0%, 0%);
+}
+
+.text-info {
+  font-family: "Oswald";
+  font-weight: 400;
+  font-size: 1.469rem;
+  color: hsl(0deg, 0%, 0%);
+  color: hsl(0deg, 0%, 0%) !important;
 }
 
 .textarea-width {
@@ -13612,10 +13645,26 @@ $btn-sup-lg: 630.34px;*/
   height: 14rem;
 }
 
+.img-fitscreeen {
+  -o-object-fit: fill;
+     object-fit: fill;
+  width: 45%;
+  height: 90%;
+}
+
+.margin-modal {
+  margin-left: 3rem;
+  padding-right: 3rem;
+}
+
+.carrousel-width {
+  width: 70%;
+}
+
 .carrousel-text {
   font-family: "Oswald";
-  font-weight: 700;
-  font-size: 2.188rem;
+  font-weight: 680;
+  font-size: 2rem;
   color: hsl(355deg, 68%, 51%);
 }
 
@@ -13638,15 +13687,15 @@ $btn-sup-lg: 630.34px;*/
 
 .footer-title {
   font-family: "Oswald";
-  font-weight: 700;
-  font-size: 2.125rem;
+  font-weight: 680;
+  font-size: 2.62rem;
   color: hsl(355deg, 68%, 51%);
 }
 
 .footer-info {
   font-family: "Oswald";
-  font-weight: 700;
-  font-size: 1.938rem;
+  font-weight: 680;
+  font-size: 1.469rem;
   color: hsl(0deg, 0%, 100%);
   --bs-nav-link-padding-x: 5rem;
   display: inline-block;
@@ -13680,8 +13729,8 @@ $btn-sup-lg: 630.34px;*/
 
 .header-text {
   font-family: "Oswald";
-  font-weight: 700;
-  font-size: 2.188rem;
+  font-weight: 680;
+  font-size: 2rem;
   color: hsl(355deg, 68%, 51%);
 }
 

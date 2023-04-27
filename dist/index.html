@@ -33,10 +33,12 @@
     <section id="app">
         
         <!-- Modal -->
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
+       <!-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
             <div class="modal-content">
+                <p class="box-titles mb-4 mt-5">Información receta</p>
                 <div class="modal-header">
+                
                 <h1 class="modal-title fs-5" id="staticBackdropLabel">{{ recipes[selectedIndex].name }}</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -46,11 +48,127 @@
                 <p class="fst-italic fw-light fs-5">{{ recipes[selectedIndex].instructions }}</p>
                 </div>
                 <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" v-on:click="onClickPrev()" >Prev</button>
-                <button type="button" class="btn btn-secondary" v-on:click="onClickNext()" >Next</button>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" v-on:click="onClickPrev()" >Anterior</button>
+                <button type="button" class="btn btn-secondary" v-on:click="onClickNext()" >Siguiente</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                 </div>
             </div>
+            </div>
+        </div> -->
+        <!-- Modal -->
+        
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content"> 
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-header justify-content-center">
+                        <p class="box-titles">Información receta</p>
+                    </div>
+            
+                    <div class="modal-body">
+                        <img class="img-fluid d-block m-auto img-fitscreeen" v-bind:src="recipes[selectedIndex].image" alt="{{ recipes[selectedIndex].name }}">
+                        <h1 class="modal-title text-info-name text-center mt-5" id="staticBackdropLabel">{{ recipes[selectedIndex].name }}</h1>
+
+                        <section class="card-color mb-5">
+                            <section class="row mt-5 mb-icons margin-modal">
+
+                                <div class="mb-3 mt-4 col-md">
+                                    <h3 class="text-recipe-label m-4">Tpo. preparación:</h3>
+                                    <p class="text-info m-4">{{ recipes[selectedIndex].preparation_time }}</p>
+                                  
+                                </div>
+                
+                                <div class="mb-3 mt-4 col-md ">
+                                    <h3 class="text-recipe-label m-4">Tpo. cocción:</h3>
+                                    <p class="text-info m-4">{{ recipes[selectedIndex].cook_time }}</p>
+                                </div>
+                
+                                <div class="mb-3 mt-4 col-md">
+                                    <h3 class="text-recipe-label m-4">Tpo. total:</h3>
+                                    <p class="text-info m-4">{{ recipes[selectedIndex].total_time }}</p>
+                                </div>
+                            </section>
+    
+                            <section class="row mt-5 mb-icons margin-modal">
+    
+                                <div class="mb-3 col-md ">
+                                    <h3 class="text-recipe-label m-4">Categoría:</h3>
+                                    <p class="text-info m-4">{{ recipes[selectedIndex].category }}</p>
+                                  
+                                </div>
+                
+                                <div class="mb-3 col-md">
+                                    <h3 class="text-recipe-label m-4">Porciones:</h3>
+                                    <p class="text-info m-4">{{ recipes[selectedIndex].portions }}</p>
+                                </div>
+                
+                                <div class="mb-3 col-md">
+                                    <h3 class="text-recipe-label m-4">Nivel complejidad:</h3>
+                                    <p class="text-info m-4">{{ recipes[selectedIndex].level }}</p>
+                                </div>
+                            </section>
+    
+                            <section class="row mt-5 mb-icons margin-modal">
+    
+                                <div class="mb-3 col-4 mb-5">
+                                    <h3 class="text-recipe-label m-4">Ocasión:</h3>
+                                    <p class="text-info m-4">{{ recipes[selectedIndex].occasion }}</p>
+                                  
+                                </div>
+                
+                                <div class="mb-3 col-4 mb-5">
+                                    <h3 class="text-recipe-label m-4">Cantidad de votos:</h3>
+                                    <p class="text-info m-4">{{ recipes[selectedIndex].likes }}</p>
+                                </div>
+                
+                            </section>
+
+                        </section>
+
+                        <div class=" row margin-modal">
+                            <h3 class="text-info-name mt-5">Descripción:</h3>
+                            <p class="text-info mt-4">{{ recipes[selectedIndex].description }}</p>
+    
+                            <h3 class="text-info-name mt-5">Ingredientes:</h3>
+                            <p class="text-info mt-4">{{ recipes[selectedIndex].ingredients }}</p>
+    
+                            <h3 class="text-info-name mt-5">Instrucciones:</h3>
+                            <p class="text-info mt-4 mb-5">{{ recipes[selectedIndex].instructions }}</p>
+                            
+                        </div>
+                    
+                        <div class="text-center mt-5 mb-5">
+                            <div class="justify-content-center">
+                                <a href="likes.php"
+                                class="btn-view-more d-inline-block mt-5 mb-5 p-1">Me gusta</a>
+                                <a href="likes.php"
+                                class="btn-view-more d-inline-block ms-5 p-1">Descargar</a>
+                            </div>
+                            
+                            <div class="modal-footer justify-content-center">
+                                <p class="box-titles mt-5">Recetas relacionadas</p>
+                            </div>
+                             
+                            <div class="main-carousel main-carousel-mb margins-carrousel mt-5 mb-2" data-flickity='{ "cellAlign": "center", "contain": true }'>
+                                <div class="carousel-cell margin-carousel"><a class="nav-link topnav-link" href="informacion-receta.html"><img class="border border-4 border-danger rounded carrousel-width" src="./images/receta-10.png" alt="receta1"><h4 class="text-center mt-3 mb-3 carrousel-text">Almuerzo</h4><p class="text-recipe-description">Arroz con pollo</p></a></div>
+                                <div class="carousel-cell margin-carousel"><a class="nav-link topnav-link" href="informacion-receta.html"><img class="border border-4 border-danger rounded carrousel-width" src="./images/receta-10.png" alt="receta1"><h4 class="text-center mt-3 mb-3 carrousel-text">Bebida</h4><p class="text-recipe-description">Arroz con pollo</p></a></div>
+                                <div class="carousel-cell margin-carousel"><a class="nav-link topnav-link" href="informacion-receta.html"><img class="border border-4 border-danger rounded carrousel-width" src="./images/receta-10.png" alt="receta1"><h4 class="text-center mt-3 mb-3 carrousel-text">Desayuno</h4><p class="text-recipe-description">Arroz con pollo</p></a></div> 
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <button type="button" class="btn-modal" v-on:click="onClickPrev()" >Anterior</button>
+
+                        <button type="button" class="btn-modal" v-on:click="onClickNext()" >Siguiente</button>
+                        
+                        <button type="button" class="btn-modal" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- Modal -->
