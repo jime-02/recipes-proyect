@@ -91,6 +91,17 @@
      
 }
 
+.options-text{
+    @include typography.set-font(vars.$ff-primary, vars.$fw-regular, vars.$fs-xxxxsm, vars.$clr-red); 
+  
+    text-decoration: none;
+     
+}
+
+.badge-pink{
+    background: vars.$clr-red;
+}
+
 .text-recipe-label{
     @include typography.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-lg, vars.$clr-red);
 
@@ -140,4 +151,19 @@
 
 .carrousel-width{
     width: 70%;
+}
+
+.line-separation{
+    position: absolute;
+    width: 51px;
+    height: 0px;
+
+
+    border: 2.5px solid #000000;
+    transform: rotate(90deg);
+}
+
+.table-width{
+    width: 75rem;
+    margin-left: 3rem;
 }

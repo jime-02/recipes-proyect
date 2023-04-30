@@ -13388,6 +13388,7 @@ textarea.form-control-lg {
 }
 body {
   font-family: "Oswald";
+  width: 50%;
 }
 
 html {
@@ -13599,6 +13600,18 @@ html {
   max-height: 7rem;
 }
 
+.options-text {
+  font-family: "Oswald";
+  font-weight: 400;
+  font-size: 1.156rem;
+  color: hsl(355deg, 68%, 51%);
+  text-decoration: none;
+}
+
+.badge-pink {
+  background: hsl(355deg, 68%, 51%);
+}
+
 .text-recipe-label {
   font-family: "Oswald";
   font-weight: 680;
@@ -13613,7 +13626,7 @@ html {
   font-size: 1.406rem;
   color: hsl(0deg, 0%, 0%);
   opacity: 90%;
-  width: 42rem;
+  width: 38rem;
   border-color: hsl(355deg, 68%, 51%);
   border-width: 0.313rem;
 }
@@ -13659,6 +13672,20 @@ html {
 
 .carrousel-width {
   width: 70%;
+}
+
+.line-separation {
+  position: absolute;
+  width: 51px;
+  height: 0px;
+  border: 2.5px solid #000000;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.table-width {
+  width: 75rem;
+  margin-left: 3rem;
 }
 
 .carrousel-text {
