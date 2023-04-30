@@ -5,7 +5,7 @@
 
 //carrousel
 .carrousel-text{
-    @include typography.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-lg, vars.$clr-red);   
+    @include mixins.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-lg, vars.$clr-red);   
 }
 
 .margins-carrousel{
@@ -18,4 +18,9 @@
 
 .margin-carrousel{
     margin-right: 3.688rem;
+}
+
+//carrousel modal
+.carrousel-width{
+    width: 70%;
 }

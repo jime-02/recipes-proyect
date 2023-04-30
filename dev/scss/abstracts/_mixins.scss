@@ -1,24 +1,48 @@
 @use '../abstracts/vars';
 @use '../media-queries';
 
-@mixin btn-menu($border, $background, $color){
+@mixin btn-dark($sizebtn, $ffsize){
+    &:hover{
+        color: vars.$clr-red;
+    }
+
+    width: $sizebtn;
+    font-size: $ffsize;
+
+    border: vars.$clr-gray-dark;
+    background-color: vars.$clr-gray-dark;
+    color: vars.$clr-white;
+}
+
+@mixin btn(){
     position: relative;
     display: grid;
     place-items: center;
     text-decoration: none;
     border-radius: 1.5rem;
-    width: 12.375rem;
+    
     height: 3.938rem;
     text-align: center;
-   
-    font-family: vars.$ff-primary;
-    font-size: vars.$fs-xxsm;
+
     font-weight: vars.$fw-bold;
-    border: $border;
+    font-family: vars.$ff-primary;
+}
 
-    background-color: $background;
-    color: $color;
+@mixin btn-red($btnsize, $fsize){
+  
+    font-size: $fsize;
+    
+    width: $btnsize;
+    border: vars.$clr-red;
+    background-color: vars.$clr-red;
+    color: vars.$clr-white;
+}
 
+@mixin set-font($ffamily, $fweight, $fsize, $fcolor: vars.$clr-black){
+    font-family: $ffamily;
+    font-weight: $fweight;
+    font-size: $fsize;
+    color: $fcolor;
 }
 
 @mixin display-options(){

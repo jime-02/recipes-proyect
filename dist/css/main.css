@@ -13395,180 +13395,6 @@ html {
   font-size: 0.969rem;
 }
 
-.btn-menu {
-  position: relative;
-  display: -ms-grid;
-  display: grid;
-  place-items: center;
-  text-decoration: none;
-  border-radius: 1.5rem;
-  width: 12.375rem;
-  height: 3.938rem;
-  text-align: center;
-  font-family: "Oswald";
-  font-size: 1.38rem;
-  font-weight: 680;
-  border: hsl(355deg, 68%, 51%);
-  background-color: hsl(355deg, 68%, 51%);
-  color: hsl(0deg, 0%, 100%);
-}
-
-.btn-menu:hover {
-  color: hsl(200deg, 19%, 18%);
-}
-
-.search-btn {
-  position: relative;
-  display: -ms-grid;
-  display: grid;
-  place-items: center;
-  text-decoration: none;
-  border-radius: 1.5rem;
-  width: 12.375rem;
-  height: 3.938rem;
-  text-align: center;
-  font-family: "Oswald";
-  font-size: 1.38rem;
-  font-weight: 680;
-  border: hsl(355deg, 68%, 51%);
-  background-color: hsl(355deg, 68%, 51%);
-  color: hsl(0deg, 0%, 100%);
-  border-bottom-right-radius: 1.5rem;
-  border-top-right-radius: 1.5rem;
-  border-bottom-left-radius: 0%;
-  border-top-left-radius: 0%;
-  width: 5.563rem;
-}
-
-.search-bar {
-  position: relative;
-  display: -ms-grid;
-  display: grid;
-  place-items: center;
-  text-decoration: none;
-  border-radius: 1.5rem;
-  width: 12.375rem;
-  height: 3.938rem;
-  text-align: center;
-  font-family: "Oswald";
-  font-size: 1.38rem;
-  font-weight: 680;
-  border: hsl(355deg, 68%, 51%);
-  background-color: hsl(0deg, 5%, 92%);
-  color: hsl(0deg, 0%, 0%);
-  text-align: left;
-  border-bottom-right-radius: 0%;
-  border-top-right-radius: 0%;
-  border-bottom-left-radius: 1.5rem;
-  border-top-left-radius: 1.5rem;
-  width: 22rem;
-}
-
-.box-titles {
-  position: relative;
-  display: -ms-grid;
-  display: grid;
-  place-items: center;
-  text-decoration: none;
-  border-radius: 1.5rem;
-  width: 12.375rem;
-  height: 3.938rem;
-  text-align: center;
-  font-family: "Oswald";
-  font-size: 1.38rem;
-  font-weight: 680;
-  border: hsl(355deg, 68%, 51%);
-  background-color: hsl(355deg, 68%, 51%);
-  color: hsl(0deg, 0%, 100%);
-  width: 26.188rem;
-  font-size: 2rem;
-}
-
-.btn-view {
-  position: relative;
-  display: -ms-grid;
-  display: grid;
-  place-items: center;
-  text-decoration: none;
-  border-radius: 1.5rem;
-  width: 12.375rem;
-  height: 3.938rem;
-  text-align: center;
-  font-family: "Oswald";
-  font-size: 1.38rem;
-  font-weight: 680;
-  border: hsl(200deg, 19%, 18%);
-  background-color: hsl(200deg, 19%, 18%);
-  color: hsl(0deg, 0%, 100%);
-  width: 14.938rem;
-  font-size: 1.399rem;
-}
-
-.btn-view-more {
-  position: relative;
-  display: -ms-grid;
-  display: grid;
-  place-items: center;
-  text-decoration: none;
-  border-radius: 1.5rem;
-  width: 12.375rem;
-  height: 3.938rem;
-  text-align: center;
-  font-family: "Oswald";
-  font-size: 1.38rem;
-  font-weight: 680;
-  border: hsl(200deg, 19%, 18%);
-  background-color: hsl(200deg, 19%, 18%);
-  color: hsl(0deg, 0%, 100%);
-  width: 20.313rem;
-  font-size: 2rem;
-}
-
-.btn-modal {
-  position: relative;
-  display: -ms-grid;
-  display: grid;
-  place-items: center;
-  text-decoration: none;
-  border-radius: 1.5rem;
-  width: 12.375rem;
-  height: 3.938rem;
-  text-align: center;
-  font-family: "Oswald";
-  font-size: 1.38rem;
-  font-weight: 680;
-  border: hsl(200deg, 19%, 18%);
-  background-color: hsl(200deg, 19%, 18%);
-  color: hsl(0deg, 0%, 100%);
-  height: 2.9rem;
-  width: 8rem;
-  font-size: 1.399rem;
-  font-weight: 400;
-}
-
-.display-nav nav li a {
-  padding: 0.7rem 0.438rem;
-  display: block;
-  opacity: 97%;
-  margin-right: 1.875rem;
-}
-.display-nav .nav li ul {
-  display: none;
-  position: absolute;
-}
-.display-nav .nav li:hover > ul {
-  display: block;
-  z-index: 2;
-  position: fixed;
-}
-.display-nav .nav-client-align {
-  right: 3.875rem;
-}
-
-.card-color {
-  background-color: hsl(0deg, 5%, 92%);
-}
-
 .category-text {
   font-family: "Oswald";
   font-weight: 680;
@@ -13608,10 +13434,6 @@ html {
   text-decoration: none;
 }
 
-.badge-pink {
-  background: hsl(355deg, 68%, 51%);
-}
-
 .text-recipe-label {
   font-family: "Oswald";
   font-weight: 680;
@@ -13646,12 +13468,181 @@ html {
   color: hsl(0deg, 0%, 0%) !important;
 }
 
-.textarea-width {
-  width: 19.125rem;
+.btn-menu {
+  font-size: 1.38rem;
+  width: 12.375rem;
+  border: hsl(355deg, 68%, 51%);
+  background-color: hsl(355deg, 68%, 51%);
+  color: hsl(0deg, 0%, 100%);
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  border-radius: 1.5rem;
+  height: 3.938rem;
+  text-align: center;
+  font-weight: 680;
+  font-family: "Oswald";
+}
+
+.btn-menu:hover {
+  color: hsl(200deg, 19%, 18%);
+}
+
+.search-btn {
+  font-size: 1.38rem;
+  width: 5.563rem;
+  border: hsl(355deg, 68%, 51%);
+  background-color: hsl(355deg, 68%, 51%);
+  color: hsl(0deg, 0%, 100%);
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  border-radius: 1.5rem;
+  height: 3.938rem;
+  text-align: center;
+  font-weight: 680;
+  font-family: "Oswald";
+  border-bottom-right-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+  border-bottom-left-radius: 0%;
+  border-top-left-radius: 0%;
+}
+
+.box-titles {
+  font-size: 2rem;
+  width: 26.188rem;
+  border: hsl(355deg, 68%, 51%);
+  background-color: hsl(355deg, 68%, 51%);
+  color: hsl(0deg, 0%, 100%);
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  border-radius: 1.5rem;
+  height: 3.938rem;
+  text-align: center;
+  font-weight: 680;
+  font-family: "Oswald";
+}
+
+.search-bar {
+  font-size: 1.38rem;
+  width: 22rem;
+  border: hsl(355deg, 68%, 51%);
+  background-color: hsl(355deg, 68%, 51%);
+  color: hsl(0deg, 0%, 100%);
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  border-radius: 1.5rem;
+  height: 3.938rem;
+  text-align: center;
+  font-weight: 680;
+  font-family: "Oswald";
+  background-color: hsl(0deg, 5%, 92%);
+  text-align: left;
+  border-bottom-right-radius: 0%;
+  border-top-right-radius: 0%;
+  border-bottom-left-radius: 1.5rem;
+  border-top-left-radius: 1.5rem;
+}
+
+.btn-view {
+  width: 14.938rem;
+  font-size: 1.399rem;
+  border: hsl(200deg, 19%, 18%);
+  background-color: hsl(200deg, 19%, 18%);
+  color: hsl(0deg, 0%, 100%);
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  border-radius: 1.5rem;
+  height: 3.938rem;
+  text-align: center;
+  font-weight: 680;
+  font-family: "Oswald";
+}
+.btn-view:hover {
+  color: hsl(355deg, 68%, 51%);
+}
+
+.btn-large {
+  width: 20.313rem;
+  font-size: 2rem;
+  border: hsl(200deg, 19%, 18%);
+  background-color: hsl(200deg, 19%, 18%);
+  color: hsl(0deg, 0%, 100%);
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  border-radius: 1.5rem;
+  height: 3.938rem;
+  text-align: center;
+  font-weight: 680;
+  font-family: "Oswald";
+}
+.btn-large:hover {
+  color: hsl(355deg, 68%, 51%);
+}
+
+.btn-modal {
+  width: 8rem;
+  font-size: 1.399rem;
+  border: hsl(200deg, 19%, 18%);
+  background-color: hsl(200deg, 19%, 18%);
+  color: hsl(0deg, 0%, 100%);
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  border-radius: 1.5rem;
+  height: 3.938rem;
+  text-align: center;
+  font-weight: 680;
+  font-family: "Oswald";
+  height: 2.9rem;
+  font-weight: 400;
+}
+.btn-modal:hover {
+  color: hsl(355deg, 68%, 51%);
+}
+
+.card-color {
+  background-color: hsl(0deg, 5%, 92%);
+}
+
+.badge-pink {
+  background: hsl(355deg, 68%, 51%);
+}
+
+.margin-modal {
+  margin-left: 3rem;
+  padding-right: 3rem;
 }
 
 .padding-card {
   padding-right: 11rem;
+}
+
+.table-width {
+  width: 75rem;
+  margin-left: 3rem;
+}
+
+.textarea-width {
+  width: 19.125rem;
 }
 
 .img-height {
@@ -13665,27 +13656,23 @@ html {
   height: 90%;
 }
 
-.margin-modal {
-  margin-left: 3rem;
-  padding-right: 3rem;
+.display-nav nav li a {
+  padding: 0.7rem 0.438rem;
+  display: block;
+  opacity: 97%;
+  margin-right: 1.875rem;
 }
-
-.carrousel-width {
-  width: 70%;
-}
-
-.line-separation {
+.display-nav .nav li ul {
+  display: none;
   position: absolute;
-  width: 51px;
-  height: 0px;
-  border: 2.5px solid #000000;
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
 }
-
-.table-width {
-  width: 75rem;
-  margin-left: 3rem;
+.display-nav .nav li:hover > ul {
+  display: block;
+  z-index: 2;
+  position: fixed;
+}
+.display-nav .nav-client-align {
+  right: 3.875rem;
 }
 
 .carrousel-text {
@@ -13704,6 +13691,10 @@ html {
 
 .margin-carrousel {
   margin-right: 3.688rem;
+}
+
+.carrousel-width {
+  width: 70%;
 }
 
 .footer-color {

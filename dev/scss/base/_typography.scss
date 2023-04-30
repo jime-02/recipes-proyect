@@ -1,8 +1,54 @@
 @use '../abstracts/vars';
+@use '../abstracts/mixins';
+@use '../media-queries';
 
-@mixin set-font($ffamily, $fweight, $fsize, $fcolor: vars.$clr-black){
-    font-family: $ffamily;
-    font-weight: $fweight;
-    font-size: $fsize;
-    color: $fcolor;
+//texts
+.category-text{
+    @include mixins.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-xxxxsm, vars.$clr-red);   
+}
+
+.text-recipe-name{
+    @include mixins.set-font(vars.$ff-primary, vars.$fw-medium, vars.$fs-xsm, vars.$clr-black);  
+
+    max-height: 1.899000000000001rem; 
+}
+
+.text-recipe-level{
+    @include mixins.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-xxxxsm, vars.$clr-black);  
+    opacity: 50%;  
+}
+
+.text-recipe-description{
+    @include mixins.set-font(vars.$ff-primary, vars.$fw-regular, vars.$fs-xxxxsm, vars.$clr-black); 
+    max-height: 7rem;   
+}
+
+.options-text{
+    @include mixins.set-font(vars.$ff-primary, vars.$fw-regular, vars.$fs-xxxxsm, vars.$clr-red); 
+  
+    text-decoration: none;   
+}
+
+.text-recipe-label{
+    @include mixins.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-lg, vars.$clr-red);
+
+    margin-left: 7.5rem;
+}
+
+.text-recipe-textarea{
+    @include mixins.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-sm, vars.$clr-black); 
+
+    opacity: 90%;
+    width: vars.$btn-sup-lg;
+    border-color: vars.$clr-red;
+    border-width: 0.313rem; 
+}
+
+.text-info-name{
+    @include mixins.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-sup-lg, vars.$clr-black);
+}
+
+.text-info{
+    @include mixins.set-font(vars.$ff-primary, vars.$fw-regular, vars.$fs-xmed, vars.$clr-black);  
+    color: vars.$clr-black !important;
 }

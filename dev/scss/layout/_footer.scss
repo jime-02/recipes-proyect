@@ -1,6 +1,7 @@
 @use '../vendor/bootstrap/bootstrap.scss';
 @use '../abstracts/vars';
-@use '../base/typography';
+@use '../abstracts/mixins';
+@use '../media-queries';
 
 .footer-color{
     height: 33rem;
@@ -9,11 +10,11 @@
 }
 
 .footer-title{
-    @include typography.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-med, vars.$clr-red);   
+    @include mixins.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-med, vars.$clr-red);   
 }
 
 .footer-info{
-    @include typography.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-xmed, vars.$clr-white); 
+    @include mixins.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-xmed, vars.$clr-white); 
     --bs-nav-link-padding-x: 5rem; 
     display: inline-block;  
 }

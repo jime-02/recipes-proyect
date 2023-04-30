@@ -1,7 +1,7 @@
 @use '../vendor/bootstrap/bootstrap.scss';
 @use '../abstracts/vars';
-@use '../base/typography';
 @use '../abstracts/mixins';
+@use '../media-queries';
 
 .topnav{
     height: 9.563rem;
@@ -14,7 +14,7 @@
 }
 
 .header-text{
-    @include typography.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-lg, vars.$clr-red);   
+    @include mixins.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-lg, vars.$clr-red);   
 }
 
 .nav-background-color{
