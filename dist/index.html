@@ -33,31 +33,6 @@
     <section id="app">
         
         <!-- Modal -->
-       <!-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog modal-fullscreen">
-            <div class="modal-content">
-                <p class="box-titles mb-4 mt-5">Información receta</p>
-                <div class="modal-header">
-                
-                <h1 class="modal-title fs-5" id="staticBackdropLabel">{{ recipes[selectedIndex].name }}</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                <img class="img-fluid d-block m-auto" v-bind:src="recipes[selectedIndex].image" alt="{{ recipes[selectedIndex].name }}">
-                <p class="text-center fs-6">{{ recipes[selectedIndex].ingredients }}</p>
-                <p class="fst-italic fw-light fs-5">{{ recipes[selectedIndex].instructions }}</p>
-                </div>
-                <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" v-on:click="onClickPrev()" >Anterior</button>
-                <button type="button" class="btn btn-secondary" v-on:click="onClickNext()" >Siguiente</button>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                </div>
-            </div>
-            </div>
-        </div> -->
-        <!-- Modal -->
-        
-        <!-- Modal -->
         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog modal-fullscreen">
                 <div class="modal-content"> 
@@ -184,8 +159,8 @@
                     <li class="position-relative hide-mb hide-tab"><a class="" href="#">
                         <img src="./images/icono-usuario.png" class="margin-user" alt="Perfil" ></a> 
                         <ul class="nav-background-color nav-client-align list-unstyled">
-                            <li class="header-no-item"><a class="mt-5 header-text nav-link" href="login.html">Iniciar Sesión</a></li>
-                            <li class="header-no-item"><a class="mt-3 mb-3 header-text nav-link" href="registro-admin.html">Registrarse</a></li>
+                            <li class="header-no-item"><a class="mt-3 btn-menu nav-link" href="login.html">Iniciar Sesión</a></li>
+                            <li class="header-no-item"><a class="mt-3 btn-menu mb-3 nav-link" href="registro-admin.html">Registrarse</a></li>
                         </ul>  
                     </li>
                 </ul>

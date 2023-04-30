@@ -13672,7 +13672,10 @@ html {
   position: fixed;
 }
 .display-nav .nav-client-align {
-  right: 3.875rem;
+  right: 6.8rem;
+  padding-left: 2rem;
+  width: 16rem;
+  border-radius: 2rem;
 }
 
 .carrousel-text {
@@ -13772,5 +13775,8 @@ html {
   position: fixed;
 }
 .display-user .nav-client-align {
-  right: 3.875rem;
+  right: 6.8rem;
+  padding-left: 2rem;
+  width: 16rem;
+  border-radius: 2rem;
 }
