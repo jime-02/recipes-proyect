@@ -29,12 +29,12 @@
 
 </head>
 
-<body class="container">
+<body class="container br-mv">
     <section id="app">
         
         <!-- Modal -->
         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog modal-fullscreen">
+            <div class="modal-dialog modal-fullscreen recipe-information-tb">
                 <div class="modal-content"> 
                     <div class="modal-header">
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -45,7 +45,7 @@
                     </div>
             
                     <div class="modal-body">
-                        <img class="img-fluid d-block m-auto img-fitscreeen" v-bind:src="recipes[selectedIndex].image" alt="{{ recipes[selectedIndex].name }}">
+                        <img class="img-fluid d-block m-auto img-fitscreeen img-modal" v-bind:src="recipes[selectedIndex].image" alt="{{ recipes[selectedIndex].name }}">
                         <h1 class="modal-title text-info-name text-center mt-5" id="staticBackdropLabel">{{ recipes[selectedIndex].name }}</h1>
 
                         <section class="card-color mb-5">
@@ -151,12 +151,12 @@
         <!--header section-->
         <header class="topnav">
             <div class="">
-                <a href="index.html"><img src="./images/identificador.png" class="position-relative mt-4 ms-5 p-2" alt="Graphic identifier"></a>
+                <a href="index.html"><img src="./images/identificador.png" class="position-relative mt-4 ms-5 p-2 margin-tb-logo" alt="Graphic identifier"></a>
             </div>
         
             <div class="position-absolute top-0 display-user end-0 mx-5 mt-2 px-5">
                 <ul class="nav">
-                    <li class="position-relative hide-mb hide-tab"><a class="" href="#">
+                    <li class="position-relative"><a class="" href="#">
                         <img src="./images/icono-usuario.png" class="margin-user" alt="Perfil" ></a> 
                         <ul class="nav-background-color nav-client-align list-unstyled">
                             <li class="header-no-item"><a class="mt-3 btn-menu nav-link" href="login.html">Iniciar Sesión</a></li>
@@ -169,23 +169,26 @@
         <!--header section end-->
 
         <!-- Navigation menu-->
+        <div class="position-absolute bar-mb">
+            <img class="icon-mb mt-3 ms-1" src="./images/bars.svg" alt="menu bar">
+        </div>
         <div class="row mt-5 mb-5">
-            <nav id="navbar-main" class="navbar display-nav">
-                <!-- <div class="offcanvas-header">  
+            <nav id="navbar-main" class="navbar display-nav offcanvas-mb">
+                   <div class="offcanvas-header">  
                         <button id="btn-close" class="btn btn-all float-end me-3">X</button>
-                    </div>-->
-                <div class="container-fluid mx-5 mt-2 px-5">
+                    </div>
+                <div class="container-fluid mx-5 mt-2 px-5 menu-align-center">
                     <ul class="nav">
-                        <li class="nav-item">
+                        <li class="nav-item ul-adjust">
                             <a class="btn-menu" href="#">Categorías</a>
-                            <ul class="mt-1 nav-background-color">
-                                <li class='header-no-item'>
+                            <ul class="nav-background-color list-unstyled">
+                                <li>
                                     <a class='header-subtext mt-3' href='recipes.php'>Almuerzo</a>
                                 </li>
-                                <li class='header-no-item'>
+                                <li>
                                     <a class='header-subtext mt-3' href='recipes.php'>Bebidas</a>
                                 </li>
-                                <li class='header-no-item'>
+                                <li>
                                     <a class='header-subtext mt-3' href='recipes.php'>Desayuno</a>
                                 </li>
                             </ul>
@@ -193,13 +196,13 @@
                     </ul>
 
                     <ul class="nav">
-                        <li class="nav-item">
+                        <li class="nav-item ul-adjust">
                             <a class="btn-menu" href="#">Niveles</a>
-                            <ul class="mt-1 nav-background-color">
-                                <li class='header-no-item'>
+                            <ul class="nav-background-color list-unstyled">
+                                <li>
                                     <a class='header-subtext mt-3' href='recipes.php'>Fácil</a>
                                 </li>
-                                <li class='header-no-item'>
+                                <li>
                                     <a class='header-subtext mt-3' href='recipes.php'>Intermedio</a>
                                 </li>
                                 <li class='header-no-item'>
@@ -210,10 +213,10 @@
                     </ul>
 
                     <ul class="nav">
-                        <li class="nav-item">
+                        <li class="nav-item ul-adjust">
                             <a class="btn-menu" href="#">Ocasiones</a>
-                            <ul class="mt-1 nav-background-color">
-                                <li class='header-no-item'>
+                            <ul class="nav-background-color list-unstyled">
+                                <li>
                                     <a class='header-subtext mt-3' href='recipes.php'>Todas</a>
                                 </li>
                                 <li class='header-no-item'>
@@ -225,10 +228,10 @@
                             </ul>
                         </li>
                     </ul>
-
-                    <form class="d-flex" role="search">
-                        <input class="search-bar ps-4" type="search" placeholder="Buscar receta..." aria-label="Search">
-                        <button class="search-btn" type="submit"><img src="./images/lupa.png" alt="lupa"></button>
+                    
+                    <form class="d-flex searcher-tb" role="search">
+                        <input class="search-bar ps-4 ul-adjust" type="search" placeholder="Buscar receta..." aria-label="Search">
+                        <button class="search-btn ul-adjust" type="submit"><img src="./images/lupa.png" alt="lupa"></button>
                     </form>    
                 </div>
             </nav>
@@ -248,9 +251,9 @@
 
         <!-- Best recipes -->
         <section class="row mt-5 justify-content-center">
-            <p class="box-titles mb-4 mt-5">Mejores recetas</p>
+            <p class="box-titles mb-4 mt-5 zoom-button">Mejores recetas</p>
 
-            <section class="row mt-5 padding-card">
+            <section class="row mt-5 padding-card grid-tb">
                 <div v-for="(item, index) in recipes" class="col-2 mt-3 mx-5 mt-2 px-5">
                 <div class="card p-3 shadow border-0 d-inline-block card-color mb-4">
                         <img v-bind:src="item.image" class="card-img-top img-height rounded mb-4" alt="featured recipe">
@@ -265,16 +268,16 @@
             </div> 
             </section>
 
-            <button class="btn-large mt-5 mb-4">Ver más</button>
+            <button class="btn-large mt-5 mb-4 zoom-button">Ver más</button>
 
         </section>   
         <!-- Best recipes end -->
 
         <!-- New recipes -->
         <section class="row mt-5 justify-content-center">
-            <p class="box-titles mb-4 mt-5">Lo más nuevo</p>
+            <p class="box-titles mb-4 mt-5 zoom-button">Lo más nuevo</p>
 
-            <section class="row mt-5 padding-card">
+            <section class="row mt-5 padding-card grid-tb">
                 <div v-for="(item, index) in recipes" class="col-2 mt-3 mx-5 mt-2 px-5">
                 <div class="card p-3 shadow border-0 d-inline-block card-color mb-4">
                         <img v-bind:src="item.image" class="card-img-top img-height rounded mb-4" alt="featured recipe">
@@ -290,7 +293,7 @@
             </div> 
             </section>
 
-            <button class="btn-large mt-5 mb-4">Ver más</button>
+            <button class="btn-large mt-5 mb-4 zoom-button">Ver más</button>
         </section>  
         <!-- New recipes end -->
         
@@ -298,13 +301,13 @@
 
      <!--Footer information-->
     <footer class="mt-5 footer-color">
-        <div class="row">
+        <div class="row footermb">
             <div class="col-md margin-logo">
                 <img src="./images/identificador.png" class="p-5 p-5-mb" alt="Graphic identifier">   
             </div>
 
-            <div class="col-md">
-                <div class="row mt-5">
+            <div class="col-md margin-top-tb">
+                <div class="row mt-5 margin-left-tb">
                     <p class="footer-title">Secciones</p>
                     <div class="">
                         <ul class="list-unstyled p-0">
@@ -317,8 +320,8 @@
                 </div>
             </div>
 
-            <div class="col-md">
-                <div class="row mt-5">
+            <div class="col-md margin-top-tb">
+                <div class="row mt-5 margin-left-tb">
                     <p class="footer-title">Social</p>
                     <div class="">
                         <ul class="list-unstyled p-0"> 
@@ -331,7 +334,7 @@
                 </div>
             </div>
 
-            <div class="col-md">
+            <div class="col-md margin-top-tb">
                 <div class="row mt-5">
                     <p class="footer-title">Acerca de</p>
                     <div class="mb-5">

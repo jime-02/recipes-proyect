@@ -34,3 +34,34 @@
     width: 90%;
 }
 
+@include media-queries.respond-to(media-queries.$tablet-landscape){
+    .margin-left-tb{
+        margin-left: 1rem;
+        margin-top: -4rem;
+    }
+
+    .margin-top-tb{    
+        margin-top: -4rem;
+    }
+
+    .icons-size{
+        width: 70%;
+    }
+
+    .margin-logo{
+        margin-top: 0;
+        text-align: center;
+    }
+    
+    .footer-color{
+        height: fit-content;  
+    }
+}
+
+
+ 
+
+
+
+
+

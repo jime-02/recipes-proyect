@@ -52,3 +52,14 @@
     @include mixins.set-font(vars.$ff-primary, vars.$fw-regular, vars.$fs-xmed, vars.$clr-black);  
     color: vars.$clr-black !important;
 }
+
+.header-subtext{  
+    @include mixins.set-font(vars.$ff-primary, vars.$fw-regular, vars.$fs-xmed, vars.$clr-black);  
+    color: vars.$clr-black;
+    display: block;  
+    text-decoration: none;
+}
+
+.header-subtext:hover{
+    transform: scale(1.2);
+}

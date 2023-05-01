@@ -2,6 +2,12 @@
 @use '../abstracts/mixins';
 @use '../abstracts/vars';
 
+@include media-queries.respond-to(media-queries.$tablet-landscape){
+    .gridmb{
+        grid-template-columns: 1fr;
+    }
+} 
+
 //Buttons
 .btn-menu{
     @include mixins.btn-red(vars.$btn-sup-sm, vars.$fs-xxsm);
@@ -97,4 +103,30 @@
 //others
 .display-nav{
     @include mixins.display-options();
+}
+
+@include media-queries.respond-to(media-queries.$tablet-landscape){
+    .search-bar{
+        width: 18rem;
+        color: vars.$clr-black;
+    } 
+
+    .grid-tb{
+        zoom: 160%;
+        margin-right: 5rem;
+        justify-content: center;
+    }
+
+    .zoom-button{
+        zoom: 130%;
+    }
+
+    .recipe-information-tb{
+        zoom: 70%;
+    }
+
+    .img-modal{
+        width: 80%;
+        height: 90%;
+    }
 }

@@ -5,7 +5,7 @@
 
 //carrousel
 .carrousel-text{
-    @include mixins.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-lg, vars.$clr-red);   
+    @include mixins.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-lg, vars.$clr-red);    
 }
 
 .margins-carrousel{
@@ -13,8 +13,12 @@
     margin-left: 9.688rem;
     margin-top: 6rem;
     margin-bottom: 7rem;
-}
 
+    @include media-queries.respond-to(media-queries.$tablet-landscape){
+        width: 100%;
+        margin-left: 0;
+    } 
+}
 
 .margin-carrousel{
     margin-right: 3.688rem;
@@ -22,5 +26,5 @@
 
 //carrousel modal
 .carrousel-width{
-    width: 70%;
+    width: 70%; 
 }

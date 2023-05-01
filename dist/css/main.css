@@ -1,4 +1,13 @@
 @charset "UTF-8";
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+  .display-nav .nav li ul {
+    display: contents !important;
+    position: absolute;
+  }
+  .display-user .nav-client-align {
+    right: 0rem !important;
+  }
+}
 /*!
  * Bootstrap  v5.3.0-alpha2 (https://getbootstrap.com/)
  * Copyright 2011-2023 The Bootstrap Authors
@@ -13395,6 +13404,12 @@ html {
   font-size: 0.969rem;
 }
 
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+  .br-mv {
+    zoom: 150%;
+    margin-left: 1.6rem;
+  }
+}
 .category-text {
   font-family: "Oswald";
   font-weight: 680;
@@ -13468,6 +13483,27 @@ html {
   color: hsl(0deg, 0%, 0%) !important;
 }
 
+.header-subtext {
+  font-family: "Oswald";
+  font-weight: 400;
+  font-size: 1.469rem;
+  color: hsl(0deg, 0%, 0%);
+  color: hsl(0deg, 0%, 0%);
+  display: block;
+  text-decoration: none;
+}
+
+.header-subtext:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+  .gridmb {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+}
 .btn-menu {
   font-size: 1.38rem;
   width: 12.375rem;
@@ -13670,14 +13706,41 @@ html {
   display: block;
   z-index: 2;
   position: fixed;
+  border-radius: 1.5rem;
+  width: 12rem;
+  text-align: center;
+  line-height: 2.5rem;
 }
 .display-nav .nav-client-align {
   right: 6.8rem;
   padding-left: 2rem;
-  width: 16rem;
+  width: 16rem !important;
   border-radius: 2rem;
 }
 
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+  .search-bar {
+    width: 18rem;
+    color: hsl(0deg, 0%, 0%);
+  }
+  .grid-tb {
+    zoom: 160%;
+    margin-right: 5rem;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .zoom-button {
+    zoom: 130%;
+  }
+  .recipe-information-tb {
+    zoom: 70%;
+  }
+  .img-modal {
+    width: 80%;
+    height: 90%;
+  }
+}
 .carrousel-text {
   font-family: "Oswald";
   font-weight: 680;
@@ -13690,6 +13753,12 @@ html {
   margin-left: 9.688rem;
   margin-top: 6rem;
   margin-bottom: 7rem;
+}
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+  .margins-carrousel {
+    width: 100%;
+    margin-left: 0;
+  }
 }
 
 .margin-carrousel {
@@ -13738,6 +13807,27 @@ html {
   width: 90%;
 }
 
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+  .margin-left-tb {
+    margin-left: 1rem;
+    margin-top: -4rem;
+  }
+  .margin-top-tb {
+    margin-top: -4rem;
+  }
+  .icons-size {
+    width: 70%;
+  }
+  .margin-logo {
+    margin-top: 0;
+    text-align: center;
+  }
+  .footer-color {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+}
 .topnav {
   height: 9.563rem;
   width: auto;
@@ -13773,10 +13863,69 @@ html {
   display: block;
   z-index: 2;
   position: fixed;
+  border-radius: 1.5rem;
+  width: 12rem;
+  text-align: center;
+  line-height: 2.5rem;
 }
 .display-user .nav-client-align {
   right: 6.8rem;
   padding-left: 2rem;
-  width: 16rem;
+  width: 16rem !important;
   border-radius: 2rem;
+}
+
+.offcanvas-header {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+  .margin-user {
+    margin-right: -14rem;
+  }
+  .bar-mb {
+    width: 100%;
+    background: transparent;
+    position: relative !important;
+  }
+  .icon-mb {
+    width: 5%;
+  }
+  .offcanvas-header {
+    display: block;
+  }
+  .offcanvas-mb {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 65%;
+    background-color: hsl(0deg, 0%, 100%);
+    z-index: 1;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+    -webkit-transition: -webkit-transform 0.6s ease-in-out;
+    transition: -webkit-transform 0.6s ease-in-out;
+    transition: transform 0.6s ease-in-out;
+    transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
+  }
+  .show-mb-nav {
+    visibility: visible;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  .ul-adjust {
+    margin-top: 3rem;
+    text-align: center;
+  }
+  .menu-align-center {
+    margin-left: 6rem !important;
+  }
+  .searcher-tb {
+    margin-bottom: 2rem;
+    margin-left: -8.5rem;
+  }
 }

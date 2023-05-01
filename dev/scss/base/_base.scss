@@ -1,5 +1,6 @@
 @use './vendor/bootstrap/bootstrap.scss';
 @use '../abstracts/vars';
+@use '../media-queries';
 
 body{
     font-family: vars.$ff-primary;  
@@ -9,3 +10,10 @@ body{
 html{
     font-size: 0.969rem;
 }
+
+@include media-queries.respond-to(media-queries.$tablet-landscape){
+    .br-mv {
+        zoom: 150%;
+        margin-left: 1.6rem;
+    }
+} 

@@ -24,3 +24,61 @@
 .display-user{
     @include mixins.display-options();
 }
+
+.offcanvas-header{
+    display: none; 
+}
+
+@include media-queries.respond-to(media-queries.$tablet-landscape){
+    .margin-user{
+        margin-right: -14rem;
+    } 
+
+     .bar-mb{
+        width: 100%;
+        background: transparent;
+        position: relative !important;
+    }
+
+    .icon-mb{  
+        width: 5%;  
+     }
+
+     .offcanvas-header {
+        display: block; 
+    }
+   
+    .offcanvas-mb {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 70%;
+        height: 65%;
+        background-color: vars.$clr-white;
+        z-index: 1;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        transform: translateX(-100%);
+        transition: transform .6s ease-in-out;
+    }
+
+    .show-mb-nav{
+        visibility: visible ;
+        transform: translateX(0);
+    }
+
+    .ul-adjust{
+        margin-top: 3rem;
+        text-align: center;
+    }
+
+    .menu-align-center{
+        margin-left: 6rem !important;
+    }
+
+    .searcher-tb{
+        margin-bottom: 2rem;
+        margin-left: -8.5rem;
+    }
+}
