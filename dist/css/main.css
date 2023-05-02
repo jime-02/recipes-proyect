@@ -13407,7 +13407,6 @@ html {
 @media only screen and (min-width: 768px) and (max-width: 979px) {
   .br-mv {
     zoom: 150%;
-    margin-left: 1.6rem;
   }
 }
 .category-text {
@@ -13498,6 +13497,11 @@ html {
           transform: scale(1.2);
 }
 
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+  .text-recipe-textarea {
+    width: 26.188rem;
+  }
+}
 @media only screen and (min-width: 768px) and (max-width: 979px) {
   .gridmb {
     -ms-grid-columns: 1fr;
@@ -13734,11 +13738,28 @@ html {
     zoom: 130%;
   }
   .recipe-information-tb {
-    zoom: 70%;
+    zoom: 67%;
   }
   .img-modal {
     width: 80%;
     height: 90%;
+  }
+  .form-content {
+    zoom: 73%;
+    margin-left: 0;
+    width: 85%;
+  }
+  .display-photo-tb {
+    display: list-item !important;
+  }
+  .mt-tb {
+    margin-top: 0 !important;
+  }
+  .ml-tb {
+    margin-left: 2rem;
+  }
+  .mr-tb {
+    margin-right: 6rem;
   }
 }
 .carrousel-text {
@@ -13826,6 +13847,9 @@ html {
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
+  }
+  .footer-title {
+    font-size: 2rem;
   }
 }
 .topnav {
@@ -13927,5 +13951,10 @@ html {
   .searcher-tb {
     margin-bottom: 2rem;
     margin-left: -8.5rem;
+  }
+  .icons-tb {
+    width: 50%;
+    margin-left: 0 !important;
+    margin-top: 2.5rem !important;
   }
 }

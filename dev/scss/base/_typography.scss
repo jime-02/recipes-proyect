@@ -63,3 +63,11 @@
 .header-subtext:hover{
     transform: scale(1.2);
 }
+
+@include media-queries.respond-to(media-queries.$tablet-landscape){
+
+    .text-recipe-textarea{
+        width: vars.$btn-lg;
+      
+    }
+}

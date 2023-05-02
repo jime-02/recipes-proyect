@@ -14,6 +14,5 @@ html{
 @include media-queries.respond-to(media-queries.$tablet-landscape){
     .br-mv {
         zoom: 150%;
-        margin-left: 1.6rem;
     }
 } 

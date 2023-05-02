@@ -52,9 +52,13 @@
         margin-top: 0;
         text-align: center;
     }
-    
+
     .footer-color{
         height: fit-content;  
+    }
+
+    .footer-title{
+        font-size: vars.$fs-lg;
     }
 }
 

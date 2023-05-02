@@ -122,11 +122,34 @@
     }
 
     .recipe-information-tb{
-        zoom: 70%;
+        zoom: 67%;
     }
 
     .img-modal{
         width: 80%;
         height: 90%;
     }
+
+    .form-content{
+        zoom: 73%;
+        margin-left: 0;
+        width: 85%;
+    }
+
+    .display-photo-tb{
+        display: list-item !important;
+    }
+
+    .mt-tb{
+        margin-top: 0 !important;
+    }
+
+    .ml-tb{
+        margin-left: 2rem;
+    }
+
+    .mr-tb{
+        margin-right: 6rem;
+    }
+   
 }
