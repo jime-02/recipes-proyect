@@ -75,12 +75,22 @@
         border-radius: 2rem;
     }
 
-
 }
+
 @include media-queries.respond-to(media-queries.$tablet-landscape){ 
     .display-nav .nav li ul {
         display: contents !important;
         position: absolute;    
+    }
+
+    .display-user .nav-client-align {
+        right: 0rem !important;
+    }   
+}
+
+@include media-queries.respond-to(media-queries.$phone){ 
+    .display-nav .nav li ul {
+        display: contents !important;  
     }
 
     .display-user .nav-client-align {
