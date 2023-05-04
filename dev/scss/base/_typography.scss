@@ -42,10 +42,21 @@
     width: vars.$btn-sup-lg;
     border-color: vars.$clr-red;
     border-width: 0.313rem; 
+
+    @include media-queries.respond-to(media-queries.$tablet-landscape){   
+        width: vars.$btn-lg;  
+    }
+
+    @include media-queries.respond-to(media-queries.$phone){
+         font-size: vars.$fs-xmed;
+    }
 }
 
 .text-info-name{
     @include mixins.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-sup-lg, vars.$clr-black);
+    @include media-queries.respond-to(media-queries.$phone){
+        font-size: vars.$fs-xmed;
+   }
 }
 
 .text-info{
@@ -62,12 +73,4 @@
 
 .header-subtext:hover{
     transform: scale(1.2);
-}
-
-@include media-queries.respond-to(media-queries.$tablet-landscape){
-
-    .text-recipe-textarea{
-        width: vars.$btn-lg;
-      
-    }
 }

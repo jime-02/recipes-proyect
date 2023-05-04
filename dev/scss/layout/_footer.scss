@@ -7,16 +7,46 @@
     height: 33rem;
     width: auto;
     background: vars.$clr-gray-dark;
+
+    @include media-queries.respond-to(media-queries.$tablet-landscape){
+        height: fit-content;  
+    }
+
+    @include media-queries.respond-to(media-queries.$tablet-portrait){
+        height: fit-content;  
+    }
+
+    @include media-queries.respond-to(media-queries.$phone){    
+    }
+
 }
 
 .footer-title{
     @include mixins.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-med, vars.$clr-red);   
+
+    @include media-queries.respond-to(media-queries.$tablet-landscape){
+        font-size: vars.$fs-lg; 
+    }
+
+    @include media-queries.respond-to(media-queries.$tablet-portrait){
+        font-size: vars.$fs-xmed;
+    }
+
+    @include media-queries.respond-to(media-queries.$phone){     
+    }
 }
 
 .footer-info{
     @include mixins.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-xmed, vars.$clr-white); 
     --bs-nav-link-padding-x: 5rem; 
     display: inline-block;  
+
+    @include media-queries.respond-to(media-queries.$tablet-portrait){
+        font-size: vars.$fs-xxxsm;
+    }
+
+    @include media-queries.respond-to(media-queries.$phone){     
+    }
 }
 
 .footer-info:hover{
@@ -28,12 +58,41 @@
 .margin-logo{
     margin-top: 11rem;
     margin-left: 1.5rem;
+
+    @include media-queries.respond-to(media-queries.$tablet-landscape){
+        margin-top: 0;
+        text-align: center;
+    }
+
+    @include media-queries.respond-to(media-queries.$tablet-portrait){
+        margin-top: 0;
+        text-align: center;
+    }
+
+    @include media-queries.respond-to(media-queries.$phone){
+        margin-top: 0;
+        margin-left: -1.5rem;
+    }
 }
 
 .icons-size{
     width: 90%;
+
+    @include media-queries.respond-to(media-queries.$tablet-landscape){
+        width: 70%;
+    }
+
+    @include media-queries.respond-to(media-queries.$tablet-portrait){
+        width: 70%;
+    }
+
+    @include media-queries.respond-to(media-queries.$phone){ 
+        width: 60%;
+    }
 }
 
+
+//media queries externos a las clases
 @include media-queries.respond-to(media-queries.$tablet-landscape){
     .margin-left-tb{
         margin-left: 1rem;
@@ -43,22 +102,37 @@
     .margin-top-tb{    
         margin-top: -4rem;
     }
+}
 
-    .icons-size{
-        width: 70%;
+@include media-queries.respond-to(media-queries.$tablet-portrait){
+    .margin-top-tb{    
+        margin-top: -1rem !important;
     }
 
-    .margin-logo{
-        margin-top: 0;
+    .ml-tb{
+        margin-left: 4.5rem;
+    }
+    .margin-botton-tb{    
+        margin-top: 2.5rem;
+    }
+}
+
+@include media-queries.respond-to(media-queries.$phone){ 
+    
+    .info-footer-mb{
         text-align: center;
     }
-
-    .footer-color{
-        height: fit-content;  
+    
+    .img-size-mb{
+        width: 113%; 
     }
 
-    .footer-title{
-        font-size: vars.$fs-lg;
+    .ml-tb{
+        margin-left: -1rem;
+    }
+
+    .margin-left-tb{
+        margin-left: -1rem;
     }
 }
 

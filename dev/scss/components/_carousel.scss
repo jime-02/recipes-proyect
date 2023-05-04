@@ -15,8 +15,17 @@
     margin-bottom: 7rem;
 
     @include media-queries.respond-to(media-queries.$tablet-landscape){
-        width: 100%;
-        margin-left: 0;
+            width: 100%;
+            margin-left: 0;   
+             margin-top: 2rem;
+            margin-bottom: 2rem;
+    } 
+    
+    @include media-queries.respond-to(media-queries.$phone){
+            width: 100%;
+            margin-left: 0;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
     } 
 }
 
@@ -28,3 +37,4 @@
 .carrousel-width{
     width: 70%; 
 }
+

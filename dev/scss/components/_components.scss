@@ -31,6 +31,8 @@
 .box-titles{
     @include mixins.btn-red(vars.$btn-lg, vars.$fs-lg);
     @include mixins.btn();
+
+   
 }
 
 .search-bar{
@@ -43,6 +45,20 @@
     border-top-right-radius: 0%;
     border-bottom-left-radius: 1.5rem;
     border-top-left-radius: 1.5rem;
+
+    @include media-queries.respond-to(media-queries.$tablet-landscape){  
+        color: vars.$clr-black;
+        width: 18rem;
+    }
+
+    @include media-queries.respond-to(media-queries.$tablet-portrait){
+        color: vars.$clr-black;
+        width: 18rem;
+    }
+
+    @include media-queries.respond-to(media-queries.$phone){
+    }
+
 } 
 
 .btn-view{
@@ -106,11 +122,6 @@
 }
 
 @include media-queries.respond-to(media-queries.$tablet-landscape){
-    .search-bar{
-        width: 18rem;
-        color: vars.$clr-black;
-    } 
-
     .grid-tb{
         zoom: 160%;
         margin-right: 5rem;
@@ -119,16 +130,20 @@
 
     .zoom-button{
         zoom: 130%;
+        margin-left: 1.2rem;
     }
 
-    .recipe-information-tb{
-        zoom: 67%;
+    .modal-tb{
+        zoom: 66%;
+        margin-left: -1rem;
     }
 
     .img-modal{
         width: 80%;
         height: 90%;
     }
+
+    /*otro lado*/
 
     .form-content{
         zoom: 73%;
@@ -142,6 +157,7 @@
 
     .mt-tb{
         margin-top: 0 !important;
+        margin-bottom: 0 !important;
     }
 
     .ml-tb{
@@ -151,5 +167,71 @@
     .mr-tb{
         margin-right: 6rem;
     }
+
+    .margin-tb{
+        margin-left: 0;
+        margin-right: 0;
+    }
    
 }
+
+@include media-queries.respond-to(media-queries.$phone){ 
+    .grid-tb{
+        zoom: 80%;
+        margin-right: 4rem;
+    }
+
+    .zoom-button{
+        zoom: 70%;
+        margin-left: 2.1rem;
+    }
+
+    .img-modal{
+        width: 100%;
+        height: 90%;
+    }
+
+    .margin-button-mb{
+        margin-left: 0 !important;
+    }
+
+    /*iconos de registro*/
+    .d-block-mb{
+        display: block !important;
+        margin-left: -2rem;
+    }
+
+    .zoom-section-mb{
+        zoom: 65%;
+    }
+
+    .input-mb{
+        margin-left: 1rem !important;
+        margin-top: 2rem;
+        width: 30rem;
+    }
+
+    .ml-tb{
+        margin-left: 1.3rem !important;
+    }
+
+    .ml-2-mb{
+        margin-left: 3rem;
+    }
+
+    /*perfil usuario icono*/
+    .ml-mb-2{
+        margin-left: 2rem;
+    }
+
+    .preview-img-mb{
+        zoom: 200%;
+        margin-left: 3rem;
+    }
+
+    .file-size-mb{
+        zoom: 80%;
+    }
+
+}
+

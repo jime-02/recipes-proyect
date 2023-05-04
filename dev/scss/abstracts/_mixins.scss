@@ -90,11 +90,13 @@
 
 @include media-queries.respond-to(media-queries.$phone){ 
     .display-nav .nav li ul {
-        display: contents !important;  
+        display: contents !important;
+        position: absolute;    
     }
 
     .display-user .nav-client-align {
         right: 0rem !important;
+        zoom: 65%;
     }   
 }
 
