@@ -30,9 +30,9 @@
 </head>
 
 <body class="container zoom-tb">
-    <section id="app" class="row">
+    <div id="app" class="">
         
-         <!--header section -->
+        <!--header section -->
         <header class="topnav">
             <div>
                 <a href="index.html"><img src="./images/identificador.png" class="position-relative mt-4 ms-5 p-2 margin-tb-logo icons-tb" alt="Graphic identifier"></a>
@@ -123,10 +123,10 @@
         <!-- Navigation menu end-->
 
         <!-- user profile -->
-        <section class="row mt-5 justify-content-center">
-            <p class="box-titles mb-4 mt-5 zoom-button">Perfil de usuario</p>
+        <div class="row mt-5 justify-content-center">
+            <p class="text-titles mb-4 mt-5 zoom-button mt-tb">Perfil de usuario</p>
 
-            <div class="mb-5 text-center ml-mb-2">
+            <div class="mb-5 text-center">
                
                 <img class="mt-5" src="./images/icono-perfil.png" alt="testimonial from user">
                 <div class="">
@@ -136,12 +136,12 @@
 
             <a class="btn-large mt-2 zoom-button" href="#">Editar información</a>
 
-        </section>   
+        </div>   
         <!-- user profile end -->
 
          <!-- colections section -->
-        <section class="row mt-5 justify-content-center">
-            <p class="box-titles mb-4 mt-5  zoom-button">Mis colecciones</p>
+        <div class="row mt-5 justify-content-center">
+            <p class="text-titles mb-4 mt-5 zoom-button">Mis colecciones</p>
 
             <section class="row mt-5 padding-card grid-tb">
                 <div v-for="(item, index) in recipes" class="col-2 mt-3 mx-5 mt-2 px-5">
@@ -160,10 +160,10 @@
 
             <button class="btn-large mt-5 mb-5  zoom-button">Ver más</button>
 
-        </section>   
+        </div>   
         <!-- colections section end-->
 
-    </section>
+    </div>
 
     <!--Footer information-->
     <footer class="mt-5 footer-color">
@@ -171,7 +171,7 @@
             <div class="col-md margin-logo">
                 <a href="index.html"><img src="./images/identificador.png" class="p-5 p-5-mb img-size-mb" alt="Graphic identifier"></a> 
             </div>
-        
+         
 
             <div class="col-md margin-top-tb info-footer-mb">
                 <div class="row mt-5 margin-top-tb margin-left-tb">
@@ -188,7 +188,7 @@
             </div>
 
             <div class="col-md margin-top-tb info-footer-mb">
-                <div class="row mt-5 margin-botton-tb">
+                <div class="row mt-5 margin-botton-tb ml-tb ml-mb">
                     <p class="footer-title">Social</p>
                     <div class="">
                         <ul class="list-unstyled p-0"> 

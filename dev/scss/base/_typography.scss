@@ -3,6 +3,15 @@
 @use '../media-queries';
 
 //texts
+.text-titles{
+    @include mixins.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-ext-lg, vars.$clr-red);
+    text-align: center;  
+    
+    @include media-queries.respond-to(media-queries.$phone){
+        font-size: vars.$fs-sup-lg;
+   }
+}
+
 .category-text{
     @include mixins.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-xxxxsm, vars.$clr-red);   
 }
