@@ -6,14 +6,19 @@
 //carrousel
 .carrousel-text{
     @include mixins.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-lg, vars.$clr-red);  
+    
     @include media-queries.respond-to(media-queries.$tablet-landscape){
-        @include mixins.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-ext-lg, vars.$clr-red);         
+        font-size:  vars.$fs-xlg;     
+    }   
+
+    @include media-queries.respond-to(media-queries.$tablet-landscape){
+        font-size: vars.$fs-xlg;        
     }   
 }
 
 .width-carrousel{
-    width: 120%;
-    left: -128px;
+    width: 116%;
+    left: -106px;
 
      @include media-queries.respond-to(media-queries.$tablet-landscape){
         margin-top: 3rem;

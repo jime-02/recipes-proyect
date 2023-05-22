@@ -8,10 +8,10 @@
     text-align: center;  
 
     @include media-queries.respond-to(media-queries.$tablet-landscape){
-        font-size: vars.$fs-lg;
+        font-size: vars.$fs-sup-lg;
    }
     @include media-queries.respond-to(media-queries.$phone){
-        font-size: vars.$fs-sm;
+        font-size: vars.$fs-xlg;
    }
 }
 
@@ -90,16 +90,27 @@
     @include mixins.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-sup-lg, vars.$clr-black);
 
     @include media-queries.respond-to(media-queries.$tablet-landscape){
-        font-size: vars.$fs-med;
+        font-size: vars.$fs-xlg;
     }
 
     @include media-queries.respond-to(media-queries.$phone){
-        font-size: vars.$fs-xsm;
+        font-size: vars.$fs-xmed;
    }
 }
 
 .text-info{
     @include mixins.set-font(vars.$ff-primary, vars.$fw-regular, vars.$fs-lg, vars.$clr-black !important);  
+}
+
+.text-table{
+    @include mixins.set-font(vars.$ff-primary, vars.$fw-regular, vars.$fs-lg, vars.$clr-white);  
+}
+
+.text-info-recipe{
+    @include mixins.set-font(vars.$ff-secondary, vars.$fw-regular, vars.$fs-lg, vars.$clr-black);  
+    @include media-queries.respond-to(media-queries.$phone){
+        font-size: vars.$fs-xmed;
+   }
 }
 
 .header-subtext{  

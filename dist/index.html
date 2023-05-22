@@ -14,6 +14,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600;700&family=Playfair+Display&display=swap" rel="stylesheet">
 
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
@@ -113,13 +116,13 @@
 
                         <div class="row margin-modal padding-right-info">
                             <h3 class="text-info-name mt-3 ml-align-text">Descripción:</h3>
-                            <p class="text-info mt-2 ml-align-text">{{ recipes[selectedIndex].description }}</p>
+                            <p class="text-info-recipe mt-2 ml-align-text">{{ recipes[selectedIndex].description }}</p>
     
                             <h3 class="text-info-name mt-3 ml-align-text">Ingredientes:</h3>
-                            <p class="text-info mt-2 ml-align-text">{{ recipes[selectedIndex].ingredients }}</p>
+                            <p class="text-info-recipe mt-2 ml-align-text">{{ recipes[selectedIndex].ingredients }}</p>
     
                             <h3 class="text-info-name mt-3 ml-align-text">Instrucciones:</h3>
-                            <p class="text-info mt-2 mb-1 ml-align-text">{{ recipes[selectedIndex].instructions }}</p>
+                            <p class="text-info-recipe mt-2 mb-1 ml-align-text">{{ recipes[selectedIndex].instructions }}</p>
                             
                         </div>
                     
@@ -157,9 +160,9 @@
         <!-- Modal -->
 
         <!--header section-->
-        <header class="topnav">
+        <header class="topnav container-fluid">
             <div>
-                <a href="index.html"><img src="./images/identificador.png" class="position-relative mt-4 ms-5 p-2 margin-tb-logo icons-tb" alt="Graphic identifier"></a>
+                <a href="index.html"><img src="./images/identificador.png" class="position-relative mt-4 ml-header p-2 margin-tb-logo icons-tb" alt="Graphic identifier"></a>
             </div>
         
             <div class="position-absolute top-0 display-user end-0 mx-5 mt-2 px-5">
@@ -259,7 +262,7 @@
 
         <!-- Best recipes -->
         <div class="row mt-5 justify-content-center">
-            <p class="text-titles mb-4 mt-3 zoom-button mt-tb">Mejores recetas</p>
+            <p class="text-titles mb-2 mt-3 mt-tb">Mejores recetas</p>
 
             <section class="row mt-2 padding-card grid-tb">
                 <div v-for="(item, index) in recipes" class="col-2 mt-3 mx-5 mt-2 px-5">
@@ -283,7 +286,7 @@
 
         <!-- New recipes -->
         <div class="row mt-3 justify-content-center">
-            <p class="text-titles mb-4 mt-4 zoom-button mt-space">Lo más nuevo</p>
+            <p class="text-titles mb-2 mt-4 mt-space">Lo más nuevo</p>
 
             <section class="row mt-2 padding-card grid-tb">
                 <div v-for="(item, index) in recipes" class="col-2 mt-3 mx-5 mt-2 px-5">
@@ -301,7 +304,7 @@
             </div> 
             </section>
 
-            <button class="btn-large mt-5 mb-5 zoom-button">Ver más</button>
+            <button class="btn-large mt-5 mb-2 zoom-button">Ver más</button>
         </div>  
         <!-- New recipes end -->
         
@@ -311,7 +314,7 @@
     <footer class="mt-5 footer-color">
         <div class="row footermb">
             <div class="col-md margin-logo">
-                <a href="index.html"><img src="./images/identificador.png" class="p-5 p-5-mb img-size-mb" alt="Graphic identifier"></a> 
+                <a href="index.html"><img src="./images/identificador.png" class="p-5 p-5-mb img-size-mb ml-mt-mobile" alt="Graphic identifier"></a> 
             </div>
          
 

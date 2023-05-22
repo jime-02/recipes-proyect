@@ -13418,9 +13418,6 @@ html {
   .br-mv {
     zoom: 150%;
   }
-  .zoom-tb {
-    zoom: 140%;
-  }
 }
 .text-titles {
   font-family: "Oswald";
@@ -13431,12 +13428,12 @@ html {
 }
 @media only screen and (max-width: 979px) {
   .text-titles {
-    font-size: 1.875rem;
+    font-size: 2.813rem;
   }
 }
 @media only screen and (max-width: 480px) {
   .text-titles {
-    font-size: 1.375rem;
+    font-size: 2rem;
   }
 }
 
@@ -13542,12 +13539,12 @@ html {
 }
 @media only screen and (max-width: 979px) {
   .text-info-name {
-    font-size: 1.75rem;
+    font-size: 2rem;
   }
 }
 @media only screen and (max-width: 480px) {
   .text-info-name {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -13556,6 +13553,25 @@ html {
   font-weight: 400;
   font-size: 1.875rem;
   color: hsl(0deg, 0%, 0%) !important;
+}
+
+.text-table {
+  font-family: "Oswald";
+  font-weight: 400;
+  font-size: 1.875rem;
+  color: hsl(0deg, 0%, 100%);
+}
+
+.text-info-recipe {
+  font-family: "Playfair Display";
+  font-weight: 400;
+  font-size: 1.875rem;
+  color: hsl(0deg, 0%, 0%);
+}
+@media only screen and (max-width: 480px) {
+  .text-info-recipe {
+    font-size: 1.5rem;
+  }
 }
 
 .header-subtext {
@@ -13639,16 +13655,15 @@ html {
   border-top-right-radius: 0%;
   border-bottom-left-radius: 1.5rem;
   border-top-left-radius: 1.5rem;
+  color: hsl(0deg, 0%, 0%);
 }
 @media only screen and (max-width: 979px) {
   .search-bar {
-    color: hsl(0deg, 0%, 0%);
     width: 18rem;
   }
 }
 @media only screen and (max-width: 767px) {
   .search-bar {
-    color: hsl(0deg, 0%, 0%);
     width: 18rem;
   }
 }
@@ -13696,7 +13711,7 @@ html {
 @media only screen and (max-width: 480px) {
   .btn-large {
     width: 20.313rem;
-    font-size: 1.375rem;
+    font-size: 2rem;
     border: hsl(200deg, 19%, 18%);
     background-color: hsl(200deg, 19%, 18%);
     color: hsl(0deg, 0%, 100%);
@@ -13820,6 +13835,10 @@ html {
   border-radius: 2rem;
 }
 
+.table-bordered {
+  border-color: hsl(355deg, 68%, 51%);
+}
+
 .featured-badge {
   display: block;
   text-align: center;
@@ -13883,8 +13902,8 @@ html {
     margin-top: 3rem !important;
   }
   .mt-tb {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
   }
   .ml-tb {
     margin-left: 0rem !important;
@@ -13895,6 +13914,9 @@ html {
   }
   .ml-form-mb {
     margin-left: -5rem !important;
+  }
+  .mt-0-mb {
+    margin-top: -2.625rem !important;
   }
 }
 @media only screen and (max-width: 480px) {
@@ -13942,16 +13964,18 @@ html {
 }
 @media only screen and (max-width: 979px) {
   .carrousel-text {
-    font-family: "Oswald";
-    font-weight: 680;
-    font-size: 3rem;
-    color: hsl(355deg, 68%, 51%);
+    font-size: 2rem;
+  }
+}
+@media only screen and (max-width: 979px) {
+  .carrousel-text {
+    font-size: 2rem;
   }
 }
 
 .width-carrousel {
-  width: 120%;
-  left: -128px;
+  width: 116%;
+  left: -106px;
 }
 @media only screen and (max-width: 979px) {
   .width-carrousel {
@@ -13974,7 +13998,7 @@ html {
 .footer-color {
   height: auto;
   background: hsl(200deg, 19%, 18%);
-  width: 101rem;
+  width: 99.5rem;
   margin-left: -9rem;
 }
 @media only screen and (max-width: 979px) {
@@ -14036,7 +14060,7 @@ html {
 }
 
 .margin-logo {
-  margin-top: 9rem;
+  margin-top: 7rem;
   margin-left: 12.5rem;
   margin-right: 1rem;
 }
@@ -14132,11 +14156,15 @@ html {
   .ms-0 {
     margin-left: 0 !important;
   }
+  .ml-mt-mobile {
+    margin-left: 0.5rem;
+    margin-top: -1.5rem;
+  }
 }
 .topnav {
   height: 9.563rem;
   background: hsl(355deg, 68%, 51%);
-  width: 101rem;
+  width: 99.5rem;
   margin-left: -9rem;
 }
 @media only screen and (max-width: 979px) {
@@ -14213,7 +14241,7 @@ html {
 }
 
 .ml-header {
-  margin-left: 10rem;
+  margin-left: 12rem;
 }
 
 .offcanvas-header {
@@ -14320,7 +14348,7 @@ html {
   .icons-tb {
     width: 79%;
     margin-top: 1.6rem !important;
-    margin-left: 9.9rem !important;
+    margin-left: 9.3rem !important;
     padding: 0 !important;
   }
 }

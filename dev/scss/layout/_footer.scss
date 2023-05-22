@@ -6,7 +6,7 @@
 .footer-color{
     height: auto;
     background: vars.$clr-gray-dark;
-    width: 101rem;
+    width: 99.5rem;
     margin-left: -9rem;
 
     @include media-queries.respond-to(media-queries.$tablet-landscape){
@@ -61,7 +61,7 @@
 }
 
 .margin-logo{
-    margin-top: 9rem;
+    margin-top: 7rem;
     margin-left: 12.5rem;
     margin-right: 1rem;
 
@@ -164,6 +164,11 @@
 
     .ms-0{
         margin-left: 0 !important;
+    }
+
+    .ml-mt-mobile{
+        margin-left: 0.5rem;
+        margin-top: -1.5rem;
     }
 }
 

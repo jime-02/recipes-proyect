@@ -32,14 +32,13 @@
     border-top-right-radius: 0%;
     border-bottom-left-radius: 1.5rem;
     border-top-left-radius: 1.5rem;
+    color: vars.$clr-black;
 
-    @include media-queries.respond-to(media-queries.$tablet-landscape){  
-        color: vars.$clr-black;
+    @include media-queries.respond-to(media-queries.$tablet-landscape){      
         width: 18rem;
     }
 
-    @include media-queries.respond-to(media-queries.$tablet-portrait){
-        color: vars.$clr-black;
+    @include media-queries.respond-to(media-queries.$tablet-portrait){ 
         width: 18rem;
     }
 
@@ -58,7 +57,7 @@
     @include mixins.btn();
 
     @include media-queries.respond-to(media-queries.$phone){
-        @include mixins.btn-dark( vars.$btn-xsm, vars.$fs-sm);
+        @include mixins.btn-dark( vars.$btn-xsm, vars.$fs-xlg);
    } 
 }
 
@@ -135,6 +134,10 @@
     @include mixins.display-options();
 }
 
+.table-bordered{
+    border-color: vars.$clr-red;
+}
+
 .featured-badge{
     display: block;
     text-align: center;
@@ -165,7 +168,6 @@
     } 
  
 }
-
 
 @include media-queries.respond-to(media-queries.$tablet-landscape){
     .grid-tb{
@@ -204,8 +206,8 @@
     }
 
     .mt-tb{
-        margin-top: 0 !important;
-        margin-bottom: 0 !important;
+        margin-top: 1rem !important;
+        margin-bottom: 1rem !important;
     }
 
     .ml-tb{
@@ -219,6 +221,10 @@
 
     .ml-form-mb{
         margin-left: -5rem !important;
+    }
+
+    .mt-0-mb{
+        margin-top: -2.625rem !important;
     }
    
 }
@@ -269,4 +275,3 @@
     }
 
 }
-
