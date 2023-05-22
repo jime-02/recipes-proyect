@@ -5,17 +5,24 @@
 
 .topnav{
     height: 9.563rem;
-    width: auto;
+    //width: auto;
     background: vars.$clr-red;
+    width: 101rem;
+    margin-left: -9rem;
 
     @include media-queries.respond-to(media-queries.$tablet-landscape){
         height: 8rem;
+        width: fit-content;
+        padding-right: 16rem;
+        margin-left: 0;
        
     }
 
     @include media-queries.respond-to(media-queries.$tablet-portrait){
         height: 5rem;
-      
+        width: fit-content;
+        margin-left: -10.3rem;
+        padding-right: 15rem;
     }
 
     @include media-queries.respond-to(media-queries.$phone){    
@@ -24,6 +31,7 @@
 
 .margin-user{
     margin-right: 8rem;
+    margin-top: 3rem;
 
     @include media-queries.respond-to(media-queries.$tablet-landscape){
         margin-right: -14rem;
@@ -32,7 +40,7 @@
 
     @include media-queries.respond-to(media-queries.$tablet-portrait){
         margin-right: -14rem;
-        margin-left: 5rem;
+        margin-left: 7rem;
     }
 
     @include media-queries.respond-to(media-queries.$phone){    
@@ -49,6 +57,10 @@
 
 .display-user{
     @include mixins.display-options();
+}
+
+.ml-header{
+    margin-left: 10rem;
 }
 
 .offcanvas-header{
@@ -109,9 +121,9 @@
    }
 
    .icons-tb{
-       width: 50%;
+       width: 72%;
        margin-left: 0 !important;
-       margin-top: 1rem !important;
+       margin-top: 2.5rem !important;
     
    }
 }
@@ -159,8 +171,9 @@
     }
 
     .icons-tb{
-        width: 70%;
-        margin-left: -0.5rem !important;
+        width: 79%;
+        margin-top: 1.6rem !important;
+        margin-left: 9.9rem !important;
         padding: 0 !important;
     }
 }
@@ -181,7 +194,7 @@
     }
 
     .zoom-user-mb{
-        zoom: 50%;
+        zoom: 46%;
     }
    
 }

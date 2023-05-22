@@ -4,36 +4,52 @@
 
 //texts
 .text-titles{
-    @include mixins.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-ext-lg, vars.$clr-red);
+    @include mixins.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-sup-lg, vars.$clr-red);
     text-align: center;  
-    
+
+    @include media-queries.respond-to(media-queries.$tablet-landscape){
+        font-size: vars.$fs-lg;
+   }
     @include media-queries.respond-to(media-queries.$phone){
-        font-size: vars.$fs-sup-lg;
+        font-size: vars.$fs-sm;
    }
 }
 
 .category-text{
-    @include mixins.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-xxxxsm, vars.$clr-red);   
+    @include mixins.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-xxsm, vars.$clr-red); 
+
+    @include media-queries.respond-to(media-queries.$phone){
+        font-size: vars.$fs-xxsm;
+   } 
 }
 
 .text-recipe-name{
-    @include mixins.set-font(vars.$ff-primary, vars.$fw-medium, vars.$fs-xsm, vars.$clr-black);  
+    @include mixins.set-font(vars.$ff-primary, vars.$fw-medium, vars.$fs-xsm, vars.$clr-black); 
+    
+    @include media-queries.respond-to(media-queries.$phone){
+        font-size: vars.$fs-xsm;
+     } 
 
-    max-height: 1.899000000000001rem; 
+    max-height: 1.7rem; 
 }
 
 .text-recipe-level{
-    @include mixins.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-xxxxsm, vars.$clr-black);  
+    @include mixins.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-xxsm, vars.$clr-black);  
+
+    @include media-queries.respond-to(media-queries.$phone){
+        font-size: vars.$fs-xxsm;
+    } 
+
     opacity: 50%;  
 }
 
 .text-recipe-description{
     @include mixins.set-font(vars.$ff-primary, vars.$fw-regular, vars.$fs-xxxxsm, vars.$clr-black); 
-    max-height: 7rem;   
+    max-height: 4rem;   
 }
 
 .options-text{
-    @include mixins.set-font(vars.$ff-primary, vars.$fw-regular, vars.$fs-xxxxsm, vars.$clr-red); 
+    @include mixins.set-font(vars.$ff-primary, vars.$fw-regular, vars.$fs-med, vars.$clr-gray-dark); 
   
     text-decoration: none;   
 }
@@ -41,14 +57,23 @@
 .text-recipe-label{
     @include mixins.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-lg, vars.$clr-red);
 
+    @include media-queries.respond-to(media-queries.$phone){
+        font-size: vars.$fs-xlg;
+   }
+
     margin-left: 7.5rem;
 }
 
+.clr-gray-dark{
+    color: vars.$clr-gray-dark;
+}
+
 .text-recipe-textarea{
-    @include mixins.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-sm, vars.$clr-black); 
+    @include mixins.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-lg, vars.$clr-black); 
 
     opacity: 90%;
     width: vars.$btn-sup-lg;
+    height: 92px;
     border-color: vars.$clr-red;
     border-width: 0.313rem; 
 
@@ -57,20 +82,24 @@
     }
 
     @include media-queries.respond-to(media-queries.$phone){
-         font-size: vars.$fs-xmed;
+         font-size: vars.$fs-xlg;
     }
 }
-
+/**/
 .text-info-name{
     @include mixins.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-sup-lg, vars.$clr-black);
+
+    @include media-queries.respond-to(media-queries.$tablet-landscape){
+        font-size: vars.$fs-med;
+    }
+
     @include media-queries.respond-to(media-queries.$phone){
-        font-size: vars.$fs-xmed;
+        font-size: vars.$fs-xsm;
    }
 }
 
 .text-info{
-    @include mixins.set-font(vars.$ff-primary, vars.$fw-regular, vars.$fs-xmed, vars.$clr-black);  
-    color: vars.$clr-black !important;
+    @include mixins.set-font(vars.$ff-primary, vars.$fw-regular, vars.$fs-lg, vars.$clr-black !important);  
 }
 
 .header-subtext{  

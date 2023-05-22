@@ -51,90 +51,96 @@
                         <div class="card-color mb-5">
                             <section class="row mt-5 mb-icons margin-modal">
 
-                                <div class="mb-3 mt-4 col-md">
+                                <div class="mt-2 col-md">
                                     <h3 class="text-recipe-label m-4">Tpo. preparación:</h3>
                                     <p class="text-info m-4">{{ recipes[selectedIndex].preparation_time }}</p>
                                   
                                 </div>
                 
-                                <div class="mb-3 mt-4 col-md ">
+                                <div class="mt-2 col-md ">
                                     <h3 class="text-recipe-label m-4">Tpo. cocción:</h3>
                                     <p class="text-info m-4">{{ recipes[selectedIndex].cook_time }}</p>
                                 </div>
                 
-                                <div class="mb-3 mt-4 col-md">
+                                <div class="mt-2 col-md">
                                     <h3 class="text-recipe-label m-4">Tpo. total:</h3>
                                     <p class="text-info m-4">{{ recipes[selectedIndex].total_time }}</p>
                                 </div>
                             </section>
     
-                            <section class="row mt-5 mb-icons margin-modal">
+                            <section class="row mt-1 mb-icons margin-modal">
     
-                                <div class="mb-3 col-md ">
+                                <div class="col-md">
                                     <h3 class="text-recipe-label m-4">Categoría:</h3>
                                     <p class="text-info m-4">{{ recipes[selectedIndex].category }}</p>
                                   
                                 </div>
                 
-                                <div class="mb-3 col-md">
+                                <div class="col-md">
                                     <h3 class="text-recipe-label m-4">Porciones:</h3>
                                     <p class="text-info m-4">{{ recipes[selectedIndex].portions }}</p>
                                 </div>
                 
-                                <div class="mb-3 col-md">
+                                <div class="col-md">
                                     <h3 class="text-recipe-label m-4">Nivel complejidad:</h3>
                                     <p class="text-info m-4">{{ recipes[selectedIndex].level }}</p>
                                 </div>
                             </section>
     
-                            <section class="row mt-5 mb-icons margin-modal">
+                            <section class="row mt-1 mb-icons margin-modal">
     
-                                <div class="mb-3 col-md-4 mb-5 ">
+                                <div class="col-md-4 mb-2 ">
                                     <h3 class="text-recipe-label m-4">Ocasión:</h3>
                                     <p class="text-info m-4">{{ recipes[selectedIndex].occasion }}</p>
                                   
                                 </div>
                 
-                                <div class="mb-3 col-md-4 mb-5">
+                                <div class="col-md-4 mb-2">
                                     <h3 class="text-recipe-label m-4">Cantidad de votos:</h3>
                                     <p class="text-info m-4">{{ recipes[selectedIndex].likes }}</p>
+                                </div>
+
+                                <div class="col-md-4 mb-2">
+                                    <h3 class="text-recipe-label m-4">Receta destacada:</h3>
+                                    <p class="text-info m-4">Sí</p>
                                 </div>
                 
                             </section>
 
                         </div>
 
-                        <div class="row margin-modal">
-                            <h3 class="text-info-name mt-5">Descripción:</h3>
-                            <p class="text-info mt-4">{{ recipes[selectedIndex].description }}</p>
+                        <div class="row margin-modal padding-right-info">
+                            <h3 class="text-info-name mt-3 ml-align-text">Descripción:</h3>
+                            <p class="text-info mt-2 ml-align-text">{{ recipes[selectedIndex].description }}</p>
     
-                            <h3 class="text-info-name mt-5">Ingredientes:</h3>
-                            <p class="text-info mt-4">{{ recipes[selectedIndex].ingredients }}</p>
+                            <h3 class="text-info-name mt-3 ml-align-text">Ingredientes:</h3>
+                            <p class="text-info mt-2 ml-align-text">{{ recipes[selectedIndex].ingredients }}</p>
     
-                            <h3 class="text-info-name mt-5">Instrucciones:</h3>
-                            <p class="text-info mt-4 mb-5">{{ recipes[selectedIndex].instructions }}</p>
+                            <h3 class="text-info-name mt-3 ml-align-text">Instrucciones:</h3>
+                            <p class="text-info mt-2 mb-1 ml-align-text">{{ recipes[selectedIndex].instructions }}</p>
                             
                         </div>
                     
-                        <div class="text-center mt-5 mb-5">
+                        <div class="text-center mt-2 mb-5">
                             <div class="justify-content-center">
                                 <a href="likes.php"
                                 class="btn-large d-inline-block mt-5 mb-5 p-1">Me gusta</a>
                                 <a href="likes.php"
-                                class="btn-large d-inline-block ms-5 p-1 margin-button-mb">Descargar</a>
+                                class="btn-large d-inline-block ms-5 p-1 margin-button-mb ml-tb">Descargar</a>
                             </div>
                             
                             <div class="modal-footer justify-content-center">
-                                <p class="text-titles mt-5">Recetas relacionadas</p>
+                                <p class="text-titles mt-2">Recetas relacionadas</p>
                             </div>
                              
-                            <div class="main-carousel main-carousel-mb margins-carrousel mt-5 mb-2" data-flickity='{ "cellAlign": "center", "contain": true }'>
-                                <div class="carousel-cell margin-carousel"><a class="nav-link topnav-link" href="informacion-receta.html"><img class="border border-4 border-danger rounded carrousel-width" src="./images/receta-10.png" alt="receta1"><h4 class="text-center mt-3 mb-3 carrousel-text">Almuerzo</h4><p class="text-recipe-description">Arroz con pollo</p></a></div>
-                                <div class="carousel-cell margin-carousel"><a class="nav-link topnav-link" href="informacion-receta.html"><img class="border border-4 border-danger rounded carrousel-width" src="./images/receta-10.png" alt="receta1"><h4 class="text-center mt-3 mb-3 carrousel-text">Bebida</h4><p class="text-recipe-description">Arroz con pollo</p></a></div>
-                                <div class="carousel-cell margin-carousel"><a class="nav-link topnav-link" href="informacion-receta.html"><img class="border border-4 border-danger rounded carrousel-width" src="./images/receta-10.png" alt="receta1"><h4 class="text-center mt-3 mb-3 carrousel-text">Desayuno</h4><p class="text-recipe-description">Arroz con pollo</p></a></div> 
+                            <div class="main-carousel main-carousel-mb mt-5 mb-2" data-flickity='{ "cellAlign": "center", "contain": true }'>
+                                <div class="carousel-cell"><a class="nav-link topnav-link" href="informacion-receta.html"><img class="border border-4 border-danger rounded carrousel-width" src="./images/receta-10.png" alt="receta1"><h4 class="text-center mt-3 mb-3 carrousel-text">Almuerzo</h4><p class="text-recipe-name">Arroz con pollo</p><p class="mb-3 text-recipe-level">Fácil</p></a><button class="btn btn-danger">Ver receta</button></div>
+                                <div class="carousel-cell"><a class="nav-link topnav-link" href="informacion-receta.html"><img class="border border-4 border-danger rounded carrousel-width" src="./images/receta-10.png" alt="receta1"><h4 class="text-center mt-3 mb-3 carrousel-text">Bebida</h4><p class="text-recipe-name">Arroz con pollo</p><p class="mb-3 text-recipe-level">Fácil</p></a><button class="btn btn-danger">Ver receta</button></div>
+                                <div class="carousel-cell"><a class="nav-link topnav-link" href="informacion-receta.html"><img class="border border-4 border-danger rounded carrousel-width" src="./images/receta-10.png" alt="receta1"><h4 class="text-center mt-3 mb-3 carrousel-text">Desayuno</h4><p class="text-recipe-name">Arroz con pollo</p><p class="mb-3 text-recipe-level">Fácil</p></a><button class="btn btn-danger">Ver receta</button></div> 
                             </div>
                         </div>
                     </div>
+                    
                     
                     <div class="modal-footer">
                         <button type="button" class="btn-modal" v-on:click="onClickPrev()" >Anterior</button>
@@ -150,7 +156,7 @@
 
         <!--header section-->
         <header class="topnav">
-            <div class="container-fluid">
+            <div>
                 <a href="index.html"><img src="./images/identificador.png" class="position-relative mt-4 ms-5 p-2 margin-tb-logo icons-tb" alt="Graphic identifier"></a>
             </div>
         
@@ -160,7 +166,7 @@
                         <img src="./images/icono-usuario.png" class="margin-user zoom-user-mb" alt="Perfil" ></a> 
                         <ul class="nav-background-color nav-client-align list-unstyled">
                             <li class="header-no-item"><a class="mt-3 btn-menu nav-link" href="login.html">Iniciar Sesión</a></li>
-                            <li class="header-no-item"><a class="mt-3 btn-menu mb-3 nav-link" href="registro-usuario.html">Registrarse</a></li>
+                            <li class="header-no-item"><a class="mt-3 btn-menu mb-3 nav-link" href="registro-admin.html">Registrarse</a></li>
                         </ul>  
                     </li>
                 </ul>
@@ -239,32 +245,32 @@
         <!-- Navigation menu end-->
 
         <!-- Carousel-->
-        <div class="main-carousel main-carousel-mb margins-carrousel margins-carrousel-mb" data-flickity='{ "cellAlign": "center", "contain": true }'>
-            <div class="carousel-cell margin-carousel"><a class="nav-link topnav-link" href="informacion-receta.html"><img class="border border-4 border-danger rounded" src="./images/receta-10.png" alt="receta1"><h4 class="text-center mt-3 mb-3 carrousel-text">Almuerzo</h4></a></div>
-            <div class="carousel-cell margin-carousel"><a class="nav-link topnav-link" href="informacion-receta.html"><img class="border border-4 border-danger rounded" src="./images/receta-10.png" alt="receta1"><h4 class="text-center mt-3 mb-3 carrousel-text">Bebida</h4></a></div>
-            <div class="carousel-cell margin-carousel"><a class="nav-link topnav-link" href="informacion-receta.html"><img class="border border-4 border-danger rounded" src="./images/receta-10.png" alt="receta1"><h4 class="text-center mt-3 mb-3 carrousel-text">Desayuno</h4></a></div>
-            <div class="carousel-cell margin-carousel"><a class="nav-link topnav-link" href="informacion-receta.html"><img class="border border-4 border-danger rounded" src="./images/receta-10.png" alt="receta1"><h4 class="text-center mt-3 mb-3 carrousel-text">Entrada</h4></a></div>
-            <div class="carousel-cell margin-carousel"><a class="nav-link topnav-link" href="informacion-receta.html"><img class="border border-4 border-danger rounded" src="./images/receta-10.png" alt="receta1"><h4 class="text-center mt-3 mb-3 carrousel-text">Postre</h4></a></div>
-            <div class="carousel-cell margin-carousel"><a class="nav-link topnav-link" href="informacion-receta.html"><img class="border border-4 border-danger rounded" src="./images/receta-10.png" alt="receta1"><h4 class="text-center mt-3 mb-3 carrousel-text">Sopa</h4></a></div> 
+        <div class="main-carousel width-carrousel" data-flickity='{ "cellAlign": "center", "contain": true }'>
+            <div class="carousel-cell"><a class="nav-link topnav-link" href="informacion-receta.html"><img class="border border-4 border-danger rounded" src="./images/receta-10.png" alt="receta1"><h4 class="text-center mt-3 mb-3 carrousel-text">Almuerzo</h4></a></div>
+            <div class="carousel-cell"><a class="nav-link topnav-link" href="informacion-receta.html"><img class="border border-4 border-danger rounded" src="./images/receta-10.png" alt="receta1"><h4 class="text-center mt-3 mb-3 carrousel-text">Bebida</h4></a></div>
+            <div class="carousel-cell"><a class="nav-link topnav-link" href="informacion-receta.html"><img class="border border-4 border-danger rounded" src="./images/receta-10.png" alt="receta1"><h4 class="text-center mt-3 mb-3 carrousel-text">Desayuno</h4></a></div>
+            <div class="carousel-cell"><a class="nav-link topnav-link" href="informacion-receta.html"><img class="border border-4 border-danger rounded" src="./images/receta-10.png" alt="receta1"><h4 class="text-center mt-3 mb-3 carrousel-text">Entrada</h4></a></div>
+            <div class="carousel-cell"><a class="nav-link topnav-link" href="informacion-receta.html"><img class="border border-4 border-danger rounded" src="./images/receta-10.png" alt="receta1"><h4 class="text-center mt-3 mb-3 carrousel-text">Postre</h4></a></div>
+            <div class="carousel-cell"><a class="nav-link topnav-link" href="informacion-receta.html"><img class="border border-4 border-danger rounded" src="./images/receta-10.png" alt="receta1"><h4 class="text-center mt-3 mb-3 carrousel-text">Sopa</h4></a></div> 
         </div>
         <!-- Carrousel end-->
 
         <!-- Best recipes -->
         <div class="row mt-5 justify-content-center">
-            <p class="text-titles mb-4 mt-5 zoom-button mt-tb">Mejores recetas</p>
+            <p class="text-titles mb-4 mt-3 zoom-button mt-tb">Mejores recetas</p>
 
-            <section class="row mt-5 padding-card grid-tb">
+            <section class="row mt-2 padding-card grid-tb">
                 <div v-for="(item, index) in recipes" class="col-2 mt-3 mx-5 mt-2 px-5">
                 <div class="card p-3 shadow border-0 d-inline-block card-color mb-4">
                         <img v-bind:src="item.image" class="card-img-top img-height rounded mb-4" alt="featured recipe">
                         <div class="card-body p-0">
-                            <p class="mt-2 mb-4 category-text">{{ item.category }}</p>
-                            <h5 class="mb-4 card-title overflow-hidden text-recipe-name">{{ item.name }}</h5>
-                            <p class="mb-5 text-recipe-level">{{ item.level }}</p>
+                            <p class="mt-2 mb-3 category-text">{{ item.category }}</p>
+                            <h5 class="mb-3 card-title overflow-hidden text-recipe-name">{{ item.name }}</h5>
+                            <p class="mb-3 text-recipe-level">{{ item.level }}</p>
 
-                            <button class="btn-view mt-2 mb-4 align-middle" v-on:click="onClickViewRecipe(index)" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Ver receta</button>
+                            <button class="btn-view mt-2 mb-2 align-middle" v-on:click="onClickViewRecipe(index)" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Ver receta</button>
                         </div>
-                    </div>     
+                </div>     
             </div> 
             </section>
 
@@ -274,18 +280,18 @@
         <!-- Best recipes end -->
 
         <!-- New recipes -->
-        <div class="row mt-5 justify-content-center">
-            <p class="text-titles mb-4 mt-5 zoom-button mt-tb">Lo más nuevo</p>
+        <div class="row mt-3 justify-content-center">
+            <p class="text-titles mb-4 mt-4 zoom-button mt-space">Lo más nuevo</p>
 
-            <section class="row mt-5 padding-card grid-tb">
+            <section class="row mt-2 padding-card grid-tb">
                 <div v-for="(item, index) in recipes" class="col-2 mt-3 mx-5 mt-2 px-5">
                 <div class="card p-3 shadow border-0 d-inline-block card-color mb-4">
                         <img v-bind:src="item.image" class="card-img-top img-height rounded mb-4" alt="featured recipe">
                         <div class="card-body p-0">
-                            <p class="mt-2 mb-4 category-text">{{ item.category }}</p>
-                            <h5 class="mb-4 card-title overflow-hidden text-recipe-name">{{ item.name }}</h5>
+                            <p class="mt-2 mb-3 category-text">{{ item.category }}</p>
+                            <h5 class="mb-3 card-title overflow-hidden text-recipe-name">{{ item.name }}</h5>
                             <p class="card-text overflow-hidden text-recipe-description">{{ item.ingredients }}</p>
-                            <p class="mb-5 text-recipe-level">{{ item.level }}</p>
+                            <p class="mb-3 text-recipe-level">{{ item.level }}</p>
 
                             <button class="btn-view mt-2 mb-4 align-middle" v-on:click="onClickViewRecipe(index)" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Ver receta</button>
                         </div>
@@ -293,7 +299,7 @@
             </div> 
             </section>
 
-            <button class="btn-large mt-5 mb-4 zoom-button">Ver más</button>
+            <button class="btn-large mt-5 mb-5 zoom-button">Ver más</button>
         </div>  
         <!-- New recipes end -->
         
@@ -313,15 +319,15 @@
                     <div class="">
                         <ul class="list-unstyled p-0">
                             <li class="mt-3"><a class="nav-link footer-info" href="#">Categorias</a></li>
-                            <li class="mt-5"><a class="nav-link footer-info" href="#">Niveles</a></li>
-                            <li class="mt-5"><a class="nav-link footer-info" href="#">Ocasiones</a></li>
-                            <li class="mt-5"><a class="nav-link footer-info" href="#">Top 10</a></li>
+                            <li class="mt-4"><a class="nav-link footer-info" href="#">Niveles</a></li>
+                            <li class="mt-4"><a class="nav-link footer-info" href="#">Ocasiones</a></li>
+                            <li class="mt-4"><a class="nav-link footer-info" href="#">Top 10</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md margin-top-tb info-footer-mb">
+            <div class="col-md margin-top-tb info-footer-mb ms-5 ms-0">
                 <div class="row mt-5 margin-botton-tb ml-tb ml-mb">
                     <p class="footer-title">Social</p>
                     <div class="">
@@ -335,15 +341,15 @@
                 </div>
             </div>
 
-            <div class="col-md margin-top-tb info-footer-mb">
+            <div class="col-md margin-top-tb info-footer-mb mr-footer">
                 <div class="row mt-5">
                     <p class="footer-title">Acerca de</p>
-                    <div class="mb-5">
+                    <div class="mb-3">
                         <ul class="list-unstyled p-0 mb-5">
                             <li class="mt-3"><a class="nav-link footer-info" href="#">Equipo</a></li>
-                            <li class="mt-5"><a class="nav-link footer-info" href="#">Términos</a></li>
-                            <li class="mt-5"><a class="nav-link footer-info" href="#">Únete</a></li>
-                            <li class="mt-5"><a class="nav-link footer-info" href="#">Visión</a></li>
+                            <li class="mt-4"><a class="nav-link footer-info" href="#">Términos</a></li>
+                            <li class="mt-4"><a class="nav-link footer-info" href="#">Únete</a></li>
+                            <li class="mt-4"><a class="nav-link footer-info" href="#">Visión</a></li>
                         </ul>
                     </div>
                 </div>

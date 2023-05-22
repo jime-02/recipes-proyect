@@ -5,32 +5,27 @@
 
 //carrousel
 .carrousel-text{
-    @include mixins.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-lg, vars.$clr-red);    
-}
-
-.margins-carrousel{
-    margin-right: 9.688rem;
-    margin-left: 9.688rem;
-    margin-top: 6rem;
-    margin-bottom: 7rem;
-
+    @include mixins.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-lg, vars.$clr-red);  
     @include media-queries.respond-to(media-queries.$tablet-landscape){
-            width: 100%;
-            margin-left: 0;   
-             margin-top: 2rem;
-            margin-bottom: 2rem;
-    } 
-    
-    @include media-queries.respond-to(media-queries.$phone){
-            width: 100%;
-            margin-left: 0;
-            margin-top: 2rem;
-            margin-bottom: 2rem;
-    } 
+        @include mixins.set-font(vars.$ff-primary, vars.$fw-bold, vars.$fs-ext-lg, vars.$clr-red);         
+    }   
 }
 
-.margin-carrousel{
-    margin-right: 3.688rem;
+.width-carrousel{
+    width: 120%;
+    left: -128px;
+
+     @include media-queries.respond-to(media-queries.$tablet-landscape){
+        margin-top: 3rem;
+        zoom: 55%;
+        width: 104%;
+        left: -17px;
+                
+    } 
+
+    @include media-queries.respond-to(media-queries.$phone){
+        zoom: 36%;    
+    } 
 }
 
 //carrousel modal

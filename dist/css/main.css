@@ -13425,70 +13425,100 @@ html {
 .text-titles {
   font-family: "Oswald";
   font-weight: 680;
-  font-size: 3rem;
+  font-size: 2.813rem;
   color: hsl(355deg, 68%, 51%);
   text-align: center;
 }
+@media only screen and (max-width: 979px) {
+  .text-titles {
+    font-size: 1.875rem;
+  }
+}
 @media only screen and (max-width: 480px) {
   .text-titles {
-    font-size: 2.3rem;
+    font-size: 1.375rem;
   }
 }
 
 .category-text {
   font-family: "Oswald";
   font-weight: 680;
-  font-size: 1.156rem;
+  font-size: 1.125rem;
   color: hsl(355deg, 68%, 51%);
+}
+@media only screen and (max-width: 480px) {
+  .category-text {
+    font-size: 1.125rem;
+  }
 }
 
 .text-recipe-name {
   font-family: "Oswald";
   font-weight: 600;
-  font-size: 1.399rem;
+  font-size: 1.25rem;
   color: hsl(0deg, 0%, 0%);
-  max-height: 1.899rem;
+  max-height: 1.7rem;
+}
+@media only screen and (max-width: 480px) {
+  .text-recipe-name {
+    font-size: 1.25rem;
+  }
 }
 
 .text-recipe-level {
   font-family: "Oswald";
   font-weight: 680;
-  font-size: 1.156rem;
+  font-size: 1.125rem;
   color: hsl(0deg, 0%, 0%);
   opacity: 50%;
+}
+@media only screen and (max-width: 480px) {
+  .text-recipe-level {
+    font-size: 1.125rem;
+  }
 }
 
 .text-recipe-description {
   font-family: "Oswald";
   font-weight: 400;
-  font-size: 1.156rem;
+  font-size: 0.875rem;
   color: hsl(0deg, 0%, 0%);
-  max-height: 7rem;
+  max-height: 4rem;
 }
 
 .options-text {
   font-family: "Oswald";
   font-weight: 400;
-  font-size: 1.156rem;
-  color: hsl(355deg, 68%, 51%);
+  font-size: 1.75rem;
+  color: hsl(200deg, 19%, 18%);
   text-decoration: none;
 }
 
 .text-recipe-label {
   font-family: "Oswald";
   font-weight: 680;
-  font-size: 2rem;
+  font-size: 1.875rem;
   color: hsl(355deg, 68%, 51%);
   margin-left: 7.5rem;
+}
+@media only screen and (max-width: 480px) {
+  .text-recipe-label {
+    font-size: 2rem;
+  }
+}
+
+.clr-gray-dark {
+  color: hsl(200deg, 19%, 18%);
 }
 
 .text-recipe-textarea {
   font-family: "Oswald";
   font-weight: 680;
-  font-size: 1.406rem;
+  font-size: 1.875rem;
   color: hsl(0deg, 0%, 0%);
   opacity: 90%;
-  width: 38rem;
+  width: 40rem;
+  height: 92px;
   border-color: hsl(355deg, 68%, 51%);
   border-width: 0.313rem;
 }
@@ -13499,34 +13529,39 @@ html {
 }
 @media only screen and (max-width: 480px) {
   .text-recipe-textarea {
-    font-size: 1.469rem;
+    font-size: 2rem;
   }
 }
 
+/**/
 .text-info-name {
   font-family: "Oswald";
   font-weight: 680;
-  font-size: 2.3rem;
+  font-size: 2.813rem;
   color: hsl(0deg, 0%, 0%);
+}
+@media only screen and (max-width: 979px) {
+  .text-info-name {
+    font-size: 1.75rem;
+  }
 }
 @media only screen and (max-width: 480px) {
   .text-info-name {
-    font-size: 1.469rem;
+    font-size: 1.25rem;
   }
 }
 
 .text-info {
   font-family: "Oswald";
   font-weight: 400;
-  font-size: 1.469rem;
-  color: hsl(0deg, 0%, 0%);
+  font-size: 1.875rem;
   color: hsl(0deg, 0%, 0%) !important;
 }
 
 .header-subtext {
   font-family: "Oswald";
   font-weight: 400;
-  font-size: 1.469rem;
+  font-size: 1.5rem;
   color: hsl(0deg, 0%, 0%);
   color: hsl(0deg, 0%, 0%);
   display: block;
@@ -13539,7 +13574,7 @@ html {
 }
 
 .btn-menu {
-  font-size: 1.38rem;
+  font-size: 1.5rem;
   width: 12.375rem;
   border: hsl(355deg, 68%, 51%);
   background-color: hsl(355deg, 68%, 51%);
@@ -13561,7 +13596,7 @@ html {
 }
 
 .search-btn {
-  font-size: 1.38rem;
+  font-size: 1.125rem;
   width: 5.563rem;
   border: hsl(355deg, 68%, 51%);
   background-color: hsl(355deg, 68%, 51%);
@@ -13583,7 +13618,7 @@ html {
 }
 
 .search-bar {
-  font-size: 1.38rem;
+  font-size: 1.125rem;
   width: 22rem;
   border: hsl(355deg, 68%, 51%);
   background-color: hsl(355deg, 68%, 51%);
@@ -13618,8 +13653,8 @@ html {
   }
 }
 .btn-view {
-  width: 14.938rem;
-  font-size: 1.399rem;
+  width: 15rem;
+  font-size: 1.5rem;
   border: hsl(200deg, 19%, 18%);
   background-color: hsl(200deg, 19%, 18%);
   color: hsl(0deg, 0%, 100%);
@@ -13640,7 +13675,7 @@ html {
 
 .btn-large {
   width: 20.313rem;
-  font-size: 2rem;
+  font-size: 1.875rem;
   border: hsl(200deg, 19%, 18%);
   background-color: hsl(200deg, 19%, 18%);
   color: hsl(0deg, 0%, 100%);
@@ -13658,10 +13693,22 @@ html {
 .btn-large:hover {
   color: hsl(355deg, 68%, 51%);
 }
+@media only screen and (max-width: 480px) {
+  .btn-large {
+    width: 20.313rem;
+    font-size: 1.375rem;
+    border: hsl(200deg, 19%, 18%);
+    background-color: hsl(200deg, 19%, 18%);
+    color: hsl(0deg, 0%, 100%);
+  }
+  .btn-large:hover {
+    color: hsl(355deg, 68%, 51%);
+  }
+}
 
 .btn-modal {
   width: 8rem;
-  font-size: 1.399rem;
+  font-size: 1.25rem;
   border: hsl(200deg, 19%, 18%);
   background-color: hsl(200deg, 19%, 18%);
   color: hsl(0deg, 0%, 100%);
@@ -13691,8 +13738,32 @@ html {
 }
 
 .margin-modal {
-  margin-left: 3rem;
+  margin-left: 13rem;
   padding-right: 3rem;
+}
+@media only screen and (max-width: 979px) {
+  .margin-modal {
+    margin-left: 4rem;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .margin-modal {
+    margin-left: 2.5rem;
+  }
+}
+
+.padding-right-info {
+  padding-right: 13rem;
+}
+@media only screen and (max-width: 979px) {
+  .padding-right-info {
+    padding-right: 8rem;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .padding-right-info {
+    padding-right: 5rem;
+  }
 }
 
 .padding-card {
@@ -13715,8 +13786,12 @@ html {
 .img-fitscreeen {
   -o-object-fit: fill;
      object-fit: fill;
-  width: 45%;
-  height: 90%;
+  width: 60%;
+  height: 100%;
+}
+
+.ml-align-text {
+  margin-left: 1.3rem;
 }
 
 .display-nav nav li a {
@@ -13760,24 +13835,27 @@ html {
     zoom: 66%;
   }
   .img-modal {
-    width: 80%;
+    width: 100%;
     height: 90%;
   }
   /*otro lado*/
   .form-content {
-    zoom: 73%;
+    zoom: 70%;
     margin-left: 4rem;
     width: 80%;
   }
   .display-photo-tb {
     display: list-item !important;
   }
+  .mt-space {
+    margin-top: 3rem !important;
+  }
   .mt-tb {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
   }
   .ml-tb {
-    margin-left: 2rem;
+    margin-left: 0rem !important;
   }
   .margin-tb {
     margin-left: 0;
@@ -13804,7 +13882,7 @@ html {
     margin-left: -2rem;
   }
   .zoom-section-mb {
-    zoom: 65%;
+    zoom: 57%;
   }
   .input-mb {
     margin-left: 1rem !important;
@@ -13827,35 +13905,34 @@ html {
 .carrousel-text {
   font-family: "Oswald";
   font-weight: 680;
-  font-size: 2rem;
+  font-size: 1.875rem;
   color: hsl(355deg, 68%, 51%);
 }
+@media only screen and (max-width: 979px) {
+  .carrousel-text {
+    font-family: "Oswald";
+    font-weight: 680;
+    font-size: 3rem;
+    color: hsl(355deg, 68%, 51%);
+  }
+}
 
-.margins-carrousel {
-  margin-right: 9.688rem;
-  margin-left: 9.688rem;
-  margin-top: 6rem;
-  margin-bottom: 7rem;
+.width-carrousel {
+  width: 120%;
+  left: -128px;
 }
 @media only screen and (max-width: 979px) {
-  .margins-carrousel {
-    width: 100%;
-    margin-left: 0;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+  .width-carrousel {
+    margin-top: 3rem;
+    zoom: 55%;
+    width: 104%;
+    left: -17px;
   }
 }
 @media only screen and (max-width: 480px) {
-  .margins-carrousel {
-    width: 100%;
-    margin-left: 0;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+  .width-carrousel {
+    zoom: 36%;
   }
-}
-
-.margin-carrousel {
-  margin-right: 3.688rem;
 }
 
 .carrousel-width {
@@ -13863,15 +13940,20 @@ html {
 }
 
 .footer-color {
-  height: 33rem;
-  width: auto;
+  height: auto;
   background: hsl(200deg, 19%, 18%);
+  width: 101rem;
+  margin-left: -9rem;
 }
 @media only screen and (max-width: 979px) {
   .footer-color {
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-left: 0;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -13879,35 +13961,39 @@ html {
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-left: 0;
   }
 }
 .footer-title {
   font-family: "Oswald";
   font-weight: 680;
-  font-size: 2.62rem;
+  font-size: 1.75rem;
   color: hsl(355deg, 68%, 51%);
 }
 @media only screen and (max-width: 979px) {
   .footer-title {
-    font-size: 2rem;
+    font-size: 1.875rem;
   }
 }
 @media only screen and (max-width: 767px) {
   .footer-title {
-    font-size: 1.469rem;
+    font-size: 1rem;
   }
 }
 .footer-info {
   font-family: "Oswald";
   font-weight: 680;
-  font-size: 1.469rem;
+  font-size: 1.5rem;
   color: hsl(0deg, 0%, 100%);
   --bs-nav-link-padding-x: 5rem;
   display: inline-block;
 }
 @media only screen and (max-width: 767px) {
   .footer-info {
-    font-size: 1.219rem;
+    font-size: 0.875rem;
   }
 }
 .footer-info:hover {
@@ -13918,19 +14004,24 @@ html {
 }
 
 .margin-logo {
-  margin-top: 11rem;
-  margin-left: 1.5rem;
+  margin-top: 9rem;
+  margin-left: 12.5rem;
+  margin-right: 1rem;
 }
 @media only screen and (max-width: 979px) {
   .margin-logo {
     margin-top: 0;
     text-align: center;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 @media only screen and (max-width: 767px) {
   .margin-logo {
     margin-top: 0;
     text-align: center;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 @media only screen and (max-width: 480px) {
@@ -13941,21 +14032,35 @@ html {
 }
 
 .icons-size {
-  width: 90%;
+  width: 55%;
 }
 @media only screen and (max-width: 979px) {
   .icons-size {
-    width: 70%;
+    width: 55%;
   }
 }
 @media only screen and (max-width: 767px) {
   .icons-size {
-    width: 70%;
+    width: 40%;
+  }
+}
+.mr-footer {
+  margin-right: 13rem;
+}
+@media only screen and (max-width: 979px) {
+  .mr-footer {
+    margin-right: 0;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .mr-footer {
+    margin-right: 0;
   }
 }
 @media only screen and (max-width: 480px) {
-  .icons-size {
-    width: 60%;
+  .mr-footer {
+    margin-top: 0;
+    margin-left: 0;
   }
 }
 
@@ -13987,29 +14092,44 @@ html {
     width: 113%;
   }
   .ml-mb {
-    margin-left: -1rem;
+    margin-left: -1rem !important;
   }
   .margin-left-tb {
     margin-left: -1rem;
   }
+  .ms-0 {
+    margin-left: 0 !important;
+  }
 }
 .topnav {
   height: 9.563rem;
-  width: auto;
   background: hsl(355deg, 68%, 51%);
+  width: 101rem;
+  margin-left: -9rem;
 }
 @media only screen and (max-width: 979px) {
   .topnav {
     height: 8rem;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding-right: 16rem;
+    margin-left: 0;
   }
 }
 @media only screen and (max-width: 767px) {
   .topnav {
     height: 5rem;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-left: -10.3rem;
+    padding-right: 15rem;
   }
 }
 .margin-user {
   margin-right: 8rem;
+  margin-top: 3rem;
 }
 @media only screen and (max-width: 979px) {
   .margin-user {
@@ -14020,13 +14140,13 @@ html {
 @media only screen and (max-width: 767px) {
   .margin-user {
     margin-right: -14rem;
-    margin-left: 5rem;
+    margin-left: 7rem;
   }
 }
 .header-text {
   font-family: "Oswald";
   font-weight: 680;
-  font-size: 2rem;
+  font-size: 1.875rem;
   color: hsl(355deg, 68%, 51%);
 }
 
@@ -14058,6 +14178,10 @@ html {
   padding-left: 2rem;
   width: 16rem !important;
   border-radius: 2rem;
+}
+
+.ml-header {
+  margin-left: 10rem;
 }
 
 .offcanvas-header {
@@ -14115,9 +14239,9 @@ html {
     margin-left: -4rem;
   }
   .icons-tb {
-    width: 50%;
+    width: 72%;
     margin-left: 0 !important;
-    margin-top: 1rem !important;
+    margin-top: 2.5rem !important;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -14162,8 +14286,9 @@ html {
     margin-left: -2rem;
   }
   .icons-tb {
-    width: 70%;
-    margin-left: -0.5rem !important;
+    width: 79%;
+    margin-top: 1.6rem !important;
+    margin-left: 9.9rem !important;
     padding: 0 !important;
   }
 }
@@ -14180,6 +14305,6 @@ html {
     zoom: 65%;
   }
   .zoom-user-mb {
-    zoom: 50%;
+    zoom: 46%;
   }
 }

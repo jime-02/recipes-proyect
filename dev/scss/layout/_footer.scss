@@ -4,16 +4,21 @@
 @use '../media-queries';
 
 .footer-color{
-    height: 33rem;
-    width: auto;
+    height: auto;
     background: vars.$clr-gray-dark;
+    width: 101rem;
+    margin-left: -9rem;
 
     @include media-queries.respond-to(media-queries.$tablet-landscape){
         height: fit-content;  
+        width: fit-content;
+        margin-left: 0;
     }
 
     @include media-queries.respond-to(media-queries.$tablet-portrait){
         height: fit-content;  
+        width: fit-content;
+        margin-left: 0;
     }
 
     @include media-queries.respond-to(media-queries.$phone){    
@@ -29,7 +34,7 @@
     }
 
     @include media-queries.respond-to(media-queries.$tablet-portrait){
-        font-size: vars.$fs-xmed;
+        font-size: vars.$fs-xxxsm;
     }
 
     @include media-queries.respond-to(media-queries.$phone){     
@@ -42,7 +47,7 @@
     display: inline-block;  
 
     @include media-queries.respond-to(media-queries.$tablet-portrait){
-        font-size: vars.$fs-xxxsm;
+        font-size: vars.$fs-xxxxsm;
     }
 
     @include media-queries.respond-to(media-queries.$phone){     
@@ -56,17 +61,22 @@
 }
 
 .margin-logo{
-    margin-top: 11rem;
-    margin-left: 1.5rem;
+    margin-top: 9rem;
+    margin-left: 12.5rem;
+    margin-right: 1rem;
 
     @include media-queries.respond-to(media-queries.$tablet-landscape){
         margin-top: 0;
         text-align: center;
+        margin-left: 0;
+        margin-right: 0;
     }
 
     @include media-queries.respond-to(media-queries.$tablet-portrait){
         margin-top: 0;
         text-align: center;
+        margin-left: 0;
+        margin-right: 0;
     }
 
     @include media-queries.respond-to(media-queries.$phone){
@@ -76,18 +86,35 @@
 }
 
 .icons-size{
-    width: 90%;
+    width: 55%;
 
     @include media-queries.respond-to(media-queries.$tablet-landscape){
-        width: 70%;
+        width: 55%;
     }
 
     @include media-queries.respond-to(media-queries.$tablet-portrait){
-        width: 70%;
+        width: 40%;
     }
 
     @include media-queries.respond-to(media-queries.$phone){ 
-        width: 60%;
+       
+    }
+}
+
+.mr-footer{
+    margin-right: 13rem;
+
+    @include media-queries.respond-to(media-queries.$tablet-landscape){
+        margin-right: 0;
+    }
+
+    @include media-queries.respond-to(media-queries.$tablet-portrait){
+        margin-right: 0;
+    }
+
+    @include media-queries.respond-to(media-queries.$phone){
+        margin-top: 0;
+        margin-left: 0;
     }
 }
 
@@ -128,11 +155,15 @@
     }
 
     .ml-mb{
-        margin-left: -1rem;
+        margin-left: -1rem !important;
     }
 
     .margin-left-tb{
         margin-left: -1rem;
+    }
+
+    .ms-0{
+        margin-left: 0 !important;
     }
 }
 

@@ -7,16 +7,18 @@ $fw-medium: 600;
 $fw-bold: 680;
 
 //font-size
-$fs-xxxxsm: 1.156rem; //22px
-$fs-xxxsm: 1.219rem; //24px
-$fs-xxsm: 1.380rem; //26px 1625
-$fs-xsm: 1.399rem; //27px 1688
-$fs-sm: 1.406rem; //30px
-$fs-xmed: 1.469rem; //32px
-$fs-med: 2.62rem; //35px
-$fs-lg: 2rem; //36px
-$fs-sup-lg: 2.3rem; //55px 
 $fs-ext-lg: 3rem;
+$fs-sup-lg: 2.813rem; //45 px titulos y nombre comida
+$fs-xsup-lg: 2.5rem; //40
+$fs-xlg: 2rem; 
+$fs-lg: 1.875rem; //30
+$fs-med: 1.75rem;//28
+$fs-xmed: 1.5rem; //24px menu, y cards 
+$fs-sm: 1.375rem;//22
+$fs-xsm: 1.25rem; //20
+$fs-xxsm: 1.125rem; //18
+$fs-xxxsm: 1rem; //16
+$fs-xxxxsm: 0.875rem;//14
 
 //colors 
 $clr-black: hsl(0, 0%, 0%);
@@ -30,8 +32,8 @@ $search-size: 5.563rem;
 $btn-modal: 8rem;
 $search-bar:22rem;
 $btn-sup-sm: 12.375rem;
-$btn-sm: 14.938rem; //239px
+$btn-sm: 15rem; //239px
 $btn-xsm: 20.313rem; //325px
 $btn-med: 24.313rem; //389px
 $btn-lg: 26.188rem; //419px
-$btn-sup-lg: 38rem; //630.34px
+$btn-sup-lg: 40rem; //630.34px
