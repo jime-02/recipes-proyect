@@ -135,6 +135,38 @@
     @include mixins.display-options();
 }
 
+.featured-badge{
+    display: block;
+    text-align: center;
+    padding: 1rem 1.25rem;
+    border-radius: 1.5rem;
+    margin-left: 22rem;
+    width: vars.$btn-xsm;
+    margin-top: 3rem;
+    height: vars.$featured-size;
+    font-size: vars.$fs-lg;
+    color: vars.$clr-white;
+    font-weight: vars.$fw-bold;
+    background: vars.$clr-red;
+
+    @include media-queries.respond-to(media-queries.$tablet-landscape){
+        margin-left: 4rem;
+        font-size: vars.$fs-sup-lg;
+        padding: 0.3rem 1.5rem;
+    } 
+
+    @include media-queries.respond-to(media-queries.$phone){
+        padding: 0.6rem 1.5rem;
+        margin-left: 1rem;
+        width: vars.$btn-modal;
+        margin-top: 2rem;
+        height: 3rem;
+        font-size: vars.$fs-xsm;
+    } 
+ 
+}
+
+
 @include media-queries.respond-to(media-queries.$tablet-landscape){
     .grid-tb{
         zoom: 160%;

@@ -13820,6 +13820,38 @@ html {
   border-radius: 2rem;
 }
 
+.featured-badge {
+  display: block;
+  text-align: center;
+  padding: 1rem 1.25rem;
+  border-radius: 1.5rem;
+  margin-left: 22rem;
+  width: 20.313rem;
+  margin-top: 3rem;
+  height: 4.875rem;
+  font-size: 1.875rem;
+  color: hsl(0deg, 0%, 100%);
+  font-weight: 680;
+  background: hsl(355deg, 68%, 51%);
+}
+@media only screen and (max-width: 979px) {
+  .featured-badge {
+    margin-left: 4rem;
+    font-size: 2.813rem;
+    padding: 0.3rem 1.5rem;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .featured-badge {
+    padding: 0.6rem 1.5rem;
+    margin-left: 1rem;
+    width: 8rem;
+    margin-top: 2rem;
+    height: 3rem;
+    font-size: 1.25rem;
+  }
+}
+
 @media only screen and (max-width: 979px) {
   .grid-tb {
     zoom: 160%;
