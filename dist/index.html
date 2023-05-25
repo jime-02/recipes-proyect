@@ -259,17 +259,8 @@
 
             <section class="row mt-2 padding-card grid-tb">
                 <div v-for="(item, index) in recipes" class="col-2 mt-3 mx-5 mt-2 px-5">
-                <div class="card p-3 shadow border-0 d-inline-block card-color mb-4">
-                        <img v-bind:src="item.image" class="card-img-top img-height rounded mb-4" alt="featured recipe">
-                        <div class="card-body p-0">
-                            <p class="mt-2 mb-3 category-text">{{ item.category }}</p>
-                            <h5 class="mb-3 card-title overflow-hidden text-recipe-name">{{ item.name }}</h5>
-                            <p class="mb-3 text-recipe-level">{{ item.level }}</p>
-
-                            <button class="btn-view mt-2 mb-2 align-middle" v-on:click="onClickViewRecipe(index)" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Ver receta</button>
-                        </div>
-                </div>     
-            </div> 
+                    <best-recipe-card :image="item.image" :category="item.category" :name="item.name" :level="item.level"></best-recipe-card>   
+                </div> 
             </section>
 
             <button class="btn-large mt-5 mb-4 zoom-button">Ver más</button>
@@ -283,18 +274,8 @@
 
             <section class="row mt-2 padding-card grid-tb">
                 <div v-for="(item, index) in recipes" class="col-2 mt-3 mx-5 mt-2 px-5">
-                <div class="card p-3 shadow border-0 d-inline-block card-color mb-4">
-                        <img v-bind:src="item.image" class="card-img-top img-height rounded mb-4" alt="featured recipe">
-                        <div class="card-body p-0">
-                            <p class="mt-2 mb-3 category-text">{{ item.category }}</p>
-                            <h5 class="mb-3 card-title overflow-hidden text-recipe-name">{{ item.name }}</h5>
-                            <p class="card-text overflow-hidden text-recipe-description">{{ item.ingredients }}</p>
-                            <p class="mb-3 text-recipe-level">{{ item.level }}</p>
-
-                            <button class="btn-view mt-2 mb-4 align-middle" v-on:click="onClickViewRecipe(index)" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Ver receta</button>
-                        </div>
-                    </div>     
-            </div> 
+                    <new-recipes-card :image="item.image" :category="item.category" :name="item.name" :ingredients="item.ingredients" :level="item.level"></new-recipes-card>  
+                 </div> 
             </section>
 
             <button class="btn-large mt-5 mb-2 zoom-button">Ver más</button>
@@ -326,6 +307,9 @@
      <script src="./js/components/RecipeDetails.js"></script>
      <script src="./js/components/HeaderNav.js"></script>
      <script src="./js/components/FooterComponent.js"></script>
+     <script src="./js/components/BestRecipeCard.js"></script>
+     <script src="./js/components/FooterComponent.js"></script>
+     <script src="./js/components/NewRecipesCard.js"></script>
 
 
     <!-- mounted, se verifica que la app fue cargada, ref a la aplicacion -->
