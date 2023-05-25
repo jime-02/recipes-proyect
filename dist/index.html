@@ -159,25 +159,18 @@
         </div>
         <!-- Modal -->
 
-        <!--header section-->
-        <header class="topnav container-fluid">
-            <div>
-                <a href="index.html"><img src="./images/identificador.png" class="position-relative mt-4 ml-header p-2 margin-tb-logo icons-tb" alt="Graphic identifier"></a>
-            </div>
+          <!-- componente de información receta
+
+        <recipe-details :name="recipes.name" :image="recipes.image" : preparation_time="recipes. preparation_time" :cook_time="recipes.cook_time" :total_time="recipes.total_time" :category="recipes.category" :portions="recipes.portions" :level="recipes.level" :occasion="recipes.occasion" :likes="recipes.likes" :featured_recipe="recipes.featured_recipe" :description="recipes.description" :ingredients="recipes.ingredients" :instructions="recipes.instructions" v-on:prevrecipe="onClickPrev" v-on:nextrecipe="onClickNext"></recipe-details>
+
+        componente de información receta -->
         
-            <div class="position-absolute top-0 display-user end-0 mx-5 mt-2 px-5">
-                <ul class="nav">
-                    <li class="position-relative"><a class="" href="#">
-                        <img src="./images/icono-usuario.png" class="margin-user zoom-user-mb" alt="Perfil" ></a> 
-                        <ul class="nav-background-color nav-client-align list-unstyled">
-                            <li class="header-no-item"><a class="mt-3 btn-menu nav-link" href="login.html">Iniciar Sesión</a></li>
-                            <li class="header-no-item"><a class="mt-3 btn-menu mb-3 nav-link" href="registro-admin.html">Registrarse</a></li>
-                        </ul>  
-                    </li>
-                </ul>
-            </div>
-        </header>
-        <!--header section end-->
+
+         <!-- seccion del header -->
+
+         <header-nav session="Iniciar Sesión" register="Registrarse" image_identifier="./images/identificador.png" image_user="./images/icono-usuario.png"></header-nav>
+         
+         <!-- seccion del header  final-->
 
         <!-- Navigation menu-->
         <div class="position-absolute bar-mb">
@@ -307,61 +300,16 @@
             <button class="btn-large mt-5 mb-2 zoom-button">Ver más</button>
         </div>  
         <!-- New recipes end -->
+
+         <!--Footer information-->
+
+          <footer-component image_identifier="./images/identificador.png"></footer-component>
+
+         <!--Footer information end-->
         
     </section>
 
-     <!--Footer information-->
-    <footer class="mt-5 footer-color">
-        <div class="row footermb">
-            <div class="col-md margin-logo">
-                <a href="index.html"><img src="./images/identificador.png" class="p-5 p-5-mb img-size-mb ml-mt-mobile" alt="Graphic identifier"></a> 
-            </div>
-         
 
-            <div class="col-md margin-top-tb info-footer-mb">
-                <div class="row mt-5 margin-top-tb margin-left-tb">
-                    <p class="footer-title">Secciones</p>
-                    <div class="">
-                        <ul class="list-unstyled p-0">
-                            <li class="mt-3"><a class="nav-link footer-info" href="#">Categorias</a></li>
-                            <li class="mt-4"><a class="nav-link footer-info" href="#">Niveles</a></li>
-                            <li class="mt-4"><a class="nav-link footer-info" href="#">Ocasiones</a></li>
-                            <li class="mt-4"><a class="nav-link footer-info" href="#">Top 10</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md margin-top-tb info-footer-mb ms-5 ms-0">
-                <div class="row mt-5 margin-botton-tb ml-tb ml-mb">
-                    <p class="footer-title">Social</p>
-                    <div class="">
-                        <ul class="list-unstyled p-0"> 
-                            <li class="mt-1"><a class="nav-link footer-info" href="#"><img src="./images/icono-facebook.png" class="icons-size" alt="Instagram"></a></li>
-                            <li class="mt-4"><a class="nav-link footer-info" href="#"><img src="./images/icono-instagram.png" class="icons-size" alt="Facebook"></a></li>
-                            <li class="mt-4"><a class="nav-link footer-info" href="#"><img src="./images/icono-whatsapp.png" class="icons-size" alt="WhatsApp"></a></li>
-                            <li class="mt-4"><a class="nav-link footer-info" href="#"><img src="./images/icono-correo.png" class="icons-size" alt="Correo"></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md margin-top-tb info-footer-mb mr-footer">
-                <div class="row mt-5">
-                    <p class="footer-title">Acerca de</p>
-                    <div class="mb-3">
-                        <ul class="list-unstyled p-0 mb-5">
-                            <li class="mt-3"><a class="nav-link footer-info" href="#">Equipo</a></li>
-                            <li class="mt-4"><a class="nav-link footer-info" href="#">Términos</a></li>
-                            <li class="mt-4"><a class="nav-link footer-info" href="#">Únete</a></li>
-                            <li class="mt-4"><a class="nav-link footer-info" href="#">Visión</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>    
-    </footer>
-    <!--Footer information end-->
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
@@ -373,6 +321,12 @@
 
      <!-- main script -->
      <script src="./js/main.js"></script>
+
+     <!-- components script -->
+     <script src="./js/components/RecipeDetails.js"></script>
+     <script src="./js/components/HeaderNav.js"></script>
+     <script src="./js/components/FooterComponent.js"></script>
+
 
     <!-- mounted, se verifica que la app fue cargada, ref a la aplicacion -->
     <script>
