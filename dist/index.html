@@ -165,7 +165,6 @@
 
         componente de información receta -->
         
-
          <!-- seccion del header -->
 
          <header-nav session="Iniciar Sesión" register="Registrarse" image_identifier="./images/identificador.png" image_user="./images/icono-usuario.png"></header-nav>
@@ -186,14 +185,8 @@
                         <li class="nav-item ul-adjust">
                             <a class="btn-menu" href="#">Categorías</a>
                             <ul class="nav-background-color list-unstyled">
-                                <li>
-                                    <a class='header-subtext mt-3' href='recipes.php'>Almuerzo</a>
-                                </li>
-                                <li>
-                                    <a class='header-subtext mt-3' href='recipes.php'>Bebidas</a>
-                                </li>
-                                <li>
-                                    <a class='header-subtext mt-3' href='recipes.php'>Desayuno</a>
+                                <li v-for="(category, index) in categories">
+                                    <category-menu :category="category.name" v-on:selectedcategory="onClickSelectedCategory"></category-menu>
                                 </li>
                             </ul>
                         </li>
@@ -203,14 +196,8 @@
                         <li class="nav-item ul-adjust">
                             <a class="btn-menu" href="#">Niveles</a>
                             <ul class="nav-background-color list-unstyled">
-                                <li>
-                                    <a class='header-subtext mt-3' href='recipes.php'>Fácil</a>
-                                </li>
-                                <li>
-                                    <a class='header-subtext mt-3' href='recipes.php'>Intermedio</a>
-                                </li>
-                                <li class='header-no-item'>
-                                    <a class='header-subtext mt-3' href='recipes.php'>Avanzado</a>
+                                <li v-for="(level, index) in levels">
+                                    <level-menu :level="level.name" v-on:selectedlevel="onClickSelectedLevel"></level-menu>
                                 </li>
                             </ul>
                         </li>
@@ -220,14 +207,8 @@
                         <li class="nav-item ul-adjust">
                             <a class="btn-menu" href="#">Ocasiones</a>
                             <ul class="nav-background-color list-unstyled">
-                                <li>
-                                    <a class='header-subtext mt-3' href='recipes.php'>Todas</a>
-                                </li>
-                                <li class='header-no-item'>
-                                    <a class='header-subtext mt-3' href='recipes.php'>Día del padre</a>
-                                </li>
-                                <li class='header-no-item'>
-                                    <a class='header-subtext mt-3' href='recipes.php'>Día de la madre</a>
+                                <li v-for="(ocassion, index) in ocassion">
+                                    <ocassion-menu :ocassion="ocassion.name" v-on:selectedocassion="onClickSelectedOcassion"></ocassion-menu>
                                 </li>
                             </ul>
                         </li>

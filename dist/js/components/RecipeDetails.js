@@ -1,62 +1,7 @@
 app.component('recipe-details',{
 
     props:{
-        name:{
-            type: String,
-            default: "Default name"   
-        },
-        image:{
-            type: String,
-            default: "Default image"   
-        },
-        preparation_time:{
-            type: String,
-            default: "Default time"  
-        },
-        cook_time:{
-            type: String,
-            default: "Default time" 
-        },
-        total_time:{
-            type: String,
-            default: "Default time" 
-         },
-         category:{
-            type: String,
-            default: "Default category" 
-         },
-         portions:{
-            type: String,
-            default: "Default portions" 
-          },
-          level:{
-            type: String,
-             default: "Default level" 
-          },
-          occasion:{
-            type: String,
-             default: "Default occasion" 
-          },
-          likes:{
-            type: Number,
-             default: 1 
-          },
-          featured_recipe:{
-            type: String,
-            default: "Default featured recipe" 
-         },
-         description:{
-          type: String,
-           default: "Default description" 
-        },
-        ingredients:{
-          type: String,
-           default: "Default ingredients" 
-        },
-        instructions:{
-          type: String,
-           default: "Default instructions" 
-        },
+       
 
     },
 
