@@ -43,26 +43,8 @@ const app = Vue.createApp({
     },
 
     methods: { //area donde se establecen todas las funciones
-       /* onClickLike(index){
-           // console.log("btn-click");
-           //this.likes += 1;
-           //console.log("index=" + index);
-
-           this.recipes[index].likes += 1;
-
-        },
-
-        onClickUnLike(index){
-           // if(this.likes > 0) this.likes -= 1;
-           if(this.recipes[index].likes > 0) this.recipes[index].likes -= 1;
-        },*/
-        
+     
         onClickCategory(category){
-           // console.log("category " + category);
-
-           //FILTER hace el recorrido de busqueda para revisar el array y filtrar lo que se necesita
-
-           //saber la categoria que estan enviando para guardarla ,se envia todo a allrecipes y despues se filtra
 
            if(category =="All"){
                 this.recipes = this.all_recipes;
@@ -87,7 +69,7 @@ const app = Vue.createApp({
         onClickPrev(){
             this.selectedIndex--;
             if(this.selectedIndex < 0){
-                this.selectedIndex = this.recipes.length - 1;;
+                this.selectedIndex = this.recipes.length-1;;
             }
         },
 

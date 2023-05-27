@@ -35,140 +35,12 @@
 <body class="container br-mv">
     <section id="app" class="col margin-tb">
         
-        <!-- Modal -->
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog modal-fullscreen modal-tb">
-                <div class="modal-content"> 
-                    <div class="modal-header">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
+        <!-- componente de información receta -->
+        <recipe-details :name="recipe.name" :image="recipe.image" :preparation_time="recipe.preparation_time" :cook_time="recipe.cook_time" :total_time="recipe.total_time" :category="recipe.category" :portions="recipe.portions" :level="recipe.level" :occasion="recipe.occasion" :likes="recipe.likes"  :description="recipe.description" :ingredients="recipe.ingredients" :instructions="recipe.instructions" v-on:prevrecipe="onClickPrev" v-on:nextrecipe="onClickNext"></recipe-details>
+        <!-- componente de información receta -->
 
-                    <div class="modal-header justify-content-center">
-                        <p class="text-titles">Información receta</p>
-                    </div>
-            
-                    <div class="modal-body">
-                        <p class="position-absolute featured-badge">Destacada</p>
-                        <img class="img-fluid d-block m-auto img-fitscreeen img-modal" v-bind:src="recipes[selectedIndex].image" alt="{{ recipes[selectedIndex].name }}">
-                      
-                        <h1 class="modal-title text-info-name text-center mt-5" id="staticBackdropLabel">{{ recipes[selectedIndex].name }}</h1>
-
-                        <div class="card-color mb-5">
-                            <section class="row mt-5 mb-icons margin-modal">
-
-                                <div class="mt-2 col-md">
-                                    <h3 class="text-recipe-label m-4">Tpo. preparación:</h3>
-                                    <p class="text-info m-4">{{ recipes[selectedIndex].preparation_time }}</p>
-                                  
-                                </div>
-                
-                                <div class="mt-2 col-md ">
-                                    <h3 class="text-recipe-label m-4">Tpo. cocción:</h3>
-                                    <p class="text-info m-4">{{ recipes[selectedIndex].cook_time }}</p>
-                                </div>
-                
-                                <div class="mt-2 col-md">
-                                    <h3 class="text-recipe-label m-4">Tpo. total:</h3>
-                                    <p class="text-info m-4">{{ recipes[selectedIndex].total_time }}</p>
-                                </div>
-                            </section>
-    
-                            <section class="row mt-1 mb-icons margin-modal">
-    
-                                <div class="col-md">
-                                    <h3 class="text-recipe-label m-4">Categoría:</h3>
-                                    <p class="text-info m-4">{{ recipes[selectedIndex].category }}</p>
-                                  
-                                </div>
-                
-                                <div class="col-md">
-                                    <h3 class="text-recipe-label m-4">Porciones:</h3>
-                                    <p class="text-info m-4">{{ recipes[selectedIndex].portions }}</p>
-                                </div>
-                
-                                <div class="col-md">
-                                    <h3 class="text-recipe-label m-4">Nivel complejidad:</h3>
-                                    <p class="text-info m-4">{{ recipes[selectedIndex].level }}</p>
-                                </div>
-                            </section>
-    
-                            <section class="row mt-1 mb-icons margin-modal">
-    
-                                <div class="col-md-4 mb-2 ">
-                                    <h3 class="text-recipe-label m-4">Ocasión:</h3>
-                                    <p class="text-info m-4">{{ recipes[selectedIndex].occasion }}</p>
-                                  
-                                </div>
-                
-                                <div class="col-md-4 mb-2">
-                                    <h3 class="text-recipe-label m-4">Cantidad de votos:</h3>
-                                    <p class="text-info m-4">{{ recipes[selectedIndex].likes }}</p>
-                                </div>
-
-                                <div class="col-md-4 mb-2">
-                                    <h3 class="text-recipe-label m-4">Receta destacada:</h3>
-                                    <p class="text-info m-4">Sí</p>
-                                </div>
-                
-                            </section>
-
-                        </div>
-
-                        <div class="row margin-modal padding-right-info">
-                            <h3 class="text-info-name mt-3 ml-align-text">Descripción:</h3>
-                            <p class="text-info-recipe mt-2 ml-align-text">{{ recipes[selectedIndex].description }}</p>
-    
-                            <h3 class="text-info-name mt-3 ml-align-text">Ingredientes:</h3>
-                            <p class="text-info-recipe mt-2 ml-align-text">{{ recipes[selectedIndex].ingredients }}</p>
-    
-                            <h3 class="text-info-name mt-3 ml-align-text">Instrucciones:</h3>
-                            <p class="text-info-recipe mt-2 mb-1 ml-align-text">{{ recipes[selectedIndex].instructions }}</p>
-                            
-                        </div>
-                    
-                        <div class="text-center mt-2 mb-5">
-                            <div class="justify-content-center">
-                                <a href="likes.php"
-                                class="btn-large d-inline-block mt-5 mb-5 p-1">Me gusta</a>
-                                <a href="likes.php"
-                                class="btn-large d-inline-block ms-5 p-1 margin-button-mb ml-tb">Descargar</a>
-                            </div>
-                            
-                            <div class="modal-footer justify-content-center">
-                                <p class="text-titles mt-2">Recetas relacionadas</p>
-                            </div>
-                             
-                            <div class="main-carousel main-carousel-mb mt-5 mb-2" data-flickity='{ "cellAlign": "center", "contain": true }'>
-                                <div class="carousel-cell"><a class="nav-link topnav-link" href="informacion-receta.html"><img class="border border-4 border-danger rounded carrousel-width" src="./images/receta-10.png" alt="receta1"><h4 class="text-center mt-3 mb-3 carrousel-text">Almuerzo</h4><p class="text-recipe-name">Arroz con pollo</p><p class="mb-3 text-recipe-level">Fácil</p></a><button class="btn btn-danger">Ver receta</button></div>
-                                <div class="carousel-cell"><a class="nav-link topnav-link" href="informacion-receta.html"><img class="border border-4 border-danger rounded carrousel-width" src="./images/receta-10.png" alt="receta1"><h4 class="text-center mt-3 mb-3 carrousel-text">Bebida</h4><p class="text-recipe-name">Arroz con pollo</p><p class="mb-3 text-recipe-level">Fácil</p></a><button class="btn btn-danger">Ver receta</button></div>
-                                <div class="carousel-cell"><a class="nav-link topnav-link" href="informacion-receta.html"><img class="border border-4 border-danger rounded carrousel-width" src="./images/receta-10.png" alt="receta1"><h4 class="text-center mt-3 mb-3 carrousel-text">Desayuno</h4><p class="text-recipe-name">Arroz con pollo</p><p class="mb-3 text-recipe-level">Fácil</p></a><button class="btn btn-danger">Ver receta</button></div> 
-                            </div>
-                        </div>
-                    </div>
-                    
-                    
-                    <div class="modal-footer">
-                        <button type="button" class="btn-modal" v-on:click="onClickPrev()" >Anterior</button>
-
-                        <button type="button" class="btn-modal" v-on:click="onClickNext()" >Siguiente</button>
-                        
-                        <button type="button" class="btn-modal" data-bs-dismiss="modal">Cerrar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal -->
-
-          <!-- componente de información receta
-
-        <recipe-details :name="recipes.name" :image="recipes.image" : preparation_time="recipes. preparation_time" :cook_time="recipes.cook_time" :total_time="recipes.total_time" :category="recipes.category" :portions="recipes.portions" :level="recipes.level" :occasion="recipes.occasion" :likes="recipes.likes" :featured_recipe="recipes.featured_recipe" :description="recipes.description" :ingredients="recipes.ingredients" :instructions="recipes.instructions" v-on:prevrecipe="onClickPrev" v-on:nextrecipe="onClickNext"></recipe-details>
-
-        componente de información receta -->
-        
          <!-- seccion del header -->
-
          <header-nav session="Iniciar Sesión" register="Registrarse" image_identifier="./images/identificador.png" image_user="./images/icono-usuario.png"></header-nav>
-         
          <!-- seccion del header  final-->
 
         <!-- Navigation menu-->
@@ -185,9 +57,9 @@
                         <li class="nav-item ul-adjust">
                             <a class="btn-menu" href="#">Categorías</a>
                             <ul class="nav-background-color list-unstyled">
-                                <li v-for="(category, index) in categories">
+                                 <!-- <li v-for="(category, index) in categories">
                                     <category-menu :category="category.name" v-on:selectedcategory="onClickSelectedCategory"></category-menu>
-                                </li>
+                                </li>-->
                             </ul>
                         </li>
                     </ul>
@@ -196,9 +68,9 @@
                         <li class="nav-item ul-adjust">
                             <a class="btn-menu" href="#">Niveles</a>
                             <ul class="nav-background-color list-unstyled">
-                                <li v-for="(level, index) in levels">
+                               <!-- <li v-for="(level, index) in levels">
                                     <level-menu :level="level.name" v-on:selectedlevel="onClickSelectedLevel"></level-menu>
-                                </li>
+                                </li>-->
                             </ul>
                         </li>
                     </ul>
@@ -207,16 +79,16 @@
                         <li class="nav-item ul-adjust">
                             <a class="btn-menu" href="#">Ocasiones</a>
                             <ul class="nav-background-color list-unstyled">
-                                <li v-for="(ocassion, index) in ocassion">
+                               <!--   <li v-for="(ocassion, index) in ocassion">
                                     <ocassion-menu :ocassion="ocassion.name" v-on:selectedocassion="onClickSelectedOcassion"></ocassion-menu>
-                                </li>
+                                </li>-->
                             </ul>
                         </li>
                     </ul>
                     
                     <form class="d-flex searcher-tb" role="search">
                         <input class="search-bar ps-4 ul-adjust" type="search" placeholder="Buscar receta..." aria-label="Search">
-                        <button class="search-btn ul-adjust" type="submit"><img src="./images/lupa.png" alt="lupa"></button>
+                        <search-button v-on:selectedsearch="onClickSearchBar"></search-button>
                     </form>    
                 </div>
             </nav>
@@ -240,7 +112,7 @@
 
             <section class="row mt-2 padding-card grid-tb">
                 <div v-for="(item, index) in recipes" class="col-2 mt-3 mx-5 mt-2 px-5">
-                    <best-recipe-card :image="item.image" :category="item.category" :name="item.name" :level="item.level"></best-recipe-card>   
+                    <best-recipe-card :image="item.image" :category="item.category" :name="item.name" :level="item.level" :index="item.id" v-on:recipedetails="onClickRecipeDetails"></best-recipe-card>   
                 </div> 
             </section>
 
@@ -255,7 +127,7 @@
 
             <section class="row mt-2 padding-card grid-tb">
                 <div v-for="(item, index) in recipes" class="col-2 mt-3 mx-5 mt-2 px-5">
-                    <new-recipes-card :image="item.image" :category="item.category" :name="item.name" :ingredients="item.ingredients" :level="item.level"></new-recipes-card>  
+                    <new-recipes-card :image="item.image" :category="item.category" :name="item.name" :ingredients="item.ingredients" :level="item.level" :index="item.id" v-on:recipedetails="onClickRecipeDetails"></new-recipes-card>  
                  </div> 
             </section>
 
@@ -271,8 +143,13 @@
         
     </section>
 
+    <!-- custom events components -->
+    <script src="https://unpkg.com/mitt/dist/mitt.umd.js"></script>
 
+    <!-- Axios - API recipes -->   
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
+     <!-- aos library -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <!-- Carousel -->
@@ -282,7 +159,7 @@
      <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> 
 
      <!-- main script -->
-     <script src="./js/main.js"></script>
+     <script src="./js/component.js"></script>
 
      <!-- components script -->
      <script src="./js/components/RecipeDetails.js"></script>
@@ -291,6 +168,7 @@
      <script src="./js/components/BestRecipeCard.js"></script>
      <script src="./js/components/FooterComponent.js"></script>
      <script src="./js/components/NewRecipesCard.js"></script>
+     <script src="./js/components/Search.js"></script>
 
 
     <!-- mounted, se verifica que la app fue cargada, ref a la aplicacion -->

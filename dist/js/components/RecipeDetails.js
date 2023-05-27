@@ -1,7 +1,69 @@
 app.component('recipe-details',{
 
     props:{
+        name:{
+            type: String,
+            default: "default",
+        },
+        image:{
+            type: String,
+            default: "default",
+        },
+
+        preparation_time:{
+            type: String,
+            default: "default",
+        },
+
+        cook_time:{
+            type: String,
+            default: "default",
+        },
+
+        total_time:{
+            type: String,
+            default: "default",
+        },
+
+        category:{
+            type: String,
+            default: "default",
+        },
+
+        portions:{
+            type: Number,
+            default: 1,
+        },
+
+        level:{
+            type: String,
+            default: "default",
+        },
+
+        occasion:{
+            type: String,
+            default: "default",
+        },
+
+        description:{
+            type: String,
+            default: "default",
+        },
        
+        ingredients:{
+            type: String,
+            default: "default",
+        },
+
+        instructions:{
+            type: String,
+            default: "default",
+        },
+
+        likes:{
+            type: Number,
+            default: 1
+        },
 
     },
 
@@ -13,16 +75,16 @@ app.component('recipe-details',{
     },
 
     methods: {
+        
         onClickPrev(){
-            console.log("prev");
-            this.$emit('prevrecipe', this.index);
+            //console.log("Anterior");
+            this.$emit('prevrecipe', this.index); 
         },
 
         onClickNext(){
-            console.log("next");
+           // console.log("Siguiente");
             this.$emit('nextrecipe', this.index);
         }
-       
     },
   
     template: 
@@ -142,9 +204,9 @@ app.component('recipe-details',{
                 
                 
                 <div class="modal-footer">
-                    <button type="button" class="btn-modal" v-on:click="onClickPrev()" >Anterior</button>
+                    <button type="button" class="btn-modal" v-on:click="onClickPrev()">Anterior</button>
 
-                    <button type="button" class="btn-modal" v-on:click="onClickNext()" >Siguiente</button>
+                    <button type="button" class="btn-modal" v-on:click="onClickNext()">Siguiente</button>
                     
                     <button type="button" class="btn-modal" data-bs-dismiss="modal">Cerrar</button>
                 </div>
@@ -152,7 +214,5 @@ app.component('recipe-details',{
         </div>
     </div>
     <!-- Modal -->
-    `
-
-   
+    `  
 })

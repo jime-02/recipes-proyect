@@ -20,12 +20,32 @@ app.component('best-recipe-card', {
             default: "Default level"
         },
  
+        index:{
+            type: Number 
+        }
+    },
+
+    mounted() {
+        this.recipe_likes = this.likes;
     },
 
     methods: {
+        onClickLike(){
+            //console.log("LIKE");
+            this.$emit('recipelike', this.index);
+        },
+
+        onClickUnlike(){
+            //console.log("UNLIKE");
+            this.$emit('recipeunlike', this.index);
+        },
+
+        onClickViewRecipe(){
+            console.log("VIEW");
+            this.$emit('recipedetails', this.index);
+        }
        
     },
-
     template: 
 
     /*html*/
@@ -37,7 +57,7 @@ app.component('best-recipe-card', {
             <h5 class="mb-3 card-title overflow-hidden text-recipe-name">{{ name }}</h5>
             <p class="mb-3 text-recipe-level">{{ level }}</p>
 
-            <button class="btn-view mt-2 mb-2 align-middle" v-on:click="onClickViewRecipe(index)" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Ver receta</button>
+            <button class="btn-view mt-2 mb-2 align-middle" v-on:click="onClickViewRecipe()" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Ver receta</button>
         </div>
     </div> 
   ` 

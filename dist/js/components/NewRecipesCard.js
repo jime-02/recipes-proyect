@@ -24,10 +24,32 @@ app.component('new-recipes-card', {
             type: String,
             default: "Default ingredients"
         },
+
+        index:{
+            type: Number 
+        }
  
     },
 
+    mounted() {
+        this.recipe_likes = this.likes;
+    },
+
     methods: {
+        onClickLike(){
+            //console.log("LIKE");
+            this.$emit('recipelike', this.index);
+        },
+
+        onClickUnlike(){
+            //console.log("UNLIKE");
+            this.$emit('recipeunlike', this.index);
+        },
+
+        onClickViewRecipe(){
+            //console.log("VIEW");
+            this.$emit('recipedetails', this.index);
+        }
        
     },
 
@@ -43,7 +65,7 @@ app.component('new-recipes-card', {
             <p class="card-text overflow-hidden text-recipe-description">{{ ingredients }}</p>
             <p class="mb-3 text-recipe-level">{{ level }}</p>
 
-            <button class="btn-view mt-2 mb-4 align-middle" v-on:click="onClickViewRecipe(index)" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Ver receta</button>
+            <button class="btn-view mt-2 mb-4 align-middle" v-on:click="onClickViewRecipe()" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Ver receta</button>
         </div>
     </div>     
   ` 
