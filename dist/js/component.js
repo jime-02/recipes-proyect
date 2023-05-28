@@ -10,7 +10,9 @@ const app = Vue.createApp({
             recipe: {},
             visibleRecipes: 8,
             visibleRecipesTop: 8, // Número de recetas visibles inicialmente
-            increment: 8, // Número de recetas visibles inicialmente
+            increment: 8, // incremento de recetas visibles
+            bestRecipes:[],
+            userRecipesArray:[],
 
             categories:[ //se establece relacion de ir a buscar el filtro de cada una de las categorias 
                 { name: 'main course'}, 
@@ -37,16 +39,16 @@ const app = Vue.createApp({
                
             ],
 
-            bestRecipes:[]
         }
     },
 
     mounted:function(){
         this.all_recipes = this.recipes; //que guarde una copia de los datos
     
+        //axios para obtener recetas random y mostrar en el card de las recetas generales
         axios({
             method:'get',
-            url:'https://api.spoonacular.com/recipes/random?apiKey=002b7622080b4f96ba9094c9153e289c&number=50'
+            url:'https://api.spoonacular.com/recipes/random?apiKey=d6ce4785dd554805a3e5eaea30b74d28&number=50'
         })
         .then(
             (response) => {
@@ -79,17 +81,18 @@ const app = Vue.createApp({
         .catch(
             error => console.log(error)
         );
-        //obtener recetas del API 
+
+        //obtener recetas del API para el card de top 10 
         axios({
             method:'get',
-            url:'https://api.spoonacular.com/recipes/complexSearch?type=main course&apiKey=002b7622080b4f96ba9094c9153e289c&number=10'
+            url:'https://api.spoonacular.com/recipes/complexSearch?type=main course&apiKey=d6ce4785dd554805a3e5eaea30b74d28&number=10'
         })
         .then(
             (response) => {
                 let items = response.data.results;
                 console.log(items);
 
-                this.bestRecipes = []; //esta limpiando el array
+                this.bestRecipes = []; 
                 
                 items.forEach( (element) => {
                     this.bestRecipes.push({
@@ -120,23 +123,21 @@ const app = Vue.createApp({
 
     methods: {
 
+        //metodo para mostrar solamente 8 recetas en el card top 10 y que se desplieguen más cuando se da "ver mas"
         showMoreTop() {
             this.visibleRecipesTop += this.increment;
         },
 
+         //metodo para mostrar solamente 8 recetas en el card recetas y que se desplieguen más cuando se da "ver mas"
         showMore() {
              this.visibleRecipes += this.increment;
          },
 
-        onClickRecipeLike(index){
-            this.recipes[index].likes += 1; 
-        },
-
-          onClickViewRecipe(index){
+        onClickViewRecipe(index){
             this.selectedIndex = index;
         },
 
-        onClickPrev(){
+     /*   onClickPrev(){
             this.selectedIndex--;
             if(this.selectedIndex < 0){
                 this.selectedIndex = this.recipes.length -1;
@@ -150,13 +151,18 @@ const app = Vue.createApp({
             }
         },
 
+        onClickRecipeLike(index){
+            this.recipes[index].likes += 1; 
+        },*/
+
+        // ver los detalles de la receta
         onClickRecipeDetails(index){
             console.log("Recipe id " + index)
 
             //get recipes details
             axios({
                 method:'get', 
-                url:'https://api.spoonacular.com/recipes/'+index+'/information?includeNutrition=false&apiKey=002b7622080b4f96ba9094c9153e289c'
+                url:'https://api.spoonacular.com/recipes/'+index+'/information?includeNutrition=false&apiKey=d6ce4785dd554805a3e5eaea30b74d28'
             })
             .then(
                 (response) => {
@@ -191,14 +197,92 @@ const app = Vue.createApp({
             );
         },
 
-      
+        //guardar coleccion de receta del usuario
+        saveRecipeUser(index){
+            console.log("recipe id save recipe- " + index);
+        
+            axios({
+                method:'get', 
+                url:'https://api.spoonacular.com/recipes/'+index+'/information?includeNutrition=false&apiKey=d6ce4785dd554805a3e5eaea30b74d28'
+            })
+            .then(
+                (response) => {
+                    let items = response.data;
+                    console.log(items);
+                    
+                        this.userRecipesArray.push({
+                            id: items.id, 
+                            image: items.image,
+                            name: items.title,
+                            preparation_time: items.preparationMinutes + " mins",
+                            cook_time: items.cookingMinutes + " mins",
+                            total_time: items.readyInMinutes + " mins",
+                            category: items.dishTypes[1],
+                            portions: items.servings,
+                            level: "Easy",
+                            occasion: items.occasions,
+                            likes: items.aggregateLikes, 
+                            description: items.summary,
+                            ingredients: items.extendedIngredients, 
+                            instructions: items.instructions,
+                        })
 
+                }
+            )
+            .catch(
+                error => console.log(error)
+            );
+        },
+
+        //metodo para el buscador por keyword 
+        onClickSearchRecipe(){
+
+            const searchTerm = this.$refs.searchInput.value;
+    
+            //get recipe by category FALTA
+            axios({
+                method: 'get',
+                url: `https://api.spoonacular.com/recipes/complexSearch?query=${searchTerm}&apiKey=d6ce4785dd554805a3e5eaea30b74d28`
+              })
+
+            .then(
+                (response) => {
+                    let items = response.data.results;
+                    console.log(items);
+                    
+                    items.forEach( (element) => {
+                        this.searchRecipes.push({
+                            id: element.id, 
+                            image: element.image,
+                            name: element.title,
+                            preparation_time: element.preparationMinutes + " mins",
+                            cook_time: element.cookingMinutes + " mins",
+                            total_time: element.readyInMinutes + " mins",
+                            category: element.dishTypes,
+                            portions: element.servings,
+                            level: "Easy",
+                            occasion: element.occasions,
+                            likes: element.aggregateLikes, 
+                            description: element.summary,
+                            ingredients: element.extendedIngredients, 
+                            instructions: element.instructions,
+                        })//push metodo de array para meter datos
+                    });
+                    //console.log(this.categories);
+                }
+            )
+            .catch(
+                error => console.log(error)
+            );
+        },
+
+        //que se muestre la seleccion del filtro
         onClickSelectedCategory(category){
     
             //get recipe by category FALTA
             axios({
                 method:'get',
-                url:'https://api.spoonacular.com/recipes/complexSearch?type='+category+'&apiKey=002b7622080b4f96ba9094c9153e289c'
+                url:'https://api.spoonacular.com/recipes/complexSearch?type='+category+'&apiKey=d6ce4785dd554805a3e5eaea30b74d28'
             })
             .then(
                 (response) => {
@@ -232,47 +316,6 @@ const app = Vue.createApp({
                 error => console.log(error)
             );
         },
-
-        onClickSearchRecipe(){
-
-            const searchTerm = this.$refs.searchInput.value;
-    
-            //get recipe by category FALTA
-            axios({
-                method: 'get',
-                url: `https://api.spoonacular.com/recipes/complexSearch?query=${searchTerm}&apiKey=002b7622080b4f96ba9094c9153e289c`
-              })
-
-            .then(
-                (response) => {
-                    let items = response.data.results;
-                    console.log(items);
-                    
-                    items.forEach( (element) => {
-                        this.searchRecipes.push({
-                            id: element.id, 
-                            image: element.image,
-                            name: element.title,
-                            preparation_time: element.preparationMinutes + " mins",
-                            cook_time: element.cookingMinutes + " mins",
-                            total_time: element.readyInMinutes + " mins",
-                            category: element.dishTypes,
-                            portions: element.servings,
-                            level: "Easy",
-                            occasion: element.occasions,
-                            likes: element.aggregateLikes, 
-                            description: element.summary,
-                            ingredients: element.extendedIngredients, 
-                            instructions: element.instructions,
-                        })//push metodo de array para meter datos
-                    });
-                    //console.log(this.categories);
-                }
-            )
-            .catch(
-                error => console.log(error)
-            );
-        }
     },
 })
 

@@ -36,7 +36,7 @@
     <section id="app" class="col margin-tb">
         
         <!-- componente de información receta -->
-        <recipe-details :name="recipe.name" :image="recipe.image" :preparation_time="recipe.preparation_time" :cook_time="recipe.cook_time" :total_time="recipe.total_time" :category="recipe.category" :portions="recipe.portions" :level="recipe.level" :occasion="recipe.occasion" :likes="recipe.likes" :description="recipe.description" :ingredients="recipe.ingredients" :instructions="recipe.instructions" v-on:prevrecipe="onClickPrev" v-on:nextrecipe="onClickNext"></recipe-details>
+        <recipe-details :name="recipe.name" :image="recipe.image" :preparation_time="recipe.preparation_time" :cook_time="recipe.cook_time" :total_time="recipe.total_time" :category="recipe.category" :portions="recipe.portions" :level="recipe.level" :occasion="recipe.occasion" :likes="recipe.likes" :description="recipe.description" :ingredients="recipe.ingredients" :instructions="recipe.instructions" v-on:prevrecipe="onClickPrev" v-on:nextrecipe="onClickNext" :index="recipe.id" v-on:colectionrecipe="saveRecipeUser"></recipe-details>
         <!-- componente de información receta -->
 
          <!-- seccion del header -->
@@ -111,11 +111,12 @@
             
             <section class="row mt-2 padding-card grid-tb">
                 <div v-for="(item, index) in searchRecipes" class="col-2 mt-3 mx-5 mt-2 px-5">
-                    <p class="text-titles mb-2 mt-3 mt-tb">Recetas encontradas:</p>
+                    <p class="text-titles mb-2 mt-3 mt-tb">Se encontró:</p>
                     <best-recipe-card :image="item.image" :category="item.category" :name="item.name" :level="item.level" :index="item.id" v-on:recipedetails="onClickRecipeDetails"></best-recipe-card>   
                 </div> 
             </section>
         </div> 
+        <!-- search recipes -->
 
         <!-- Best recipes -->
         <div class="row mt-5 justify-content-center">
@@ -145,6 +146,22 @@
             <button class="btn-large mt-5 mb-2 zoom-button" @click="showMore">Ver más</button>
         </div>  
         <!-- New recipes end -->
+
+
+       <!-- colection recipes -->
+        <div class="row mt-5 justify-content-center">
+            <p class="text-titles mb-2 mt-3 mt-tb">Recetas coleccionadas</p>
+
+            <section class="row mt-2 padding-card grid-tb">
+                <div v-for="(item, index) in userRecipesArray" class="col-2 mt-3 mx-5 mt-2 px-5">
+                    <new-recipes-card :image="item.image" :category="item.category" :name="item.name" :level="item.level" :index="item.id" v-on:recipedetails="onClickRecipeDetails"></new-recipes-card>   
+                </div> 
+            </section>
+
+            <button class="btn-large mt-5 mb-4 zoom-button">Ver más</button>
+
+        </div>  
+        <!-- colection recipes --> 
 
          <!--Footer information-->
 

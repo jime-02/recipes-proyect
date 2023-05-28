@@ -65,6 +65,10 @@ app.component('recipe-details',{
             default: 1
         },
 
+        index:{
+            type: Number
+        },
+
     },
 
     //custom libreria
@@ -74,20 +78,37 @@ app.component('recipe-details',{
       })
     },
 
+    data() {
+        return {
+          localLikes: 0,
+          showMessageCollection: false,
+        };
+    },
+
     methods: {
         
-        onClickPrev(){
-            //console.log("Anterior");
+       /* onClickPrev(){
+            console.log("Anterior");
             this.$emit('prevrecipe', this.index); 
         },
 
         onClickNext(){
-           // console.log("Siguiente");
+            console.log("Siguiente");
             this.$emit('nextrecipe', this.index);
+        },*/
+
+        saveRecipeUser(){
+            this.$emit('colectionrecipe', this.index);
+
+            this.showMessageCollection = true; // Mostrar el mensaje para coleccionar la receta 
+            setTimeout(() => {
+                this.showMessageCollection = false; 
+            }, 5000);
         },
 
-        onClickRecipeLike(index){
-            this.recipes[index].likes += 1; 
+        onClickRecipeLike(){
+            this.localLikes += 1;
+           //this.$emit('recipelike', this.index);
         },
 
     },
@@ -163,7 +184,7 @@ app.component('recipe-details',{
             
                             <div class="col-md-4 mb-2">
                                 <h3 class="text-recipe-label m-4">Cantidad de votos:</h3>
-                                <p class="text-info m-4">{{ likes }}</p>
+                                <p class="text-info m-4">{{ localLikes }}</p>
                             </div>
 
                             <div class="col-md-4 mb-2">
@@ -189,12 +210,12 @@ app.component('recipe-details',{
                 
                     <div class="text-center mt-2 mb-5">
                         <div class="justify-content-center">
-                            <a href="likes.php"
-                            class="btn-large d-inline-block mt-5 mb-5 p-1" v-on:click="onClickRecipeLike()">Me gusta</a>
-                            <a href="likes.php"
-                            class="btn-large d-inline-block ms-5 p-1 margin-button-mb ml-tb">Coleccionar</a>
+                            <a class="btn-large d-inline-block mt-5 mb-5 p-1" v-on:click="onClickRecipeLike()">Me gusta</a>
+                            <a class="btn-large d-inline-block ms-5 p-1 margin-button-mb ml-tb" v-on:click="saveRecipeUser()">Coleccionar</a>
                         </div>
-                        
+
+                        <div v-if="showMessageCollection" class="alert alert-success fixed-bottom mb-0" role="alert">Se coleccionó la receta</div>
+
                         <div class="modal-footer justify-content-center">
                             <p class="text-titles mt-2">Recetas relacionadas</p>
                         </div>
@@ -209,9 +230,9 @@ app.component('recipe-details',{
                 
                 
                 <div class="modal-footer">
-                    <button type="button" class="btn-modal" v-on:click="onClickPrev()">Anterior</button>
+                   <!-- <button type="button" class="btn-modal" v-on:click="onClickPrev()">Anterior</button>
 
-                    <button type="button" class="btn-modal" v-on:click="onClickNext()">Siguiente</button>
+                    <button type="button" class="btn-modal" v-on:click="onClickNext()">Siguiente</button> -->
                     
                     <button type="button" class="btn-modal" data-bs-dismiss="modal">Cerrar</button>
                 </div>

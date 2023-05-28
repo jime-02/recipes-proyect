@@ -36,15 +36,6 @@ app.component('new-recipes-card', {
     },
 
     methods: {
-        onClickLike(){
-            //console.log("LIKE");
-            this.$emit('recipelike', this.index);
-        },
-
-        onClickUnlike(){
-            //console.log("UNLIKE");
-            this.$emit('recipeunlike', this.index);
-        },
 
         onClickViewRecipe(){
             //console.log("VIEW");
