@@ -96,6 +96,9 @@
         <!-- Navigation menu end-->
 
         <!-- Carousel-->
+       <!-- <div v-for="(item, index) in recipes">
+            <carrousel-card :image="item.image" :name="item.name" :index="item.id" v-on:recipedetails="onClickRecipeDetails"></carrousel-card>
+        </div>-->
         <div class="main-carousel width-carrousel" data-flickity='{ "cellAlign": "center", "contain": true }'>
             <div class="carousel-cell"><a class="nav-link topnav-link" href="informacion-receta.html"><img class="border border-4 border-danger rounded" src="./images/receta-10.png" alt="receta1"><h4 class="text-center mt-3 mb-3 carrousel-text">Almuerzo</h4></a></div>
             <div class="carousel-cell"><a class="nav-link topnav-link" href="informacion-receta.html"><img class="border border-4 border-danger rounded" src="./images/receta-10.png" alt="receta1"><h4 class="text-center mt-3 mb-3 carrousel-text">Bebida</h4></a></div>
@@ -104,22 +107,23 @@
             <div class="carousel-cell"><a class="nav-link topnav-link" href="informacion-receta.html"><img class="border border-4 border-danger rounded" src="./images/receta-10.png" alt="receta1"><h4 class="text-center mt-3 mb-3 carrousel-text">Postre</h4></a></div>
             <div class="carousel-cell"><a class="nav-link topnav-link" href="informacion-receta.html"><img class="border border-4 border-danger rounded" src="./images/receta-10.png" alt="receta1"><h4 class="text-center mt-3 mb-3 carrousel-text">Sopa</h4></a></div> 
         </div>
+        
         <!-- Carrousel end-->
 
         <!-- search recipes -->
-        <div class="row mt-5 justify-content-center">
-            
+        <div v-if="searchRecipes.length > 0" class="row mt-5 justify-content-center">
+            <p class="text-titles mb-2 mt-3 mt-tb">Se encontró:</p>
             <section class="row mt-2 padding-card grid-tb">
-                <div v-for="(item, index) in searchRecipes" class="col-2 mt-3 mx-5 mt-2 px-5">
-                    <p class="text-titles mb-2 mt-3 mt-tb">Se encontró:</p>
+                <div v-for="(item, index) in searchRecipes.slice(0, visibleRecipes)" class="col-2 mt-3 mx-5 mt-2 px-5">
                     <best-recipe-card :image="item.image" :category="item.category" :name="item.name" :level="item.level" :index="item.id" v-on:recipedetails="onClickRecipeDetails"></best-recipe-card>   
                 </div> 
             </section>
+            <button class="btn-large mt-5 mb-4 zoom-button" @click="showMoreSearch">Ver más</button>
         </div> 
         <!-- search recipes -->
 
         <!-- Best recipes -->
-        <div class="row mt-5 justify-content-center">
+        <div v-if="searchRecipes.length === 0" class="row mt-5 justify-content-center">
             <p class="text-titles mb-2 mt-3 mt-tb">Mejores recetas</p>
 
             <section class="row mt-2 padding-card grid-tb">
@@ -134,7 +138,7 @@
         <!-- Best recipes end -->
 
         <!-- New recipes -->
-        <div class="row mt-3 justify-content-center">
+        <div v-if="searchRecipes.length === 0" class="row mt-3 justify-content-center">
             <p class="text-titles mb-2 mt-4 mt-space">Lo más nuevo</p>
 
             <section class="row mt-2 padding-card grid-tb">
@@ -149,7 +153,7 @@
 
 
        <!-- colection recipes -->
-        <div class="row mt-5 justify-content-center">
+        <div v-if="userRecipesArray.length > 0" class="row mt-5 justify-content-center">
             <p class="text-titles mb-2 mt-3 mt-tb">Recetas coleccionadas</p>
 
             <section class="row mt-2 padding-card grid-tb">
@@ -196,6 +200,7 @@
      <script src="./js/components/BestRecipeCard.js"></script>
      <script src="./js/components/FooterComponent.js"></script>
      <script src="./js/components/NewRecipesCard.js"></script>
+     <script src="./js/components/Carrousel.js"></script>
 
 
 

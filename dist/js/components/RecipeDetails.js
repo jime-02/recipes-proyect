@@ -103,7 +103,7 @@ app.component('recipe-details',{
             this.showMessageCollection = true; // Mostrar el mensaje para coleccionar la receta 
             setTimeout(() => {
                 this.showMessageCollection = false; 
-            }, 5000);
+            }, 4000);
         },
 
         onClickRecipeLike(){
