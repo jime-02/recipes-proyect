@@ -36,7 +36,7 @@
     <section id="app" class="col margin-tb">
         
         <!-- componente de información receta -->
-        <recipe-details :name="recipe.name" :image="recipe.image" :preparation_time="recipe.preparation_time" :cook_time="recipe.cook_time" :total_time="recipe.total_time" :category="recipe.category" :portions="recipe.portions" :level="recipe.level" :occasion="recipe.occasion" :likes="recipe.likes"  :description="recipe.description" :ingredients="recipe.ingredients" :instructions="recipe.instructions" v-on:prevrecipe="onClickPrev" v-on:nextrecipe="onClickNext"></recipe-details>
+        <recipe-details :name="recipe.name" :image="recipe.image" :preparation_time="recipe.preparation_time" :cook_time="recipe.cook_time" :total_time="recipe.total_time" :category="recipe.category" :portions="recipe.portions" :level="recipe.level" :occasion="recipe.occasion" :likes="recipe.likes" :description="recipe.description" :ingredients="recipe.ingredients" :instructions="recipe.instructions" v-on:prevrecipe="onClickPrev" v-on:nextrecipe="onClickNext"></recipe-details>
         <!-- componente de información receta -->
 
          <!-- seccion del header -->
@@ -86,9 +86,9 @@
                         </li>
                     </ul>
                     
-                    <form class="d-flex searcher-tb" role="search">
-                        <input class="search-bar ps-4 ul-adjust" type="search" placeholder="Buscar receta..." aria-label="Search">
-                        <search-button v-on:selectedsearch="onClickSearchBar"></search-button>
+                    <form class="d-flex searcher-tb" role="search" @submit.prevent="onClickSearchRecipe">
+                        <input ref="searchInput" class="search-bar ps-4 ul-adjust" type="search" placeholder="Buscar receta..." aria-label="Search">
+                        <button class="search-btn ul-adjust" type="submit"><img src="./images/lupa.png" alt="lupa"></button>
                     </form>    
                 </div>
             </nav>
@@ -106,17 +106,28 @@
         </div>
         <!-- Carrousel end-->
 
+        <!-- search recipes -->
+        <div class="row mt-5 justify-content-center">
+            
+            <section class="row mt-2 padding-card grid-tb">
+                <div v-for="(item, index) in searchRecipes" class="col-2 mt-3 mx-5 mt-2 px-5">
+                    <p class="text-titles mb-2 mt-3 mt-tb">Recetas encontradas:</p>
+                    <best-recipe-card :image="item.image" :category="item.category" :name="item.name" :level="item.level" :index="item.id" v-on:recipedetails="onClickRecipeDetails"></best-recipe-card>   
+                </div> 
+            </section>
+        </div> 
+
         <!-- Best recipes -->
         <div class="row mt-5 justify-content-center">
             <p class="text-titles mb-2 mt-3 mt-tb">Mejores recetas</p>
 
             <section class="row mt-2 padding-card grid-tb">
-                <div v-for="(item, index) in recipes" class="col-2 mt-3 mx-5 mt-2 px-5">
+                <div v-for="(item, index) in bestRecipes.slice(0, visibleRecipesTop)" class="col-2 mt-3 mx-5 mt-2 px-5">
                     <best-recipe-card :image="item.image" :category="item.category" :name="item.name" :level="item.level" :index="item.id" v-on:recipedetails="onClickRecipeDetails"></best-recipe-card>   
                 </div> 
             </section>
 
-            <button class="btn-large mt-5 mb-4 zoom-button">Ver más</button>
+            <button class="btn-large mt-5 mb-4 zoom-button" @click="showMoreTop">Ver más</button>
 
         </div>   
         <!-- Best recipes end -->
@@ -126,12 +137,12 @@
             <p class="text-titles mb-2 mt-4 mt-space">Lo más nuevo</p>
 
             <section class="row mt-2 padding-card grid-tb">
-                <div v-for="(item, index) in recipes" class="col-2 mt-3 mx-5 mt-2 px-5">
+                <div v-for="(item, index) in recipes.slice(0, visibleRecipes)" class="col-2 mt-3 mx-5 mt-2 px-5">
                     <new-recipes-card :image="item.image" :category="item.category" :name="item.name" :ingredients="item.ingredients" :level="item.level" :index="item.id" v-on:recipedetails="onClickRecipeDetails"></new-recipes-card>  
                  </div> 
             </section>
 
-            <button class="btn-large mt-5 mb-2 zoom-button">Ver más</button>
+            <button class="btn-large mt-5 mb-2 zoom-button" @click="showMore">Ver más</button>
         </div>  
         <!-- New recipes end -->
 
@@ -168,7 +179,7 @@
      <script src="./js/components/BestRecipeCard.js"></script>
      <script src="./js/components/FooterComponent.js"></script>
      <script src="./js/components/NewRecipesCard.js"></script>
-     <script src="./js/components/Search.js"></script>
+
 
 
     <!-- mounted, se verifica que la app fue cargada, ref a la aplicacion -->

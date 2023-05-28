@@ -3,10 +3,14 @@ const app = Vue.createApp({
     data() {
         return {
 
+            searchRecipes:[],
             all_recipes:[],
             selectedIndex: 0,
             hasRecipes: true,
             recipe: {},
+            visibleRecipes: 8,
+            visibleRecipesTop: 8, // Número de recetas visibles inicialmente
+            increment: 8, // Número de recetas visibles inicialmente
 
             categories:[ //se establece relacion de ir a buscar el filtro de cada una de las categorias 
                 { name: 'main course'}, 
@@ -31,27 +35,64 @@ const app = Vue.createApp({
             //objetos
                 {id: 1, image:"", name: "", category: "", time: "", level: "", likes: 4, ingredients: "", instructions: "", description:"", portions:"", occasion:"", preparation_time:"", cook_time:"", total_time:""},
                
-            ]
+            ],
+
+            bestRecipes:[]
         }
     },
 
     mounted:function(){
         this.all_recipes = this.recipes; //que guarde una copia de los datos
     
-        //obtener recetas del API 
         axios({
             method:'get',
-            url:'https://api.spoonacular.com/recipes/complexSearch?type=main course&apiKey=93d548ce31d7411eaecf08e61cd0be2d'
+            url:'https://api.spoonacular.com/recipes/random?apiKey=002b7622080b4f96ba9094c9153e289c&number=50'
         })
         .then(
             (response) => {
-                let items = response.data.results;
+                let items = response.data.recipes;
                 console.log(items);
 
                 this.recipes = []; //esta limpiando el array
                 
                 items.forEach( (element) => {
                     this.recipes.push({
+                        id: element.id, 
+                        image: element.image,
+                        name: element.title,
+                        preparation_time: element.preparationMinutes + " mins",
+                        cook_time: element.cookingMinutes + " mins",
+                        total_time: element.readyInMinutes + " mins",
+                        category: element.dishTypes[0],
+                        portions: element.servings,
+                        level: "Easy",
+                        occasion: element.occasions,
+                        likes: element.aggregateLikes, 
+                        description: element.summary,
+                        ingredients: element.ingredientsList,  //corregir que aparezcan bien los datos
+                        instructions: element.instructions,
+                        
+                    })
+                });
+            }
+        )
+        .catch(
+            error => console.log(error)
+        );
+        //obtener recetas del API 
+        axios({
+            method:'get',
+            url:'https://api.spoonacular.com/recipes/complexSearch?type=main course&apiKey=002b7622080b4f96ba9094c9153e289c&number=10'
+        })
+        .then(
+            (response) => {
+                let items = response.data.results;
+                console.log(items);
+
+                this.bestRecipes = []; //esta limpiando el array
+                
+                items.forEach( (element) => {
+                    this.bestRecipes.push({
                         id: element.id, 
                         image: element.image,
                         name: element.title,
@@ -78,19 +119,44 @@ const app = Vue.createApp({
     }, 
 
     methods: {
+
+        showMoreTop() {
+            this.visibleRecipesTop += this.increment;
+        },
+
+        showMore() {
+             this.visibleRecipes += this.increment;
+         },
+
         onClickRecipeLike(index){
             this.recipes[index].likes += 1; 
         },
-        onClickRecipeUnlike(index){
-            if(this.recipes[index].likes > 0) this.recipes[index].likes -= 1;
+
+          onClickViewRecipe(index){
+            this.selectedIndex = index;
         },
+
+        onClickPrev(){
+            this.selectedIndex--;
+            if(this.selectedIndex < 0){
+                this.selectedIndex = this.recipes.length -1;
+            }
+        },
+
+        onClickNext(){
+            this.selectedIndex++;
+            if(this.selectedIndex >= this.recipes.length){
+                this.selectedIndex = 0;
+            }
+        },
+
         onClickRecipeDetails(index){
             console.log("Recipe id " + index)
 
             //get recipes details
             axios({
                 method:'get', 
-                url:'https://api.spoonacular.com/recipes/'+index+'/information?includeNutrition=false&apiKey=93d548ce31d7411eaecf08e61cd0be2d'
+                url:'https://api.spoonacular.com/recipes/'+index+'/information?includeNutrition=false&apiKey=002b7622080b4f96ba9094c9153e289c'
             })
             .then(
                 (response) => {
@@ -125,30 +191,14 @@ const app = Vue.createApp({
             );
         },
 
-        onClickViewRecipe(index){
-            this.selectedIndex = index;
-        },
-
-        onClickPrev(){
-            this.selectedIndex--;
-            if(this.selectedIndex < 0){
-                this.selectedIndex = this.recipes.length -1;
-            }
-        },
-
-        onClickNext(){
-            this.selectedIndex++;
-            if(this.selectedIndex >= this.recipes.length){
-                this.selectedIndex = 0;
-            }
-        },
+      
 
         onClickSelectedCategory(category){
     
             //get recipe by category FALTA
             axios({
                 method:'get',
-                url:'https://api.spoonacular.com/recipes/complexSearch?type='+category+'&apiKey=93d548ce31d7411eaecf08e61cd0be2d'
+                url:'https://api.spoonacular.com/recipes/complexSearch?type='+category+'&apiKey=002b7622080b4f96ba9094c9153e289c'
             })
             .then(
                 (response) => {
@@ -183,29 +233,30 @@ const app = Vue.createApp({
             );
         },
 
-        onClickSearchBar(){
+        onClickSearchRecipe(){
+
+            const searchTerm = this.$refs.searchInput.value;
     
             //get recipe by category FALTA
             axios({
-                method:'get',
-                url:'https://api.spoonacular.com/recipes/complexSearch?type=keyword&apiKey=93d548ce31d7411eaecf08e61cd0be2d'
-            })
+                method: 'get',
+                url: `https://api.spoonacular.com/recipes/complexSearch?query=${searchTerm}&apiKey=002b7622080b4f96ba9094c9153e289c`
+              })
+
             .then(
                 (response) => {
                     let items = response.data.results;
                     console.log(items);
-    
-                    this.recipes = []; //esta limpiando el array
                     
                     items.forEach( (element) => {
-                        this.recipes.push({
+                        this.searchRecipes.push({
                             id: element.id, 
                             image: element.image,
                             name: element.title,
                             preparation_time: element.preparationMinutes + " mins",
                             cook_time: element.cookingMinutes + " mins",
                             total_time: element.readyInMinutes + " mins",
-                            category: element.dishTypes[1],
+                            category: element.dishTypes,
                             portions: element.servings,
                             level: "Easy",
                             occasion: element.occasions,

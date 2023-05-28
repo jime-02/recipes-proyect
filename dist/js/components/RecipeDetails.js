@@ -84,7 +84,12 @@ app.component('recipe-details',{
         onClickNext(){
            // console.log("Siguiente");
             this.$emit('nextrecipe', this.index);
-        }
+        },
+
+        onClickRecipeLike(index){
+            this.recipes[index].likes += 1; 
+        },
+
     },
   
     template: 
@@ -185,9 +190,9 @@ app.component('recipe-details',{
                     <div class="text-center mt-2 mb-5">
                         <div class="justify-content-center">
                             <a href="likes.php"
-                            class="btn-large d-inline-block mt-5 mb-5 p-1">Me gusta</a>
+                            class="btn-large d-inline-block mt-5 mb-5 p-1" v-on:click="onClickRecipeLike()">Me gusta</a>
                             <a href="likes.php"
-                            class="btn-large d-inline-block ms-5 p-1 margin-button-mb ml-tb">Descargar</a>
+                            class="btn-large d-inline-block ms-5 p-1 margin-button-mb ml-tb">Coleccionar</a>
                         </div>
                         
                         <div class="modal-footer justify-content-center">

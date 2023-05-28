@@ -19,6 +19,11 @@ app.component('best-recipe-card', {
             type: String,
             default: "Default level"
         },
+
+        title: {
+            type: String,
+            default: "Default title"
+        },
  
         index:{
             type: Number 
