@@ -20,7 +20,7 @@ app.component('category-menu', {
 
     /*html*/
     ` 
-      <a class='header-subtext mt-3' v-on:click="onClickCategoryMenu">Todas</a> <!-- {{ occasion }} -->
+      <a class='header-subtext mt-3' v-on:click="onClickCategoryMenu">{{category}}</a> <!-- {{ occasion }} -->
     
     ` 
 })
