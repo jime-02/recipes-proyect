@@ -99,14 +99,26 @@
                         </li>
                     </ul>
                     
-                    <form class="d-flex searcher-tb" role="search">
-                        <input class="search-bar ps-4 ul-adjust" type="search" placeholder="Buscar receta..." aria-label="Search">
+                    <form class="d-flex searcher-tb" role="search" @submit.prevent="onClickSearchRecipe">
+                        <input ref="searchInput" class="search-bar ps-4 ul-adjust" type="search" placeholder="Buscar receta..." aria-label="Search">
                         <button class="search-btn ul-adjust" type="submit"><img src="./images/lupa.png" alt="lupa"></button>
-                    </form>    
+                    </form>     
                 </div>
             </nav>
         </div>
         <!-- Navigation menu end-->
+
+        <!-- search recipes -->
+        <div v-if="searchRecipes.length > 0" class="row mt-5 justify-content-center">
+            <p class="text-titles mb-2 mt-3 mt-tb">Se encontraron las recetas:</p>
+            <section class="row mt-2 padding-card grid-tb">
+                <div v-for="(item, index) in searchRecipes.slice(0, visibleRecipes)" class="col-2 mt-3 mx-5 mt-2 px-5">
+                    <best-recipe-card :image="item.image" :category="item.category" :name="item.name" :level="item.level" :index="item.id" v-on:recipedetails="onClickRecipeDetails"></best-recipe-card>   
+                </div> 
+            </section>
+            <button class="btn-large mt-5 mb-4 zoom-button" @click="showMoreSearch">Ver más</button>
+        </div> 
+        <!-- search recipes -->
 
         <!-- user profile -->
         <div class="row mt-5 justify-content-center mt-tb">
@@ -166,7 +178,6 @@
      <script src="./js/components/RecipeDetails.js"></script>
      <script src="./js/components/BestRecipeCard.js"></script>
      <script src="./js/components/NewRecipesCard.js"></script>
-     <script src="./js/components/Carrousel.js"></script>
  
      <!-- mounted, se verifica que la app fue cargada, ref a la aplicacion -->
      <script>

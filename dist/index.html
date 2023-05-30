@@ -99,7 +99,7 @@
        <!-- <div v-for="(item, index) in recipes">
             <carrousel-card :image="item.image" :name="item.name" :index="item.id" v-on:recipedetails="onClickRecipeDetails"></carrousel-card>
         </div>-->
-        <div class="main-carousel width-carrousel" data-flickity='{ "cellAlign": "center", "contain": true }'>
+        <div v-if="searchRecipes.length === 0" class="main-carousel width-carrousel" data-flickity='{ "cellAlign": "center", "contain": true }'>
             <div class="carousel-cell"><a class="nav-link topnav-link" href="informacion-receta.html"><img class="border border-4 border-danger rounded" src="./images/receta-10.png" alt="receta1"><h4 class="text-center mt-3 mb-3 carrousel-text">Almuerzo</h4></a></div>
             <div class="carousel-cell"><a class="nav-link topnav-link" href="informacion-receta.html"><img class="border border-4 border-danger rounded" src="./images/receta-10.png" alt="receta1"><h4 class="text-center mt-3 mb-3 carrousel-text">Bebida</h4></a></div>
             <div class="carousel-cell"><a class="nav-link topnav-link" href="informacion-receta.html"><img class="border border-4 border-danger rounded" src="./images/receta-10.png" alt="receta1"><h4 class="text-center mt-3 mb-3 carrousel-text">Desayuno</h4></a></div>
@@ -180,7 +180,6 @@
      <script src="./js/components/HeaderNav.js"></script>
      <script src="./js/components/FooterComponent.js"></script>
      <script src="./js/components/BestRecipeCard.js"></script>
-     <script src="./js/components/FooterComponent.js"></script>
      <script src="./js/components/NewRecipesCard.js"></script>
      <script src="./js/components/Carrousel.js"></script>
 
