@@ -33,31 +33,16 @@
 
         <!-- seccion del header -->
 
-        <header-nav session="Iniciar Sesión" register="Registrarse" image_identifier="./images/identificador.png" image_user="./images/icono-usuario.png"></header-nav>
+        <header-nav session="Iniciar Sesión" register="Registrarse" image_identifier="./images/identificador.png" image_user="./images/icono-usuario.png" v-on:onclicklogout="onclicklogout"></header-nav>
             
         <!-- seccion del header  final-->
 
+        <p class="text-recipe-label sesionTextSize">{{ sessionMessage }}</p>
+        
         <!--  Registrar usuario -->
         <div class="row mt-5 justify-content-center zoom-section-mb mt-tb">
 
-            <user-register title="Registro de usuario"
-            complete_name="Nombre completo:"
-            user_name="Nombre de usuario:"
-            email="Correo electrónico:"
-            password="Contraseña"
-            
-            completename_name="nombre-usuario"
-            completename_id="nombre-usuario"
-
-            username_name="user-name"
-            username_id="user-name"
-
-            email_name="email"
-            email_id="email"
-
-            password_name="password"
-            password_id="password"
-            ></user-register>
+            <user-register v-on:register="onClickRegister"></user-register>
 
         </div> 
         <!--  Registrar usuario end -->
@@ -65,8 +50,14 @@
      <!-- VueJS -->
      <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> 
 
+     <!-- custom events components -->
+     <script src="https://unpkg.com/mitt/dist/mitt.umd.js"></script>
+
+     <!-- Axios - API recipes -->   
+     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
      <!-- main script -->
-     <script src="./js/main.js"></script>
+     <script src="./js/component.js"></script>
 
      <!-- components script -->
      <script src="./js/components/HeaderNav.js"></script>
@@ -76,6 +67,7 @@
     <script>
         const mountedApp = app.mount("#app");
     </script>
+    
 
 </body>
 </html>

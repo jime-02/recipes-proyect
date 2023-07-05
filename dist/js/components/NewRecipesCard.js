@@ -20,9 +20,9 @@ app.component('new-recipes-card', {
             default: "Default level"
         },
 
-        ingredients: {
+        occasion: {
             type: String,
-            default: "Default ingredients"
+            default: "Default occasion"
         },
 
         index:{
@@ -53,7 +53,7 @@ app.component('new-recipes-card', {
         <div class="card-body p-0">
             <p class="mt-2 mb-3 category-text">{{ category }}</p>
             <h5 class="mb-3 card-title overflow-hidden text-recipe-name">{{ name }}</h5>
-            <p class="card-text overflow-hidden text-recipe-description">{{ ingredients }}</p>
+            <p class="card-text overflow-hidden text-recipe-description">For: {{ occasion }}</p>
             <p class="mb-3 text-recipe-level">{{ level }}</p>
 
             <button class="btn-view mt-2 mb-4 align-middle" v-on:click="onClickViewRecipe()" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Ver receta</button>

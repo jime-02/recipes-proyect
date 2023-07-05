@@ -1,7 +1,9 @@
 app.component('login', {
 
+    //emits: ['login'], // Declarar el evento 'login' en la opción emits
+
     props:{
-        title:{
+      /*  title:{
             type: String,
             default: "Default title"
         },
@@ -59,42 +61,71 @@ app.component('login', {
         for_label_password:{
             type: String,
             default: "Default"
-        },
+        },*/
 
     },
 
+    data() {
+        return {
+            email: '',
+            password: '',
+            showErrorMessage: false
+        }
+    },
+
     methods: {
+        onClickLogin(){
+
+            if (this.email === '' || this.password === '') {
+
+                this.showErrorMessage = true; 
+              } else {
+
+               // console.log("funciona login");
+                this.$emit('login', this.email, this.password);
+            }
+        },
+
+        onClickReset(){
+           
+            window.location.href = 'cambio-clave.html';
+           // this.$emit('login', this.email, this.password);   
+        },
+
     },
 
     template: 
 
     /*html*/
     ` 
-    <p class="text-titles mb-3 mt-4 mt-tb">{{title}}</p>
+    <p class="text-titles mb-3 mt-4 mt-tb">Iniciar sesión</p>
 
-    <form :action="action_click" method="post" enctype="multipart/form-data">
+    <form>
 
         <div class="mb-3 mt-3 margin-content text-recipe-label clr-gray-dark form-content">
-
+       
             <div class="form-group mt-5 d-flex d-block-mb">
-                <label :for="for_label_user" class="col-md-4 d-flex">{{ username_label }}:</label>
+                <label for="email" class="col-md-4 d-flex">Correo electrónico:</label>
                 <div class="col-sm">
-                  <input type="text" :name="username_name" class="form-control ms-5 shadow-lg text-recipe-textarea input-mb" :id="username_Id" placeholder="Usuario_01">
+                  <input type="text" class="form-control ms-5 shadow-lg text-recipe-textarea input-mb" id="email" placeholder="usuario@example.com" v-model="email">
                 </div>
             </div>
 
             <div class="form-group mt-5 d-flex d-block-mb">
-                <label :for="for_label_password" class="col-md-4 d-flex">{{ titlelabel }}:</label>
+                <label for="password" class="col-md-4 d-flex">Contraseña:</label>
                 <div class="col-sm">
-                  <input type="password" :name="password_name" class="form-control ms-5 shadow-lg text-recipe-textarea input-mb" :id="password_id" placeholder="*************************">
+                  <input type="password" class="form-control ms-5 shadow-lg text-recipe-textarea input-mb" id="password" placeholder="*************************" v-model="password">
                 </div>
             </div>
 
         </div>  
+        
+          <!-- Mensaje de error -->
+          <div v-if="showErrorMessage" class="text-danger mb-3 mt-2 text-center">Debe ingresar su información en los campos.</div>
 
         <div class="text-center mt-2">
-            <input class="me-5 d-inline-block btn-large mt-5 mb-5 margin-mb margin-tb" type="submit" :value="submit_button_label">
-            <input class="me-5 d-inline-block btn-large mt-5 mb-5 mt-tb margin-mb margin-tb mt-0-mb" type="submit" :value="submit_label_forgot">
+            <input class="me-5 d-inline-block btn-large mt-5 mb-5 margin-mb margin-tb" type="button" value="Iniciar Sesión" v-on:click="onClickLogin">
+            <input class="me-5 d-inline-block btn-large mt-5 mb-5 margin-mb margin-tb" type="button" value="¿Olvidó su contraseña?" v-on:click="onClickReset">
         </div>  
          
     </form>

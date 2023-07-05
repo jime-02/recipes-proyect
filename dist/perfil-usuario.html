@@ -32,12 +32,17 @@
 <body class="container br-mv">
     <div id="app">
         
+         <!-- componente de información receta -->
+         <recipe-details :name="recipe.name" :image="recipe.image" :preparation_time="recipe.preparation_time" :cook_time="recipe.cook_time" :total_time="recipe.total_time" :category="recipe.category" :portions="recipe.portions" :level="recipe.level" :occasion="recipe.occasion" :likes="recipe.likes" :description="recipe.description" :ingredients="recipe.ingredients" :instructions="recipe.instructions" :index="recipe.id" v-on:colectionrecipe="saveRecipeUser" v-on:recipelike="onClickRecipeLike"></recipe-details>
+         <!-- componente de información receta -->
          <!-- seccion del header -->
 
-         <header-nav session="Iniciar Sesión" register="Registrarse" image_identifier="./images/identificador.png" image_user="./images/icono-usuario.png"></header-nav>
+         <header-nav session="Iniciar Sesión" register="Registrarse" image_identifier="./images/identificador.png" image_user="./images/icono-usuario.png" v-on:onclicklogout="onclicklogout"></header-nav>
          
          <!-- seccion del header  final-->
 
+         <p class="text-recipe-label sesionTextSize">{{ sessionMessage }}</p>
+         
         <!-- Navigation menu-->
         <div class="position-absolute bar-mb">
             <img class="icon-mb mt-3 ms-1" src="./images/bars.svg" alt="menu bar">
@@ -143,7 +148,7 @@
 
             <section class="row mt-2 padding-card grid-tb">
                 <div v-for="(item, index) in userRecipesArray.slice(0, visibleRecipes)" class="col-2 mt-3 mx-5 mt-2 px-5">
-                    <best-recipe-card :image="item.image" :category="item.category" :name="item.name" :level="item.level" :index="item.id" v-on:recipedetails="onClickRecipeDetails"></best-recipe-card>   
+                    <user-profile :image="item.image" :category="item.category" :name="item.name" :level="item.level" :index="item.id" v-on:recipedetails="onClickRecipeDetails" v-on:deleterecipe="onClickDeleteRecipeUser" v-on:recipelike="onClickRecipeLike"></user-profile>   
                 </div> 
             </section>
 
@@ -178,6 +183,7 @@
      <script src="./js/components/RecipeDetails.js"></script>
      <script src="./js/components/BestRecipeCard.js"></script>
      <script src="./js/components/NewRecipesCard.js"></script>
+     <script src="./js/components/UserProfile.js"></script>
  
      <!-- mounted, se verifica que la app fue cargada, ref a la aplicacion -->
      <script>

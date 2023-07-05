@@ -138,6 +138,15 @@
     border-color: vars.$clr-red;
 }
 
+.btn-delete-recipe{
+    background: vars.$clr-red;
+}
+
+.btn-delete-recipe:hover{
+    background: vars.$clr-red;
+    color: vars.$clr-black;
+}
+
 .featured-badge{
     display: block;
     text-align: center;

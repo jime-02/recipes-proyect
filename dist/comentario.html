@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +35,7 @@
     
      <!-- seccion del header -->
 
-     <header-nav session="Iniciar Sesión" register="Registrarse" image_identifier="./images/identificador.png" image_user="./images/icono-usuario.png"></header-nav>
+     <header-nav session="Iniciar Sesión" register="Registrarse" image_identifier="./images/identificador.png" image_user="./images/icono-usuario.png" v-on:onclicklogout="onclicklogout"></header-nav>
          
     <!-- seccion del header  final-->
 
@@ -46,17 +48,20 @@
         </div> 
         <!--  comentario end -->
     
-     <!-- VueJS -->
-     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> 
+         <!-- custom events components -->
+      <script src="https://unpkg.com/mitt/dist/mitt.umd.js"></script>
+     
+       <!-- VueJS -->
+       <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> 
+  
+       <!-- main script -->
+       <script src="./js/component.js"></script>
 
-     <!-- main script -->
-     <script src="./js/main.js"></script>
+        <!-- components script -->
+        <script src="./js/components/HeaderNav.js"></script>
+        <script src="./js/components/Comment.js"></script>
 
-     <!-- components script -->
-     <script src="./js/components/HeaderNav.js"></script>
-     <script src="./js/components/Comment.js"></script>
-
-     <!-- mounted, se verifica que la app fue cargada, ref a la aplicacion -->
+       <!-- mounted, se verifica que la app fue cargada, ref a la aplicacion -->
     <script>
         const mountedApp = app.mount("#app");
     </script>

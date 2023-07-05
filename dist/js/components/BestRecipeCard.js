@@ -37,7 +37,7 @@ app.component('best-recipe-card', {
     methods: {
 
         onClickViewRecipe(){
-            console.log("VIEW");
+            console.log("VIEW details");
             this.$emit('recipedetails', this.index);
         }
        

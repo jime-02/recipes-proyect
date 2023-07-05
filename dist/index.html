@@ -36,11 +36,14 @@
     <section id="app" class="col margin-tb">
         
         <!-- componente de información receta -->
-        <recipe-details :name="recipe.name" :image="recipe.image" :preparation_time="recipe.preparation_time" :cook_time="recipe.cook_time" :total_time="recipe.total_time" :category="recipe.category" :portions="recipe.portions" :level="recipe.level" :occasion="recipe.occasion" :likes="recipe.likes" :description="recipe.description" :ingredients="recipe.ingredients" :instructions="recipe.instructions" :index="recipe.id" v-on:colectionrecipe="saveRecipeUser"></recipe-details>
-        <!-- componente de información receta (v-on:prevrecipe="onClickPrev" v-on:nextrecipe="onClickNext") -->
+        <recipe-details :name="recipe.name" :image="recipe.image" :preparation_time="recipe.preparation_time" :cook_time="recipe.cook_time" :total_time="recipe.total_time" :category="recipe.category" :portions="recipe.portions" :level="recipe.level" :occasion="recipe.occasion" :likes="recipe.likes" :description="recipe.description" :ingredients="recipe.ingredients" :instructions="recipe.instructions" :index="recipe.id" v-on:colectionrecipe="saveRecipeUser" v-on:recipelike="onClickRecipeLike"></recipe-details>
+        <!-- componente de información receta -->
 
          <!-- seccion del header -->
-         <header-nav session="Iniciar Sesión" register="Registrarse" image_identifier="./images/identificador.png" image_user="./images/icono-usuario.png"></header-nav>
+         <header-nav session="Iniciar Sesión" register="Registrarse" image_identifier="./images/identificador.png" image_user="./images/icono-usuario.png" v-on:onclicklogout="onclicklogout"></header-nav>
+
+         <p class="text-recipe-label sesionTextSize">{{ sessionMessage }}</p>
+         
          <!-- seccion del header  final-->
 
         <!-- Navigation menu-->
@@ -143,7 +146,7 @@
 
             <section class="row mt-2 padding-card grid-tb">
                 <div v-for="(item, index) in recipes.slice(0, visibleRecipes)" class="col-2 mt-3 mx-5 mt-2 px-5">
-                    <new-recipes-card :image="item.image" :category="item.category" :name="item.name" :ingredients="item.ingredients" :level="item.level" :index="item.id" v-on:recipedetails="onClickRecipeDetails"></new-recipes-card>  
+                    <new-recipes-card :image="item.image" :category="item.category" :name="item.name" :occasion="item.occasion" :level="item.level" :index="item.id" v-on:recipedetails="onClickRecipeDetails"></new-recipes-card>  
                  </div> 
             </section>
 

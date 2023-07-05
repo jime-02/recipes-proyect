@@ -33,25 +33,16 @@
 
         <!-- seccion del header -->
 
-        <header-nav session="Iniciar Sesión" register="Registrarse" image_identifier="./images/identificador.png" image_user="./images/icono-usuario.png"></header-nav>
+        <header-nav session="Iniciar Sesión" register="Registrarse" image_identifier="./images/identificador.png" image_user="./images/icono-usuario.png" v-on:onclicklogout="onclicklogout"></header-nav>
             
         <!-- seccion del header  final-->
 
+        <p class="text-recipe-label sesionTextSize">{{ sessionMessage }}</p>
+        
         <!--  Inicio sesión -->
         <div class="row mt-3 mb-3 justify-content-center zoom-section-mb">
 
-            <login title="Iniciar sesión"
-            action_click="index.html"
-            username_label="Nombre de usuario"
-            username_name="username"
-            username_Id="username"
-            for_label_user="username"
-            titlelabel="Contraseña"
-            password_name="password"
-            password_id="password"
-            for_label_password="password"
-            submit_button_label="Iniciar Sesión"
-            submit_label_forgot="¿Olvidó su contraseña?"></login>
+            <login v-on:login="onClickLogin"></login>
 
         </div> 
         <!--  Inicio sesión end -->
@@ -59,8 +50,15 @@
      <!-- VueJS -->
      <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> 
 
+     <!-- custom events components -->
+     <script src="https://unpkg.com/mitt/dist/mitt.umd.js"></script>
+
+     <!-- Axios - API recipes -->   
+     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
      <!-- main script -->
-     <script src="./js/main.js"></script>
+     <script src="./js/component.js"></script>
+
 
      <!-- components script -->
      <script src="./js/components/HeaderNav.js"></script>

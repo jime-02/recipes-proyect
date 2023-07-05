@@ -1,12 +1,12 @@
 app.component('user-register', {
 
     props:{
-        title:{
+      /*  title:{
             type: String,
             default: "Default title"
         },
 
-        complete_name:{
+        user_last_name:{
             type: String,
             default: "Default name"
         },
@@ -26,89 +26,99 @@ app.component('user-register', {
             default: "Default password"
         },
 
-        completename_name:{
+        country:{
             type: String,
-            default: "Default"
-        },
-        completename_id:{
-            type: String,
-            default: "Default"
-        },
-
-        username_name:{
-            type: String,
-            default: "Default"
-        },
-        username_id:{
-            type: String,
-            default: "Default"
-        },
-
-        email_name:{
-            type: String,
-            default: "Default"
-        },
-        email_id:{
-            type: String,
-            default: "Default"
-        },
-        
-        password_name:{
-            type: String,
-            default: "Default"
-        },
-        password_id:{
-            type: String,
-            default: "Default"
-        },
+            default: "Default country"
+        },*/
 
     },
 
+    data() {
+        return {
+            userName: '',
+            userLastName: '',
+            country: '',
+            email: '',
+            password: '',
+
+            registrationMessage: '', 
+            showErrorMessage: false
+        }
+    },
+
     methods: {
+
+        onClickRegister(){
+
+            if (
+                this.userName === '' ||
+                this.userLastName === '' ||
+                this.country === '' ||
+                this.email === '' ||
+                this.password === ''
+              ) {
+                this.showErrorMessage = true; // Mostrar mensaje de error
+              } else {
+                //console.log("funciona");
+                this.$emit('register', this.userName, this.userLastName, this.country, this.email, this.password);
+                this.registrationMessage = 'Usuario registrado exitosamente.';
+              }
+            
+
+        }
     },
 
     template: 
 
     /*html*/
     ` 
-    <p class="text-titles mb-2 mt-2">{{title}}</p>
+    <p class="text-titles mb-2 mt-2">Registro de usuario</p>
 
-    <form action="response.php" method="post" enctype="multipart/form-data">
+    <form>
         
         <div class="mb-5 mt-3 margin-content text-recipe-label clr-gray-dark form-content">
 
             <div class="form-group mt-5 d-flex d-block-mb margin-button-mb">
-                <label for="nombre-admin" class="col-md-4 d-flex">{{ complete_name }}</label>
+                <label for="name" class="col-md-4 d-flex">Nombre de usuario:</label>
                 <div class="col-sm">
-                <input type="text" :name="completename_name" class="form-control ms-5 shadow-lg text-recipe-textarea input-mb" :id="completename_id" placeholder="Juanito Mora Rojas">
+                <input type="name" class="form-control ms-5 shadow-lg text-recipe-textarea input-mb" id="userName" placeholder="Juanito" v-model="userName">
                 </div>
             </div>
 
             <div class="form-group mt-5 d-flex d-block-mb margin-button-mb">
-                <label for="usuario" class="col-md-4 d-flex">{{ user_name }}</label>
+                <label for="userLastName" class="col-md-4 d-flex">Apellidos:</label>
                 <div class="col-sm">
-                <input type="text" :name="username_name" class="form-control ms-5 shadow-lg text-recipe-textarea input-mb" :id="username_id" placeholder="Usuario_01">
+                <input type="userLastName" class="form-control ms-5 shadow-lg text-recipe-textarea input-mb" id="userLastName" placeholder="Mora Rojas" v-model="userLastName">
                 </div>
             </div>
 
             <div class="form-group mt-5 d-flex d-block-mb margin-button-mb">
-                <label for="email" class="col-md-4 d-flex">{{ email }}</label>
+                <label for="country" class="col-md-4 d-flex">País:</label>
                 <div class="col-sm">
-                <input type="text" :name="email_name" class="form-control ms-5 shadow-lg text-recipe-textarea input-mb" :id="email_id" placeholder="usuario@example.com ">
+                <input type="country" class="form-control ms-5 shadow-lg text-recipe-textarea input-mb" id="country" placeholder="Costa Rica" v-model="country">
                 </div>
             </div>
 
             <div class="form-group mt-5 d-flex d-block-mb margin-button-mb">
-                <label for="clave" class="col-md-4 d-flex">{{password}}:</label>
+                <label for="email" class="col-md-4 d-flex">Correo electrónico:</label>
                 <div class="col-sm">
-                <input type="password" :name="password_name" class="form-control ms-5 shadow-lg text-recipe-textarea input-mb" :id="password_id" placeholder="*************************">
+                <input type="email" class="form-control ms-5 shadow-lg text-recipe-textarea input-mb" id="email" placeholder="usuario@example.com" v-model="email">
                 </div>
             </div>
+
+            <div class="form-group mt-5 d-flex d-block-mb margin-button-mb">
+                <label for="password" class="col-md-4 d-flex">Contraseña:</label>
+                <div class="col-sm">
+                <input type="password" class="form-control ms-5 shadow-lg text-recipe-textarea input-mb" id="password" placeholder="*************************" v-model="password">
+                </div>
+            </div>
+
+            <div v-if="showErrorMessage" class="text-danger mb-3 mt-2 text-center">Debe ingresar su información en todos los campos.</div>
 
         </div>        
     </form>
 
-    <input type="submit" class="btn-large mt-3 mb-5" value="Registrarse">
-    
+    <input type="submit" class="btn-large mt-3 mb-5" value="Registrarse" v-on:click="onClickRegister()"> <!-- @click="onClickRegister -->
+    <p v-if="registrationMessage" class="success-message">{{ registrationMessage }}</p> 
     ` 
 })

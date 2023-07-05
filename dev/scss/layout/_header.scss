@@ -59,6 +59,14 @@
     @include mixins.display-options();
 }
 
+.coursorPointer{
+    cursor: pointer;
+}
+
+.sesionTextSize{
+    font-size: 15px;
+}
+
 .ml-header{
     margin-left: 12rem;
 }

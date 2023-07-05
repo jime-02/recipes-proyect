@@ -33,31 +33,39 @@
 
     <!-- seccion del header -->
 
-    <header-nav session="Iniciar Sesión" register="Registrarse" image_identifier="./images/identificador.png" image_user="./images/icono-usuario.png"></header-nav>
+    <header-nav session="Iniciar Sesión" register="Registrarse" image_identifier="./images/identificador.png" image_user="./images/icono-usuario.png" v-on:onclicklogout="onclicklogout"></header-nav>
          
     <!-- seccion del header  final-->
 
+    <p class="text-recipe-label sesionTextSize">{{ sessionMessage }}</p>
+    
         <!--  Cambio clave -->
         <div class="row mt-5 mb-5 justify-content-center zoom-section-mb">
 
            <password-change title="Cambio de contraseña"
-           new_password="Ingrese la nueva contraseña"
-           repeat_new_password="Repita la contraseña"
-           
-           new_password_for="newpassword"
-           new_password_id="newpassword"
-           
-           repeat_new_password_for="repeatpassword"
-           repeat_new_password_id="repeatpassword"></password-change>
+           emailuser="Ingrese su correo"
+           v-on:resetpass="onClickResetPass"></password-change>
        
          </div> 
         <!--  Cambio clave end -->
     
-     <!-- VueJS -->
-     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> 
+      <!-- custom events components -->
+      <script src="https://unpkg.com/mitt/dist/mitt.umd.js"></script>
+
+      <!-- Axios - API recipes -->   
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  
+       <!-- aos library -->
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+     
+       <!-- VueJS -->
+       <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> 
+  
+       <!-- main script -->
+       <script src="./js/component.js"></script>
 
      <!-- main script -->
-     <script src="./js/main.js"></script>
+     <script src="./js/component.js"></script>
 
      <!-- components script -->
      <script src="./js/components/HeaderNav.js"></script>
